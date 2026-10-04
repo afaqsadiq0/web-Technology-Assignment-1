@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 04: Block, Inline & Semantic HTML — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Block vs inline elements, comparison tables, and semantic HTML layout wireframes.">
+  <title>Lecture 04: Block, Inline &amp; Semantic HTML | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 04</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>04 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">Document Structure</span>
+      </div>
+
+      <h1 class="lecture-page-h1">Block, Inline &amp; Semantic HTML</h1>
+      <p class="lecture-lead-desc">
+        Mastering display models in the browser DOM. Understanding the differences between block-level and inline elements, structural semantics, accessibility advantages, and modern HTML5 page layouts.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle4">
+        <h2 class="objectives-title" id="objTitle4">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Distinguish between block-level and inline elements in visual flow.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Compare CSS dimension and margin behavior across display models.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Identify common semantic HTML5 structural tags and landmarks.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Construct accessible page wireframes replacing generic &lt;div&gt; soup.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: Block-Level Elements -->
+      <section class="content-block" id="block-elements">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. Block-Level Elements
+        </h2>
+        <p class="content-p">
+          A <strong>block-level element</strong> always starts on a new line and automatically expands to fill the entire horizontal width of its parent container (100% width by default). Block elements stack vertically down the webpage one after another in the normal document flow.
+        </p>
+        <p class="content-p">
+          Common block-level elements include: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code>.
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Block Elements Stacking Vertically</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">&lt;!-- Each block element begins on a new line and occupies full available width --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">style=</span><span class="token-val">"background-color: #dbeafe; padding: 10px;"</span><span class="token-tag">&gt;</span>First Block (100% width)<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">style=</span><span class="token-val">"background-color: #bfdbfe; padding: 10px;"</span><span class="token-tag">&gt;</span>Second Block (stacks below)<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </section>
+
+      <!-- Topic 2: Inline Elements -->
+      <section class="content-block" id="inline-elements">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. Inline Elements
+        </h2>
+        <p class="content-p">
+          An <strong>inline element</strong> does not cause a line break to appear in the document. It only consumes as much horizontal width as necessary to wrap its immediate content. Inline elements flow horizontally side-by-side alongside adjacent words or other inline elements until they encounter the edge of the containing box, where they wrap naturally.
+        </p>
+        <p class="content-p">
+          Common inline elements include: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;label&gt;</code>, and <code>&lt;input&gt;</code>.
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Inline Elements Flowing in Prose</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-tag">&lt;p&gt;</span>
+  This is normal prose containing an
+  <span class="token-tag">&lt;strong&gt;</span>inline strong tag<span class="token-tag">&lt;/strong&gt;</span>, an
+  <span class="token-tag">&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"#"</span><span class="token-tag">&gt;</span>inline hyperlink<span class="token-tag">&lt;/a&gt;</span>, and a
+  <span class="token-tag">&lt;span</span> <span class="token-attr">style=</span><span class="token-val">"color: #2563eb;"</span><span class="token-tag">&gt;</span>styled inline span<span class="token-tag">&lt;/span&gt;</span>.
+<span class="token-tag">&lt;/p&gt;</span></code></pre>
+        </div>
+      </section>
+
+      <!-- Topic 3: Comparison Table -->
+      <section class="content-block" id="comparison">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. Block-Level vs. Inline Elements Comparison
+        </h2>
+        <p class="content-p">
+          Understanding the layout physics of both display categories is critical to mastering CSS layouts:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="Block vs Inline Comparison">
+            <thead>
+              <tr>
+                <th>Behavioral Characteristic</th>
+                <th>Block-Level Elements</th>
+                <th>Inline Elements</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Default Line Break</strong></td>
+                <td>Always begins on a fresh new line.</td>
+                <td>Flows inline with adjacent text without line breaks.</td>
+              </tr>
+              <tr>
+                <td><strong>Default Width</strong></td>
+                <td>Expands to 100% of parent container width.</td>
+                <td>Shrinks to fit the exact width of its inner content.</td>
+              </tr>
+              <tr>
+                <td><strong>Explicit Width &amp; Height</strong></td>
+                <td>Respects CSS <code>width</code> and <code>height</code> properties.</td>
+                <td>Ignores CSS <code>width</code> and <code>height</code> properties.</td>
+              </tr>
+              <tr>
+                <td><strong>Vertical Margins &amp; Padding</strong></td>
+                <td>Top and bottom margins and padding fully push surrounding elements.</td>
+                <td>Top and bottom padding renders visually but does not push adjacent lines. Top/bottom margins have no effect.</td>
+              </tr>
+              <tr>
+                <td><strong>Permitted Nesting</strong></td>
+                <td>Can contain other block elements as well as inline elements.</td>
+                <td>Can contain other inline elements and text data (avoid nesting blocks inside inline).</td>
+              </tr>
+              <tr>
+                <td><strong>Canonical Examples</strong></td>
+                <td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code></td>
+                <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;code&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Topic 4: Semantic HTML -->
+      <section class="content-block" id="semantic-html">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 4. Semantic HTML &amp; Core Structural Elements
+        </h2>
+        <p class="content-p">
+          A <strong>semantic element</strong> clearly describes its meaning to both the web browser and the human developer. In legacy HTML, developers constructed entire layouts using non-semantic <code>&lt;div class="header"&gt;</code>, <code>&lt;div class="nav"&gt;</code>, and <code>&lt;div class="footer"&gt;</code>—a problem known as "div soup".
+        </p>
+        <p class="content-p">
+          HTML5 solved this by introducing dedicated semantic layout elements that define recognizable landmark regions:
+        </p>
+
+        <div class="feature-info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;header&gt;</code></h3>
+            <p class="info-card-body">Contains introductory content, site logo, candidate titles, or primary search bar.</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;nav&gt;</code></h3>
+            <p class="info-card-body">Designates a major block of navigational links intended for site or page exploration.</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;main&gt;</code></h3>
+            <p class="info-card-body">Encapsulates the dominant, unique content of the document (only one per document).</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;article&gt;</code></h3>
+            <p class="info-card-body">Self-contained, reusable composition independently distributable (e.g., blog post, lecture).</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;section&gt;</code></h3>
+            <p class="info-card-body">Represents a standalone thematic grouping of content, typically introduced by a heading.</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;aside&gt;</code></h3>
+            <p class="info-card-body">Content tangentially related to the main topic, such as sidebars, glossaries, or author bios.</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;footer&gt;</code></h3>
+            <p class="info-card-body">Contains author information, copyright metadata, legal links, and secondary navigation.</p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><code>&lt;figure&gt; &amp; &lt;figcaption&gt;</code></h3>
+            <p class="info-card-body">Encapsulates illustrative media (images, diagrams, code blocks) with an accessible caption.</p>
+          </div>
+        </div>
+
+        <!-- Semantic Wireframe Diagram -->
+        <h3 class="content-heading-3">Semantic HTML5 Layout Architecture</h3>
+        <p class="content-p">The visual wireframe below illustrates the semantic hierarchy of a modern web page:</p>
+
+        <div class="semantic-wireframe-container" aria-label="Semantic HTML Layout Diagram">
+          <div class="wireframe-box wf-header">
+            &lt;header&gt; — Site Header, Logo &amp; Branding
+            <div class="wireframe-box wf-nav">&lt;nav&gt; — Main Navigation Menu Links&lt;/nav&gt;
+          </div>
+
+          <div class="wf-main-wrap">
+            <div class="wireframe-box wf-main">
+              &lt;main&gt; — Unique Central Content
+              <div class="wireframe-box wf-article">
+                &lt;article&gt; — Independent Educational Article / Module
+                <div style="font-size: 0.75rem; color: #047857; margin-top: 0.25rem;">&lt;section&gt;Thematic Subsection&lt;/section&gt;</div>
+              </div>
+            </div>
+
+            <div class="wireframe-box wf-aside">
+              &lt;aside&gt; — Contextual Sidebar (Glossary, Student Info, Related Links)
+            </div>
+          </div>
+
+          <div class="wireframe-box wf-footer">
+            &lt;footer&gt; — Institutional Copyright, Student Metadata, Course Affiliation
+          </div>
+        </div>
+      </section>
+
+      <!-- Topic 5: Importance of Semantic HTML -->
+      <section class="content-block" id="importance">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 5. Why Semantic HTML Matters
+        </h2>
+        <ul class="content-list">
+          <li>
+            <strong>Digital Accessibility (a11y):</strong> Assistive technologies (screen readers like NVDA and JAWS) construct landmark shortcuts from semantic elements, allowing visually impaired users to jump directly to <code>&lt;main&gt;</code> or skip navigation menus.
+          </li>
+          <li>
+            <strong>Search Engine Optimization (SEO):</strong> Web crawlers (Googlebot) parse semantic headings and articles to understand the conceptual hierarchy and primary topic of each page, directly improving search rankings.
+          </li>
+          <li>
+            <strong>Maintainability &amp; Developer Ergonomics:</strong> Reading <code>&lt;nav&gt;</code> or <code>&lt;article&gt;</code> conveys immediate developer intent compared to analyzing dozens of nested <code>&lt;div&gt;</code> wrappers with arbitrary class names.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle4">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle4">Key Takeaways: Lecture 04</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Block-level elements take up the full horizontal width and always start on a new line.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Inline elements wrap content tightly and do not accept CSS width/height dimensions.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Semantic tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) replace non-descriptive <code>&lt;div&gt;</code> soup.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Proper semantic markup improves web accessibility, SEO indexing, and source code maintainability.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture3.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 03: HTML Fundamentals</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="lecture5.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Next Module <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Lecture 05: HTML Forms</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

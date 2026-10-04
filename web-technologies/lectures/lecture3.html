@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 03: HTML & HTML5 Fundamentals — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Document structure, headings, paragraphs, links, images, lists, and core tags.">
+  <title>Lecture 03: HTML &amp; HTML5 Fundamentals | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 03</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>03 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">Markup &amp; Structure</span>
+      </div>
+
+      <h1 class="lecture-page-h1">HTML &amp; HTML5 Fundamentals</h1>
+      <p class="lecture-lead-desc">
+        The foundational markup language of the World Wide Web. Understanding the HTML5 document tree, elements vs. tags, headings, hypermedia links, accessible images, and structured lists.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle3">
+        <h2 class="objectives-title" id="objTitle3">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Master the standard boilerplate structure of an HTML5 document.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Implement proper heading hierarchy from &lt;h1&gt; to &lt;h6&gt;.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Construct accessible hyperlinks and responsive images with alt attributes.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Build ordered, unordered, and nested list structures.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: What is HTML & HTML5? -->
+      <section class="content-block" id="html-intro">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. What is HTML &amp; HTML5?
+        </h2>
+        <p class="content-p">
+          <strong>HTML (HyperText Markup Language)</strong> is the standard declarative markup language used to describe the structure and content of documents displayed in a web browser. Rather than defining visual presentation (which is handled by CSS), HTML provides <em>meaning</em> and <em>organization</em> to text, multimedia, and user interfaces.
+        </p>
+        <p class="content-p">
+          <strong>HTML5</strong> represents the major revision of the standard. Released to modernize the web for rich multimedia and mobile devices, HTML5 eliminated the need for third-party browser plugins (such as Adobe Flash) by introducing native audio/video playback, canvas graphics, and dedicated semantic layout elements.
+        </p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 Elements vs. Tags: Understanding the Terminology</div>
+          <p>
+            A <strong>tag</strong> is the syntax enclosed within angle brackets (e.g., <code>&lt;p&gt;</code> for opening tag, <code>&lt;/p&gt;</code> for closing tag). An <strong>element</strong> is the complete entity comprising the opening tag, any attributes, the inner content, and the closing tag.
+          </p>
+        </div>
+      </section>
+
+      <!-- Topic 2: Basic HTML Document Structure -->
+      <section class="content-block" id="doc-structure">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. Basic HTML5 Document Structure
+        </h2>
+        <p class="content-p">
+          Every valid HTML5 document adheres to a standardized nested tree structure consisting of a document type declaration, an html root element, a document head for metadata, and a visible body.
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Standard HTML5 Document Boilerplate</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="token-tag">&lt;html</span> <span class="token-attr">lang=</span><span class="token-val">"en"</span><span class="token-tag">&gt;</span>
+<span class="token-tag">&lt;head&gt;</span>
+  <span class="token-tag">&lt;meta</span> <span class="token-attr">charset=</span><span class="token-val">"UTF-8"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;meta</span> <span class="token-attr">name=</span><span class="token-val">"viewport"</span> <span class="token-attr">content=</span><span class="token-val">"width=device-width, initial-scale=1.0"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;title&gt;</span>My First Web Page<span class="token-tag">&lt;/title&gt;</span>
+<span class="token-tag">&lt;/head&gt;</span>
+<span class="token-tag">&lt;body&gt;</span>
+  <span class="token-tag">&lt;h1&gt;</span>Welcome to Web Technologies<span class="token-tag">&lt;/h1&gt;</span>
+  <span class="token-tag">&lt;p&gt;</span>This text is rendered within the visible viewport.<span class="token-tag">&lt;/p&gt;</span>
+<span class="token-tag">&lt;/body&gt;</span>
+<span class="token-tag">&lt;/html&gt;</span></code></pre>
+        </div>
+
+        <h3 class="content-heading-3">Boilerplate Element Breakdown</h3>
+        <ul class="content-list">
+          <li><strong><code>&lt;!DOCTYPE html&gt;</code>:</strong> Informs the browser that this document follows the modern HTML5 standard, preventing legacy "quirks mode" rendering.</li>
+          <li><strong><code>&lt;html lang="en"&gt;</code>:</strong> The root container for all code in the page. The <code>lang</code> attribute assists screen readers and search engines.</li>
+          <li><strong><code>&lt;head&gt;</code>:</strong> Encapsulates machine-readable metadata not rendered directly in the visual viewport (character sets, viewport scaling, stylesheets, page title).</li>
+          <li><strong><code>&lt;meta charset="UTF-8"&gt;</code>:</strong> Declares character encoding supporting virtually all human languages and punctuation marks.</li>
+          <li><strong><code>&lt;meta name="viewport"&gt;</code>:</strong> Critical for responsive mobile layout; ensures the page scales correctly to match physical device widths.</li>
+          <li><strong><code>&lt;body&gt;</code>:</strong> Contains all visible content rendered to the end-user (headings, text, images, forms).</li>
+        </ul>
+      </section>
+
+      <!-- Topic 3: Headings and Paragraphs -->
+      <section class="content-block" id="headings-paragraphs">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. Headings &amp; Paragraphs
+        </h2>
+        <p class="content-p">
+          Headings structure the hierarchy of document sections. HTML provides six levels of headings, ranging from the most important <code>&lt;h1&gt;</code> to the least important <code>&lt;h6&gt;</code>.
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Proper Heading &amp; Paragraph Hierarchy</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-tag">&lt;h1&gt;</span>Main Document Topic (One per page for SEO)<span class="token-tag">&lt;/h1&gt;</span>
+<span class="token-tag">&lt;p&gt;</span>The paragraph element defines a block of running prose.<span class="token-tag">&lt;/p&gt;</span>
+
+<span class="token-tag">&lt;h2&gt;</span>Major Sub-Section Topic<span class="token-tag">&lt;/h2&gt;</span>
+<span class="token-tag">&lt;p&gt;</span>Browsers automatically append vertical margins before and after paragraphs.<span class="token-tag">&lt;/p&gt;</span>
+
+<span class="token-tag">&lt;h3&gt;</span>Detailed Subsection Topic<span class="token-tag">&lt;/h3&gt;</span></code></pre>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-title">⚠️ Accessibility Rule: Heading Hierarchy</div>
+          <p>
+            Never skip heading levels (e.g., jumping from <code>&lt;h1&gt;</code> directly to <code>&lt;h4&gt;</code>) merely to achieve a smaller visual font size. Use CSS for font sizing and preserve semantic heading levels for screen-reader navigation.
+          </p>
+        </div>
+      </section>
+
+      <!-- Topic 4: Links and Images -->
+      <section class="content-block" id="links-images">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 4. Hyperlinks &amp; Images
+        </h2>
+        <p class="content-p">
+          The defining capability of the Web is <em>hyperlinking</em>—the ability to connect resources via the anchor element (<code>&lt;a&gt;</code>). Combined with embedded imagery (<code>&lt;img&gt;</code>), HTML creates rich hypermedia experiences.
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Anchor Links &amp; Image Embedding</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">&lt;!-- External Link opening in a secure new tab --&gt;</span>
+<span class="token-tag">&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"https://www.w3.org"</span> <span class="token-attr">target=</span><span class="token-val">"_blank"</span> <span class="token-attr">rel=</span><span class="token-val">"noopener noreferrer"</span><span class="token-tag">&gt;</span>
+  Visit W3C Official Standards
+<span class="token-tag">&lt;/a&gt;</span>
+
+<span class="token-comment">&lt;!-- Internal Relative Link --&gt;</span>
+<span class="token-tag">&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"lecture2.html"</span><span class="token-tag">&gt;</span>Read Tiered Architecture Lecture<span class="token-tag">&lt;/a&gt;</span>
+
+<span class="token-comment">&lt;!-- Accessible Image with Alt Text --&gt;</span>
+<span class="token-tag">&lt;img</span> <span class="token-attr">src=</span><span class="token-val">"../assets/images/client-server-diagram.svg"</span> <span class="token-attr">alt=</span><span class="token-val">"Client server interaction flow diagram"</span> <span class="token-attr">width=</span><span class="token-val">"800"</span> <span class="token-attr">height=</span><span class="token-val">"400"</span><span class="token-tag">&gt;</span></code></pre>
+        </div>
+
+        <!-- Live Demonstration Image Figure -->
+        <figure style="margin: 1.75rem 0; border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; background: #0f172a; box-shadow: var(--shadow-sm);">
+          <img src="../assets/images/client-server-diagram.svg" alt="Client server interaction flow diagram illustrating request response cycle" width="800" height="400" style="width: 100%; height: auto; display: block;">
+          <figcaption style="padding: 0.75rem 1rem; background: #090d16; color: var(--slate-400); font-size: 0.825rem; font-family: var(--font-mono); text-align: center; border-top: 1px solid var(--slate-800);">
+            Fig 3.1: Architectural diagram of the Client-Server HTTP/HTTPS communication lifecycle.
+          </figcaption>
+        </figure>
+
+        <ul class="content-list">
+          <li><strong>The <code>href</code> Attribute:</strong> Specifies the destination URL, whether absolute (e.g., <code>https://...</code>) or relative (e.g., <code>../index.html</code>).</li>
+          <li><strong>The <code>target="_blank"</code> Attribute:</strong> Directs the browser to render the target resource in a new browsing tab. Always pair with <code>rel="noopener noreferrer"</code> to prevent reverse-tabnabbing security exploits.</li>
+          <li><strong>The <code>alt</code> Attribute:</strong> Crucial for digital accessibility. Provides a descriptive text alternative read aloud by screen readers and displayed if image files fail to load over slow connections.</li>
+        </ul>
+      </section>
+
+      <!-- Topic 5: Ordered & Unordered Lists -->
+      <section class="content-block" id="lists">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 5. Ordered &amp; Unordered Lists
+        </h2>
+        <p class="content-p">
+          Lists structure collections of related items. HTML supports ordered numerical sequences, unordered bulleted lists, and description lists.
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Unordered, Ordered, and Nested Lists</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">&lt;!-- Unordered List (Bullet Points) --&gt;</span>
+<span class="token-tag">&lt;ul&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>HTML - HyperText Markup Language<span class="token-tag">&lt;/li&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>CSS - Cascading Style Sheets<span class="token-tag">&lt;/li&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>JavaScript - Dynamic Interactivity<span class="token-tag">&lt;/li&gt;</span>
+<span class="token-tag">&lt;/ul&gt;</span>
+
+<span class="token-comment">&lt;!-- Ordered List (Numbered Sequence) --&gt;</span>
+<span class="token-tag">&lt;ol&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>Write semantic markup<span class="token-tag">&lt;/li&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>Apply modern CSS styles<span class="token-tag">&lt;/li&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>Test across responsive viewports<span class="token-tag">&lt;/li&gt;</span>
+<span class="token-tag">&lt;/ol&gt;</span></code></pre>
+        </div>
+      </section>
+
+      <!-- Topic 6: Basic HTML Formatting Tags -->
+      <section class="content-block" id="formatting-tags">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 6. Common HTML Formatting Tags
+        </h2>
+        <p class="content-p">
+          Text content frequently requires inline semantic emphasis or formatting cues:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="HTML Formatting Tags">
+            <thead>
+              <tr>
+                <th>Tag</th>
+                <th>Semantic Meaning</th>
+                <th>Default Browser Presentation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;strong&gt;</code></td>
+                <td>Indicates strong importance, seriousness, or urgency.</td>
+                <td><strong>Bold text</strong></td>
+              </tr>
+              <tr>
+                <td><code>&lt;em&gt;</code></td>
+                <td>Indicates stress emphasis (alters spoken pitch in screen readers).</td>
+                <td><em>Italicized text</em></td>
+              </tr>
+              <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Represents text marked or highlighted for reference purposes.</td>
+                <td><mark style="background:#fef08a;">Yellow highlighted text</mark></td>
+              </tr>
+              <tr>
+                <td><code>&lt;code&gt;</code></td>
+                <td>Designates a short fragment of computer code.</td>
+                <td><code>Monospace font</code></td>
+              </tr>
+              <tr>
+                <td><code>&lt;blockquote&gt;</code></td>
+                <td>Represents an extended quotation from an external source.</td>
+                <td>Indented block with surrounding margin</td>
+              </tr>
+              <tr>
+                <td><code>&lt;hr&gt;</code></td>
+                <td>Thematic break / change of topic between paragraphs.</td>
+                <td>Horizontal divider rule line</td>
+              </tr>
+              <tr>
+                <td><code>&lt;br&gt;</code></td>
+                <td>Produces a line break (carriage return) within running prose.</td>
+                <td>Moves subsequent content to a new line</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle3">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle3">Key Takeaways: Lecture 03</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>HTML delivers structure and semantic meaning; CSS delivers aesthetic styling and layout.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Every valid HTML5 document begins with <code>&lt;!DOCTYPE html&gt;</code> followed by <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Headings (<code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>) should follow a logical sequence for accessibility and search indexing.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Always provide descriptive <code>alt</code> text on <code>&lt;img&gt;</code> tags and use <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> for lists.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture2.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 02: Tiered Web Architecture</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="lecture4.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Next Module <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Lecture 04: Block, Inline &amp; Semantics</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 01: Web Development Overview — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Platforms, terminologies, standards, constraints, application categories, and development environments.">
+  <title>Lecture 01: Web Development Overview | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 01</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>01 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">Foundations &amp; Architecture</span>
+      </div>
+
+      <h1 class="lecture-page-h1">Web Development Overview</h1>
+      <p class="lecture-lead-desc">
+        A foundational exploration of the World Wide Web, examining client-server communication, technology stacks, international web standards, architectural constraints, and modern developer environments.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle">
+        <h2 class="objectives-title" id="objTitle">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Understand the fundamental mechanics of the Client-Server model and HTTP.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Identify major web development platforms and software stacks.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Analyze web standards established by the W3C, WHATWG, and ECMA.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Evaluate web constraints and configure modern development environments.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: Web Development Overview -->
+      <section class="content-block" id="overview">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. Web Development Overview
+        </h2>
+        <p class="content-p">
+          Web development refers to the tasks associated with building, creating, and maintaining websites and web-based applications that run online on a browser. It encompasses everything from plain text webpage creation to complex interactive network applications.
+        </p>
+        <p class="content-p">
+          At its structural core, web computing operates upon the <strong>Client-Server Architecture</strong>. The client (typically a web browser) transmits an HTTP or HTTPS request across the Internet to a web server hosting site resources. The server processes this request, executes any server-side logic, and delivers a response containing HTML markup, CSS stylesheets, images, or JSON data back to the client.
+        </p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 Core Principle: The Internet vs. The Web</div>
+          <p>
+            The <strong>Internet</strong> is the global decentralized infrastructure of interconnected computer networks. The <strong>World Wide Web (WWW)</strong> is an information-sharing service built on top of the Internet, utilizing hyperlinked documents transferred via the Hypertext Transfer Protocol (HTTP).
+          </p>
+        </div>
+      </section>
+
+      <!-- Topic 2: Web Development Platforms -->
+      <section class="content-block" id="platforms">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. Web Development Platforms
+        </h2>
+        <p class="content-p">
+          A web development platform consists of the unified operating systems, runtime engines, web server software, database management systems, and programming languages grouped together to support application development. Common platform stacks include:
+        </p>
+
+        <div class="feature-info-grid">
+          <article class="info-card">
+            <div class="info-card-header">
+              <span class="info-card-icon">🐧</span>
+              <h3 class="info-card-title">LAMP Stack</h3>
+            </div>
+            <p class="info-card-body">
+              <strong>Linux, Apache, MySQL, PHP/Perl/Python</strong>. The time-tested open-source foundation that powered the early dynamic web and powers major CMS solutions today.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-header">
+              <span class="info-card-icon">⚡</span>
+              <h3 class="info-card-title">JavaScript Stacks (MERN / MEAN)</h3>
+            </div>
+            <p class="info-card-body">
+              <strong>MongoDB, Express.js, React/Angular, Node.js</strong>. Unifies frontend and backend programming under a single runtime language (JavaScript).
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-header">
+              <span class="info-card-icon">🏢</span>
+              <h3 class="info-card-title">Enterprise .NET &amp; Java EE</h3>
+            </div>
+            <p class="info-card-body">
+              High-performance, strongly-typed enterprise ecosystems tailored for high-transaction corporate banking and enterprise governance.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-header">
+              <span class="info-card-icon">☁️</span>
+              <h3 class="info-card-title">Cloud Native Platforms</h3>
+            </div>
+            <p class="info-card-body">
+              Serverless runtimes and microservices managed by cloud providers (AWS, Azure, Google Cloud) offering elastic horizontal scalability.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Topic 3: Web Terminologies -->
+      <section class="content-block" id="terminologies">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. Core Web Terminologies
+        </h2>
+        <p class="content-p">
+          Mastery of web engineering requires fluency in foundational networking and architectural terminology:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="Web Terminologies Reference">
+            <thead>
+              <tr>
+                <th>Terminology</th>
+                <th>Definition &amp; Role</th>
+                <th>Typical Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Client (User Agent)</strong></td>
+                <td>Software application running on an end-user device that sends requests to servers and renders returned markup.</td>
+                <td>Google Chrome, Mozilla Firefox, Safari</td>
+              </tr>
+              <tr>
+                <td><strong>Web Server</strong></td>
+                <td>A hardware and software system responsible for storing website files and serving them over HTTP to clients.</td>
+                <td>Apache HTTP Server, Nginx, Caddy</td>
+              </tr>
+              <tr>
+                <td><strong>HTTP / HTTPS</strong></td>
+                <td>Application layer protocol transferring hypermedia. HTTPS incorporates SSL/TLS encryption for confidentiality.</td>
+                <td><code>https://ciitvehari.edu.pk</code></td>
+              </tr>
+              <tr>
+                <td><strong>URL / URI</strong></td>
+                <td>Uniform Resource Locator: the global address specifying where an asset is located on the web and the access protocol.</td>
+                <td><code>https://example.com:443/docs/index.html</code></td>
+              </tr>
+              <tr>
+                <td><strong>DNS</strong></td>
+                <td>Domain Name System: the decentralized naming system mapping human-readable domain names to numerical IP addresses.</td>
+                <td><code>comsats.edu.pk</code> &rarr; <code>202.83.164.25</code></td>
+              </tr>
+              <tr>
+                <td><strong>IP Address</strong></td>
+                <td>Unique numerical identifier assigned to every device connected to a computer network using IP for communication.</td>
+                <td>IPv4: <code>192.168.1.1</code> / IPv6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Topic 4: Web Standards -->
+      <section class="content-block" id="standards">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 4. Web Standards &amp; Governing Bodies
+        </h2>
+        <p class="content-p">
+          Web standards are formal non-proprietary specifications and technical guidelines defining how the World Wide Web operates. Without standards, every web browser would interpret code differently, resulting in broken websites and fragmented software.
+        </p>
+
+        <ul class="content-list">
+          <li>
+            <strong>W3C (World Wide Web Consortium):</strong> Founded by Tim Berners-Lee in 1994, the W3C produces core standards including HTML, CSS, SVG, and Web Accessibility Guidelines (WCAG).
+          </li>
+          <li>
+            <strong>WHATWG (Web Hypertext Application Technology Working Group):</strong> Founded by browser vendors (Apple, Mozilla, Opera, Google) to develop the modern "Living Standard" for HTML and the DOM.
+          </li>
+          <li>
+            <strong>ECMA International:</strong> Standardizes ECMAScript, the official specification underpinning the JavaScript programming language.
+          </li>
+          <li>
+            <strong>IETF (Internet Engineering Task Force):</strong> Defines Internet transport standards such as TCP/IP, DNS, and the HTTP/1.1, HTTP/2, and HTTP/3 specifications.
+          </li>
+        </ul>
+
+        <div class="callout callout-tip">
+          <div class="callout-title">🌟 Why Standards Matter</div>
+          <p>
+            Adhering to W3C standards ensures cross-browser interoperability, consistent visual rendering, backwards compatibility, search engine indexing, and compliance with accessibility laws for users with disabilities.
+          </p>
+        </div>
+      </section>
+
+      <!-- Topic 5: Web Development Constraints -->
+      <section class="content-block" id="constraints">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 5. Web Development Constraints
+        </h2>
+        <p class="content-p">
+          Unlike closed desktop software development where hardware is predictable, web software engineers operate within strict environmental constraints:
+        </p>
+
+        <div class="feature-info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title">📡 Network Latency &amp; Bandwidth</h3>
+            <p class="info-card-body">
+              Users connect via varying speeds (fiber to unstable mobile 3G). Web pages must optimize assets, compress code, and minimize HTTP round-trips.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">🖥️ Viewport &amp; Device Fragmentation</h3>
+            <p class="info-card-body">
+              Web apps must render flawlessly on 4-inch smartphones, 10-inch tablets, and 32-inch 4K desktop monitors using fluid responsive design.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">🌐 Cross-Browser Discrepancies</h3>
+            <p class="info-card-body">
+              Different rendering engines (Blink in Chrome/Edge, Gecko in Firefox, WebKit in Safari) may exhibit minor CSS quirks and feature rollout differences.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">🔒 Hostile Security Environment</h3>
+            <p class="info-card-body">
+              Client-side code runs in an untrusted browser environment vulnerable to Cross-Site Scripting (XSS), CSRF, and injection attacks if input is unvalidated.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topic 6: Application Categories -->
+      <section class="content-block" id="categories">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 6. Web Application Categories
+        </h2>
+        <p class="content-p">
+          Modern web systems fall into several architectural categories based on their interactivity and data delivery mechanism:
+        </p>
+
+        <ul class="content-list">
+          <li>
+            <strong>Static Websites:</strong> Pre-rendered HTML, CSS, and image files stored on a server and delivered identically to all visitors. Fast, highly secure, and cost-effective (e.g., portfolios, documentation sites).
+          </li>
+          <li>
+            <strong>Dynamic Web Applications:</strong> Generates content in real-time by querying a database on the server based on user sessions, form submissions, or authentication states (e.g., banking portals, university LMS).
+          </li>
+          <li>
+            <strong>Single-Page Applications (SPA):</strong> Loads a single HTML shell page once, then dynamically rewrites the DOM using client-side JavaScript without requiring full-page browser reloads.
+          </li>
+          <li>
+            <strong>Progressive Web Apps (PWA):</strong> Web applications utilizing service workers, web app manifests, and HTTPS to offer native app-like capabilities including offline caching and push notifications.
+          </li>
+          <li>
+            <strong>Content Management Systems (CMS):</strong> Platforms like WordPress or Drupal that decouple editorial content publishing from underlying source code via administrative dashboards.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Topic 7: Development Environments -->
+      <section class="content-block" id="environments">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 7. Modern Development Environments
+        </h2>
+        <p class="content-p">
+          A productive web developer maintains an integrated toolchain comprising code editors, browser inspection utilities, and revision tracking systems:
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">Terminal / Bash — Recommended Dev Workflow</span>
+            <button class="code-copy-btn" aria-label="Copy command snippet">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment"># 1. Initialize local repository</span>
+git init web-technologies-lab
+
+<span class="token-comment"># 2. Open project inside Visual Studio Code</span>
+code .
+
+<span class="token-comment"># 3. Serve via local HTTP server (prevents CORS and path errors)</span>
+npx serve .</code></pre>
+        </div>
+
+        <ul class="content-list">
+          <li><strong>Integrated Development Environments (IDEs):</strong> Visual Studio Code, WebStorm, or Sublime Text featuring syntax highlighting, IntelliSense auto-completion, and linter extensions.</li>
+          <li><strong>Browser Developer Tools (DevTools):</strong> Built into Chrome, Edge, and Firefox to inspect the live DOM tree, test CSS rules in real time, monitor network waterfalls, and debug JavaScript.</li>
+          <li><strong>Version Control Systems (VCS):</strong> Git combined with remote platforms (GitHub, GitLab) enabling branching, collaboration, history tracking, and deployment automation.</li>
+        </ul>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle">Key Takeaways: Lecture 01</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Web development relies on the request-response model across clients (browsers) and servers via HTTP/HTTPS.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Web standards developed by W3C and WHATWG guarantee cross-browser compatibility and accessible user experiences.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Web developers must design defensively against constraints including viewport fragmentation, latency, and security threats.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>A standard developer environment consists of an IDE (e.g., VS Code), Browser DevTools, and Git version control.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="lecture2.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Next Module <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Lecture 02: Tiered Web Architecture</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSC336 Web Technologies academic course portal by Muhammad Afaq (FA23-BSE-012) at COMSATS University Islamabad, Vehari Campus. Comprehensive lectures covering HTML5, CSS3, Web Architecture, Flexbox, and Grid.">
+  <meta name="author" content="Muhammad Afaq (FA23-BSE-012)">
+  <title>Web Technologies | CSC336 Course Portal — Muhammad Afaq</title>
+  
+  <!-- Google Fonts for Modern Academic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header" id="topHeader">
+    <div class="container navbar">
+      <a href="index.html" class="logo-brand" aria-label="Web Technologies Course Home">
+        <div class="logo-icon" aria-hidden="true">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Mobile Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="#lectures" class="nav-link">Lectures</a></li>
+          <li><a href="#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <!-- Hamburger Button for Mobile -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         2. HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span class="hero-tag-icon">🏛️</span>
+              <span>COMSATS University Islamabad, Vehari Campus • Fall 2026</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="hero-title-highlight" id="typewriterText">Web Technologies</span><span class="typewriter-cursor" aria-hidden="true">|</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Explore the foundations of modern web development, from HTML structure to responsive CSS layouts.
+            </p>
+
+            <!-- Student Bio Card -->
+            <div class="student-bio-card">
+              <div class="student-avatar" aria-hidden="true">MA</div>
+              <div class="student-info">
+                <div class="student-name-row">
+                  <span class="student-name">Muhammad Afaq</span>
+                  <span class="student-reg-tag">FA23-BSE-012</span>
+                </div>
+                <span class="student-dept">BS Software Engineering • CSC336 Coursework</span>
+              </div>
+            </div>
+
+            <!-- Action CTA Buttons -->
+            <div class="hero-cta-group">
+              <a href="#lectures" class="btn btn-primary" id="btnExploreLectures">
+                <span>Explore Lectures</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+              <a href="#overview" class="btn btn-secondary" id="btnViewCourseTopics">
+                <span>View Course Topics</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Abstract Tech/Web Visual -->
+          <div class="hero-visual-card" aria-hidden="true">
+            <div class="tech-window-header">
+              <div class="window-dots">
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+              </div>
+              <span class="tech-window-title">architecture-preview.html</span>
+            </div>
+
+            <div class="hero-code-snippet">
+              <span class="code-hl-comment">&lt;!-- Academic Learning Stack --&gt;</span><br>
+              <span class="code-hl-tag">&lt;div</span> <span class="code-hl-attr">class=</span><span class="code-hl-val">"web-course"</span><span class="code-hl-tag">&gt;</span><br>
+              &nbsp;&nbsp;<span class="code-hl-tag">&lt;header</span> <span class="code-hl-attr">class=</span><span class="code-hl-val">"semantic-header"</span><span class="code-hl-tag">&gt;</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-hl-tag">&lt;h1&gt;</span>Web Standards &amp; Architecture<span class="code-hl-tag">&lt;/h1&gt;</span><br>
+              &nbsp;&nbsp;<span class="code-hl-tag">&lt;/header&gt;</span><br>
+              &nbsp;&nbsp;<span class="code-hl-tag">&lt;main</span> <span class="code-hl-attr">style=</span><span class="code-hl-val">"<span class="code-hl-css-prop">display:</span> grid; <span class="code-hl-css-prop">gap:</span> 1.5rem;"</span><span class="code-hl-tag">&gt;</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-hl-tag">&lt;article&gt;</span>HTML5 Markup &amp; CSS3 Styling<span class="code-hl-tag">&lt;/article&gt;</span><br>
+              &nbsp;&nbsp;<span class="code-hl-tag">&lt;/main&gt;</span><br>
+              <span class="code-hl-tag">&lt;/div&gt;</span>
+            </div>
+
+            <div class="hero-metrics-grid">
+              <div class="metric-pill">
+                <div class="metric-label">Curriculum Modules</div>
+                <div class="metric-value">08 Lectures</div>
+              </div>
+              <div class="metric-pill">
+                <div class="metric-label">Design Standard</div>
+                <div class="metric-value">HTML5 &amp; CSS3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. COURSE OVERVIEW SECTION
+         ======================================================================= -->
+    <section class="section section-bg-muted" id="overview">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-eyebrow">Curriculum Foundation</span>
+          <h2 class="section-title">Course Overview</h2>
+          <p class="section-subtitle">
+            A comprehensive study of client-side web technologies, architectural patterns, semantic markup, and modern CSS layout paradigms.
+          </p>
+        </header>
+
+        <div class="overview-grid">
+          <!-- Card 1: Web Development -->
+          <article class="overview-card">
+            <div class="overview-card-icon icon-blue">🌐</div>
+            <h3 class="overview-card-title">Web Development</h3>
+            <p class="overview-card-desc">
+              Overview, platforms, terminology, standards and development environments.
+            </p>
+            <div class="overview-card-tags">
+              <span class="topic-tag">W3C Standards</span>
+              <span class="topic-tag">Client &amp; Server</span>
+              <span class="topic-tag">Tooling</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Web Architecture -->
+          <article class="overview-card">
+            <div class="overview-card-icon icon-cyan">🏗️</div>
+            <h3 class="overview-card-title">Web Architecture</h3>
+            <p class="overview-card-desc">
+              One-Tier, Two-Tier and N-Tier architecture.
+            </p>
+            <div class="overview-card-tags">
+              <span class="topic-tag">1-Tier</span>
+              <span class="topic-tag">Client-Server</span>
+              <span class="topic-tag">N-Tier</span>
+            </div>
+          </article>
+
+          <!-- Card 3: HTML & HTML5 -->
+          <article class="overview-card">
+            <div class="overview-card-icon icon-amber">📄</div>
+            <h3 class="overview-card-title">HTML &amp; HTML5</h3>
+            <p class="overview-card-desc">
+              Structure, elements, semantic HTML and forms.
+            </p>
+            <div class="overview-card-tags">
+              <span class="topic-tag">Document Tree</span>
+              <span class="topic-tag">Semantics</span>
+              <span class="topic-tag">Form Controls</span>
+            </div>
+          </article>
+
+          <!-- Card 4: CSS & Layout -->
+          <article class="overview-card">
+            <div class="overview-card-icon icon-purple">🎨</div>
+            <h3 class="overview-card-title">CSS &amp; Layout</h3>
+            <p class="overview-card-desc">
+              Box Model, positioning, Flexbox, Grid and responsive design.
+            </p>
+            <div class="overview-card-tags">
+              <span class="topic-tag">Box Model</span>
+              <span class="topic-tag">Flexbox</span>
+              <span class="topic-tag">CSS Grid</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. LECTURES SECTION (CSS GRID)
+         ======================================================================= -->
+    <section class="section" id="lectures">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-eyebrow">Academic Syllabus</span>
+          <h2 class="section-title">Course Lectures</h2>
+          <p class="section-subtitle">
+            Access all 8 individual lecture modules with detailed notes, semantic examples, code snippets, and visual architectural diagrams.
+          </p>
+        </header>
+
+        <div class="lectures-grid">
+          <!-- Lecture 1 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 01</span>
+              <span class="lecture-cat-badge">Foundations</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">Web Development Overview</h3>
+              <p class="lecture-card-desc">
+                Explores web platforms, core terminology, international standards, constraints, and modern development environments.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">Web platforms &amp; environments</li>
+                <li class="lecture-card-topic-item">W3C standards &amp; constraints</li>
+                <li class="lecture-card-topic-item">Application categories</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture1.html" class="lecture-btn-link" id="linkLecture1">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 2 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 02</span>
+              <span class="lecture-cat-badge">Architecture</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">Tiered Web Architecture</h3>
+              <p class="lecture-card-desc">
+                In-depth analysis of One-Tier, Two-Tier, and N-Tier web architectures, their layers, advantages, and system trade-offs.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">One-Tier, Two-Tier &amp; N-Tier</li>
+                <li class="lecture-card-topic-item">Client-server communication</li>
+                <li class="lecture-card-topic-item">Visual architecture diagrams</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture2.html" class="lecture-btn-link" id="linkLecture2">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 3 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 03</span>
+              <span class="lecture-cat-badge">Markup</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">HTML &amp; HTML5 Fundamentals</h3>
+              <p class="lecture-card-desc">
+                Document structure, doctypes, headings, paragraphs, hyperlinks, images, lists, and core HTML document syntax.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">HTML5 document anatomy</li>
+                <li class="lecture-card-topic-item">Links, media &amp; list structures</li>
+                <li class="lecture-card-topic-item">Syntax-highlighted code blocks</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture3.html" class="lecture-btn-link" id="linkLecture3">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 4 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 04</span>
+              <span class="lecture-cat-badge">Semantics</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">Block, Inline &amp; Semantic HTML</h3>
+              <p class="lecture-card-desc">
+                Differentiating block and inline elements, structural semantics, accessibility benefits, and layout wireframes.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">Block vs. Inline comparison</li>
+                <li class="lecture-card-topic-item">Semantic HTML structure</li>
+                <li class="lecture-card-topic-item">SEO &amp; accessibility values</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture4.html" class="lecture-btn-link" id="linkLecture4">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 5 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 05</span>
+              <span class="lecture-cat-badge">Forms</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">HTML Forms</h3>
+              <p class="lecture-card-desc">
+                Form structure, input types, radio buttons, checkboxes, dropdowns, textareas, validation attributes, and demonstration.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">Input controls &amp; labels</li>
+                <li class="lecture-card-topic-item">Methods (GET vs POST)</li>
+                <li class="lecture-card-topic-item">Live styled interactive form</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture5.html" class="lecture-btn-link" id="linkLecture5">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 6 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 06</span>
+              <span class="lecture-cat-badge">Styling</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">CSS Fundamentals</h3>
+              <p class="lecture-card-desc">
+                Cascading Style Sheets, CSS syntax, styling methods (inline, internal, external), selectors, and rule cascade.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">Inline, internal &amp; external CSS</li>
+                <li class="lecture-card-topic-item">Class, ID, element selectors</li>
+                <li class="lecture-card-topic-item">How HTML &amp; CSS work together</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture6.html" class="lecture-btn-link" id="linkLecture6">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 7 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 07</span>
+              <span class="lecture-cat-badge">Layout</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">CSS Box Model &amp; Positioning</h3>
+              <p class="lecture-card-desc">
+                Content, padding, border, margin, box-sizing, and positioning schemes (static, relative, absolute, fixed, sticky).
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">Interactive Box Model diagram</li>
+                <li class="lecture-card-topic-item">Dimensions &amp; box sizing</li>
+                <li class="lecture-card-topic-item">5 CSS positioning schemes</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture7.html" class="lecture-btn-link" id="linkLecture7">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lecture 8 -->
+          <article class="lecture-card">
+            <div class="lecture-card-header">
+              <span class="lecture-num-badge">LECTURE 08</span>
+              <span class="lecture-cat-badge">Modern CSS</span>
+            </div>
+            <div class="lecture-card-body">
+              <h3 class="lecture-card-title">CSS3, Flexbox &amp; Grid</h3>
+              <p class="lecture-card-desc">
+                CSS3 innovations, 1D Flexbox layouts, 2D Grid systems, axis alignment, and responsive design techniques.
+              </p>
+              <ul class="lecture-card-topics">
+                <li class="lecture-card-topic-item">Flexbox containers &amp; items</li>
+                <li class="lecture-card-topic-item">CSS Grid columns &amp; rows</li>
+                <li class="lecture-card-topic-item">Flexbox vs Grid breakdown</li>
+              </ul>
+            </div>
+            <div class="lecture-card-footer">
+              <a href="lectures/lecture8.html" class="lecture-btn-link" id="linkLecture8">
+                <span>View Lecture</span>
+                <span class="arrow-icon" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. ABOUT SECTION
+         ======================================================================= -->
+    <section class="section section-bg-muted" id="about">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-eyebrow">Academic Submission</span>
+          <h2 class="section-title">About This Project</h2>
+          <p class="section-subtitle">
+            Front-end development educational platform engineered according to university assignment guidelines.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <!-- Statement Card -->
+          <article class="about-card">
+            <h3 class="about-card-title">Academic Purpose &amp; Scope</h3>
+            <p class="about-card-text">
+              This website is an academic project developed for <strong>CSC336 Web Technologies</strong> to demonstrate front-end development concepts using <strong>HTML5</strong> and <strong>CSS3</strong>.
+            </p>
+            <p class="about-card-text">
+              Engineered with clean semantic markup, custom CSS variables, Flexbox header/footer patterns, and a robust CSS Grid system, this platform showcases responsive design principles across mobile, tablet, and desktop viewports without reliance on third-party frameworks.
+            </p>
+
+            <div class="academic-alert-box">
+              <div class="academic-alert-title">Curriculum Compliance Note</div>
+              <p class="academic-alert-desc">
+                All 8 lectures are aligned strictly with the university syllabus requirements, containing original pedagogical summaries, structured code examples, and technical diagrams.
+              </p>
+            </div>
+          </article>
+
+          <!-- Student Profile Specification Table -->
+          <aside class="about-card">
+            <h3 class="about-card-title">Candidate Information</h3>
+            <table class="student-spec-table" aria-label="Student and course registration information">
+              <tbody>
+                <tr>
+                  <th>Student Name</th>
+                  <td>Muhammad Afaq</td>
+                </tr>
+                <tr>
+                  <th>Registration No</th>
+                  <td>FA23-BSE-012</td>
+                </tr>
+                <tr>
+                  <th>Academic Program</th>
+                  <td>BS Software Engineering</td>
+                </tr>
+                <tr>
+                  <th>Institution</th>
+                  <td>COMSATS University Islamabad, Vehari Campus</td>
+                </tr>
+                <tr>
+                  <th>Course Code &amp; Title</th>
+                  <td>CSC336 Web Technologies</td>
+                </tr>
+                <tr>
+                  <th>Academic Semester</th>
+                  <td>Fall 2026</td>
+                </tr>
+                <tr>
+                  <th>Project Stack</th>
+                  <td>Semantic HTML5, CSS3 (Flexbox &amp; Grid), Vanilla JS</td>
+                </tr>
+              </tbody>
+            </table>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. CONTACT SECTION
+         ======================================================================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-eyebrow">Academic Contact</span>
+          <h2 class="section-title">Institutional Department</h2>
+          <p class="section-subtitle">
+            Official department and campus affiliation for university course evaluation.
+          </p>
+        </header>
+
+        <div class="info-card" style="max-width: 680px; margin: 0 auto; text-align: center; padding: 2.5rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏛️</div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.5rem;">
+            Department of Computer Science
+          </h3>
+          <p style="color: var(--slate-600); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            COMSATS University Islamabad, Vehari Campus<br>
+            Mailsi Road, Off Multan Road, Vehari, Punjab, Pakistan
+          </p>
+          <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <span class="nav-student-badge" style="display: inline-flex;">Course: CSC336 Web Technologies</span>
+            <span class="nav-student-badge" style="display: inline-flex;">Semester: Fall 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       7. FOOTER SECTION
+       ========================================================================= -->
+  <footer class="footer" id="mainFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Academic Statement -->
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Lectures 1 to 4 -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lectures/lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lectures/lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lectures/lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lectures/lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Lectures 5 to 8 -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lectures/lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lectures/lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lectures/lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lectures/lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top of page">
+          <span>Back to Top</span>
+          <span aria-hidden="true">↑</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

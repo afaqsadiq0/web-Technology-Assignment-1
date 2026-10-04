@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 06: CSS Fundamentals — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Cascading Style Sheets, selectors, syntax, styling methods, and the HTML/CSS rendering pipeline.">
+  <title>Lecture 06: CSS Fundamentals | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 06</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>06 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">Styling &amp; Presentation</span>
+      </div>
+
+      <h1 class="lecture-page-h1">CSS Fundamentals</h1>
+      <p class="lecture-lead-desc">
+        Separating content from presentation. Exploring the cascading rule hierarchy, CSS rule syntax, the three implementation methods, selectors, and the browser rendering pipeline.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle6">
+        <h2 class="objectives-title" id="objTitle6">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Understand the purpose and cascading mechanics of CSS.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Compare Inline, Internal, and External CSS stylesheets.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Master element, class, ID, grouping, and attribute selectors.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Trace how HTML and CSS combine into the browser Render Tree.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: Cascading Style Sheets & Purpose -->
+      <section class="content-block" id="purpose-css">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. Cascading Style Sheets &amp; Purpose
+        </h2>
+        <p class="content-p">
+          <strong>CSS (Cascading Style Sheets)</strong> is a style sheet language used to specify the presentation, styling, and formatting of an HTML document. While HTML defines the structural skeleton and semantic meaning, CSS dictates typography, color palettes, spacing, positioning, and responsive adaptations across device viewports.
+        </p>
+        <p class="content-p">
+          The term <strong>Cascading</strong> refers to the deterministic algorithm browsers use to resolve conflicts when multiple styling rules target the same HTML element. The cascade evaluates:
+        </p>
+        <ul class="content-list">
+          <li><strong>Source Origin &amp; Importance:</strong> User-agent styles &rarr; Author styles &rarr; <code>!important</code> declarations.</li>
+          <li><strong>Specificity:</strong> Inline styles (1,0,0,0) &gt; IDs (0,1,0,0) &gt; Classes/attributes (0,0,1,0) &gt; Elements (0,0,0,1).</li>
+          <li><strong>Source Order:</strong> If specificity is equal, the rule declared latest in the stylesheet wins.</li>
+        </ul>
+      </section>
+
+      <!-- Topic 2: CSS Syntax -->
+      <section class="content-block" id="syntax">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. Anatomy of a CSS Rule
+        </h2>
+        <p class="content-p">
+          A CSS rule comprises two principal parts: a <strong>Selector</strong> and a <strong>Declaration Block</strong>:
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">CSS Syntax Anatomy</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">/* Selector { Property: Value; } */</span>
+<span class="token-selector">h1.hero-title</span> {
+  <span class="token-property">color</span>: <span class="token-val">#1d4ed8</span>;             <span class="token-comment">/* Declaration 1 */</span>
+  <span class="token-property">font-size</span>: <span class="token-val">2.5rem</span>;           <span class="token-comment">/* Declaration 2 */</span>
+  <span class="token-property">line-height</span>: <span class="token-val">1.2</span>;            <span class="token-comment">/* Declaration 3 */</span>
+  <span class="token-property">letter-spacing</span>: <span class="token-val">-0.02em</span>;     <span class="token-comment">/* Declaration 4 */</span>
+}</code></pre>
+        </div>
+
+        <ul class="content-list">
+          <li><strong>Selector:</strong> Targets specific HTML nodes in the document tree to receive the styles.</li>
+          <li><strong>Declaration Block:</strong> Wrapped in curly braces <code>{ ... }</code>, containing one or more declarations separated by semicolons.</li>
+          <li><strong>Property:</strong> The visual style attribute being modified (e.g., <code>color</code>, <code>font-size</code>).</li>
+          <li><strong>Value:</strong> The specific parameter assigned to that property (e.g., <code>#1d4ed8</code>, <code>2.5rem</code>).</li>
+        </ul>
+      </section>
+
+      <!-- Topic 3: Three Methods of Applying CSS -->
+      <section class="content-block" id="three-methods">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. The Three Ways to Apply CSS
+        </h2>
+        <p class="content-p">
+          There are three distinct mechanisms to incorporate CSS rules into an HTML document:
+        </p>
+
+        <div class="feature-info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title">1. Inline CSS</h3>
+            <p class="info-card-body">
+              Applied directly to an individual tag via the <code>style="..."</code> attribute.<br>
+              <strong>Evaluation:</strong> Highest specificity, but tightly couples style with markup; makes maintenance difficult and prevents browser caching.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">2. Internal (Embedded) CSS</h3>
+            <p class="info-card-body">
+              Defined within a <code>&lt;style&gt;</code> element inside the <code>&lt;head&gt;</code> section of an HTML document.<br>
+              <strong>Evaluation:</strong> Good for single-page standalone documents, but cannot be shared across multiple website pages.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">3. External CSS (Recommended)</h3>
+            <p class="info-card-body">
+              Written in a standalone <code>.css</code> file and linked using <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.<br>
+              <strong>Evaluation:</strong> Best industry practice; enables clean separation of concerns, global consistency, and aggressive browser caching.
+            </p>
+          </div>
+        </div>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML &amp; CSS — Demonstration of the 3 Methods</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">&lt;!-- 1. Inline CSS --&gt;</span>
+<span class="token-tag">&lt;p</span> <span class="token-attr">style=</span><span class="token-val">"color: red; font-weight: bold;"</span><span class="token-tag">&gt;</span>Inline styled paragraph.<span class="token-tag">&lt;/p&gt;</span>
+
+<span class="token-comment">&lt;!-- 2. Internal CSS (inside &lt;head&gt;) --&gt;</span>
+<span class="token-tag">&lt;style&gt;</span>
+  <span class="token-selector">p.custom</span> { <span class="token-property">color</span>: <span class="token-val">green</span>; }
+<span class="token-tag">&lt;/style&gt;</span>
+
+<span class="token-comment">&lt;!-- 3. External CSS (inside &lt;head&gt;) --&gt;</span>
+<span class="token-tag">&lt;link</span> <span class="token-attr">rel=</span><span class="token-val">"stylesheet"</span> <span class="token-attr">href=</span><span class="token-val">"../css/style.css"</span><span class="token-tag">&gt;</span></code></pre>
+        </div>
+      </section>
+
+      <!-- Topic 4: CSS Selectors -->
+      <section class="content-block" id="selectors">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 4. CSS Selectors Deep Dive
+        </h2>
+        <p class="content-p">
+          Selectors empower developers to precisely target HTML elements based on element names, attributes, class names, or hierarchical position:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="CSS Selectors Reference">
+            <thead>
+              <tr>
+                <th>Selector Type</th>
+                <th>Syntax Pattern</th>
+                <th>Target Description</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Element (Type)</strong></td>
+                <td><code>element</code></td>
+                <td>Targets every element of that specific HTML tag name.</td>
+                <td><code>p { line-height: 1.6; }</code></td>
+              </tr>
+              <tr>
+                <td><strong>Class Selector</strong></td>
+                <td><code>.classname</code></td>
+                <td>Targets elements possessing the specified <code>class</code> attribute.</td>
+                <td><code>.btn-primary { background: #2563eb; }</code></td>
+              </tr>
+              <tr>
+                <td><strong>ID Selector</strong></td>
+                <td><code>#idname</code></td>
+                <td>Targets the single unique element matching the <code>id</code>.</td>
+                <td><code>#navToggle { display: block; }</code></td>
+              </tr>
+              <tr>
+                <td><strong>Grouping Selector</strong></td>
+                <td><code>sel1, sel2</code></td>
+                <td>Applies common rules to multiple different selectors.</td>
+                <td><code>h1, h2, h3 { font-family: Inter; }</code></td>
+              </tr>
+              <tr>
+                <td><strong>Descendant Selector</strong></td>
+                <td><code>ancestor descendant</code></td>
+                <td>Targets elements nested anywhere inside the specified ancestor.</td>
+                <td><code>.navbar a { text-decoration: none; }</code></td>
+              </tr>
+              <tr>
+                <td><strong>Universal Selector</strong></td>
+                <td><code>*</code></td>
+                <td>Matches every element within the document.</td>
+                <td><code>* { box-sizing: border-box; }</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Topic 5: How HTML & CSS Work Together -->
+      <section class="content-block" id="pipeline">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 5. How HTML and CSS Work Together (Rendering Pipeline)
+        </h2>
+        <p class="content-p">
+          When a web browser loads a website, it converts raw network byte streams into pixels on screen through a multi-stage critical rendering path:
+        </p>
+
+        <!-- HTML/CSS Visual Flow Diagram -->
+        <div class="arch-diagram-card">
+          <h3 class="arch-tier-header" style="text-align: center; margin-bottom: 1rem;">Browser Construction of the Render Tree</h3>
+          <div class="arch-canvas">
+            <div class="arch-tier-box" style="border-color: #f43f5e;">
+              <div class="arch-tier-header" style="color: #f43f5e;">Step 1: HTML Markup</div>
+              <div class="arch-tier-name">DOM Tree</div>
+              <p class="arch-tier-desc">Document Object Model represents all HTML node tags.</p>
+            </div>
+
+            <div class="arch-connector">
+              <span class="arch-connector-arrow">+</span>
+            </div>
+
+            <div class="arch-tier-box" style="border-color: #3b82f6;">
+              <div class="arch-tier-header" style="color: #2563eb;">Step 2: CSS Stylesheets</div>
+              <div class="arch-tier-name">CSSOM Tree</div>
+              <p class="arch-tier-desc">CSS Object Model calculates cascaded computed styles.</p>
+            </div>
+
+            <div class="arch-connector">
+              <span class="arch-connector-arrow">&rarr;</span>
+            </div>
+
+            <div class="arch-tier-box" style="border-color: #10b981;">
+              <div class="arch-tier-header" style="color: #059669;">Step 3: Synthesis</div>
+              <div class="arch-tier-name">Render Tree</div>
+              <p class="arch-tier-desc">Combines visible nodes with styles &rarr; Layout &rarr; Paint.</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="content-list">
+          <li><strong>DOM Construction:</strong> The browser parses HTML tokens into a tree of document nodes.</li>
+          <li><strong>CSSOM Construction:</strong> Simultaneously, the browser parses CSS files and determines the final computed styles for every selector.</li>
+          <li><strong>Render Tree:</strong> The browser merges the DOM and CSSOM, omitting invisible elements (e.g., <code>&lt;head&gt;</code>, elements with <code>display: none</code>).</li>
+          <li><strong>Layout (Reflow) &amp; Paint:</strong> The browser computes the exact pixel coordinates and dimensions of each box on screen, then draws colors, borders, and text into the display buffer.</li>
+        </ul>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle6">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle6">Key Takeaways: Lecture 06</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>CSS separates visual styling from HTML document semantics.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>External stylesheets linked via <code>&lt;link&gt;</code> are the gold standard for web maintainability.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Specificities resolve selector collisions: Inline (1000) &gt; ID (100) &gt; Class (10) &gt; Element (1).</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>The browser combines the DOM and CSSOM to build the Render Tree before calculating page layout and painting pixels.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture5.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 05: HTML Forms</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="lecture7.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Next Module <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Lecture 07: CSS Box Model</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

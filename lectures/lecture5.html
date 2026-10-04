@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 05: HTML Forms — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Form controls, validation attributes, labels, input types, and live styled demonstration form.">
+  <title>Lecture 05: HTML Forms | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 05</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>05 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">User Input &amp; Forms</span>
+      </div>
+
+      <h1 class="lecture-page-h1">HTML Forms</h1>
+      <p class="lecture-lead-desc">
+        The primary mechanism for two-way user interaction on the web. Exploring form controls, input validation, accessible label associations, submission HTTP methods, and an interactive demonstration form.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle5">
+        <h2 class="objectives-title" id="objTitle5">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Understand the &lt;form&gt; tag, action targets, and GET vs. POST methods.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Associate accessible &lt;label&gt; tags with controls using the for attribute.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Implement text, email, password, radio, checkbox, and select elements.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Validate client input using native HTML5 attributes (required, pattern).</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: Form Structure & Attributes -->
+      <section class="content-block" id="form-structure">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. Form Structure &amp; HTTP Methods
+        </h2>
+        <p class="content-p">
+          An <strong>HTML Form</strong> is a document section containing interactive controls designed to collect data from a user and transmit it to a web server for processing.
+        </p>
+        <p class="content-p">
+          The container element is <code>&lt;form&gt;</code>, which configures the submission destination and network transmission protocol:
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Form Definition &amp; Attributes</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">&lt;!-- Form submitting data securely to a server endpoint --&gt;</span>
+<span class="token-tag">&lt;form</span> <span class="token-attr">action=</span><span class="token-val">"/api/register"</span> <span class="token-attr">method=</span><span class="token-val">"POST"</span> <span class="token-attr">enctype=</span><span class="token-val">"application/x-www-form-urlencoded"</span><span class="token-tag">&gt;</span>
+  <span class="token-comment">&lt;!-- Form controls go here --&gt;</span>
+<span class="token-tag">&lt;/form&gt;</span></code></pre>
+        </div>
+
+        <ul class="content-list">
+          <li><strong><code>action</code>:</strong> The URL of the server-side script or API endpoint that will receive and process the submitted data.</li>
+          <li><strong><code>method="GET"</code>:</strong> Appends form values directly into the browser URL query string (e.g., <code>?query=html</code>). Suitable for idempotent search queries; never use for passwords or sensitive data.</li>
+          <li><strong><code>method="POST"</code>:</strong> Transmits data inside the HTTP request body payload. Essential for secure data, passwords, file uploads, and state-modifying actions.</li>
+        </ul>
+      </section>
+
+      <!-- Topic 2: Accessible Labels and Text Inputs -->
+      <section class="content-block" id="form-controls">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. Labels, Inputs &amp; Controls
+        </h2>
+        <p class="content-p">
+          Form accessibility relies upon explicit label binding. The <code>&lt;label&gt;</code> tag's <code>for</code> attribute must strictly match the unique <code>id</code> of its corresponding input element:
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">HTML Example — Text, Email, and Password Inputs</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">&lt;!-- Text Input with Explicit Label Binding --&gt;</span>
+<span class="token-tag">&lt;label</span> <span class="token-attr">for=</span><span class="token-val">"userName"</span><span class="token-tag">&gt;</span>Full Name:<span class="token-tag">&lt;/label&gt;</span>
+<span class="token-tag">&lt;input</span> <span class="token-attr">type=</span><span class="token-val">"text"</span> <span class="token-attr">id=</span><span class="token-val">"userName"</span> <span class="token-attr">name=</span><span class="token-val">"user_name"</span> <span class="token-attr">required</span> <span class="token-attr">placeholder=</span><span class="token-val">"Muhammad Afaq"</span><span class="token-tag">&gt;</span>
+
+<span class="token-comment">&lt;!-- Built-in HTML5 Email Validation --&gt;</span>
+<span class="token-tag">&lt;label</span> <span class="token-attr">for=</span><span class="token-val">"userEmail"</span><span class="token-tag">&gt;</span>Email Address:<span class="token-tag">&lt;/label&gt;</span>
+<span class="token-tag">&lt;input</span> <span class="token-attr">type=</span><span class="token-val">"email"</span> <span class="token-attr">id=</span><span class="token-val">"userEmail"</span> <span class="token-attr">name=</span><span class="token-val">"user_email"</span> <span class="token-attr">required</span><span class="token-tag">&gt;</span>
+
+<span class="token-comment">&lt;!-- Password Masking Input --&gt;</span>
+<span class="token-tag">&lt;label</span> <span class="token-attr">for=</span><span class="token-val">"userPass"</span><span class="token-tag">&gt;</span>Password:<span class="token-tag">&lt;/label&gt;</span>
+<span class="token-tag">&lt;input</span> <span class="token-attr">type=</span><span class="token-val">"password"</span> <span class="token-attr">id=</span><span class="token-val">"userPass"</span> <span class="token-attr">name=</span><span class="token-val">"user_password"</span> <span class="token-attr">minlength=</span><span class="token-val">"8"</span><span class="token-tag">&gt;</span></code></pre>
+        </div>
+
+        <h3 class="content-heading-3">Selection Controls &amp; Multi-line Text</h3>
+        <ul class="content-list">
+          <li><strong>Radio Buttons (<code>type="radio"</code>):</strong> Used when a user must choose exactly one option from a mutually exclusive set. All radios in a group must share identical <code>name</code> attributes.</li>
+          <li><strong>Checkboxes (<code>type="checkbox"</code>):</strong> Used for binary toggles or selecting multiple independent options simultaneously.</li>
+          <li><strong>Dropdown Select (<code>&lt;select&gt;</code> &amp; <code>&lt;option&gt;</code>):</strong> Space-saving menu revealing a list of options when clicked.</li>
+          <li><strong>Multi-line Textarea (<code>&lt;textarea&gt;</code>):</strong> Resizable multi-line text input for extended comments, essays, or feedback.</li>
+          <li><strong>Submit and Reset Buttons:</strong> <code>&lt;button type="submit"&gt;</code> initiates form validation and HTTP dispatch; <code>&lt;button type="reset"&gt;</code> restores all fields to initial default values.</li>
+        </ul>
+      </section>
+
+      <!-- Topic 3: Live Styled Demonstration Form -->
+      <section class="content-block" id="demo-form">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. Live Interactive Demonstration Form
+        </h2>
+        <p class="content-p">
+          Below is a fully styled, functional HTML5 demonstration form incorporating every required form control:
+        </p>
+
+        <!-- Styled Form Card -->
+        <div class="demo-form-card">
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.25rem;">
+            CSC336 Student Course Enrollment Form
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--slate-500); margin-bottom: 1.5rem;">
+            COMSATS University Islamabad, Vehari Campus — Academic Demonstration
+          </p>
+
+          <form id="academicDemoForm" method="POST">
+            <!-- Text Input -->
+            <div class="form-group">
+              <label for="demoName" class="form-label form-label-required">Student Full Name</label>
+              <input type="text" id="demoName" name="student_name" class="form-input" placeholder="e.g. Muhammad Afaq" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+              <label for="demoEmail" class="form-label form-label-required">Official Email Address</label>
+              <input type="email" id="demoEmail" name="student_email" class="form-input" placeholder="fa23-bse-012@ciitvehari.edu.pk" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+              <label for="demoPassword" class="form-label form-label-required">Portal Password</label>
+              <input type="password" id="demoPassword" name="student_password" class="form-input" placeholder="Enter secure password" minlength="8" required>
+            </div>
+
+            <!-- Dropdown Select -->
+            <div class="form-group">
+              <label for="demoCourse" class="form-label form-label-required">Selected Academic Course</label>
+              <select id="demoCourse" name="selected_course" class="form-select" required>
+                <option value="" disabled selected>-- Choose Course Module --</option>
+                <option value="CSC336 Web Technologies">CSC336 Web Technologies</option>
+                <option value="CSC241 Object Oriented Programming">CSC241 Object Oriented Programming</option>
+                <option value="CSC322 Operating Systems">CSC322 Operating Systems</option>
+                <option value="CSC339 Software Engineering">CSC339 Software Engineering</option>
+              </select>
+            </div>
+
+            <!-- Radio Buttons (Mutually Exclusive) -->
+            <div class="form-group">
+              <label class="form-label form-label-required">Study Mode / Session</label>
+              <div class="form-radio-group">
+                <label class="form-choice-label">
+                  <input type="radio" name="study_mode" value="Morning" checked required>
+                  <span>Morning Session</span>
+                </label>
+                <label class="form-choice-label">
+                  <input type="radio" name="study_mode" value="Evening" required>
+                  <span>Evening Session</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Checkboxes (Multiple Selections) -->
+            <div class="form-group">
+              <label class="form-label">Prior Prerequisites Completed</label>
+              <div class="form-checkbox-group">
+                <label class="form-choice-label">
+                  <input type="checkbox" name="prereq" value="Intro to Computing">
+                  <span>Intro to Computing</span>
+                </label>
+                <label class="form-choice-label">
+                  <input type="checkbox" name="prereq" value="Data Structures">
+                  <span>Data Structures</span>
+                </label>
+                <label class="form-choice-label">
+                  <input type="checkbox" name="prereq" value="Database Systems">
+                  <span>Database Systems</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+              <label for="demoComments" class="form-label">Academic Goals &amp; Comments</label>
+              <textarea id="demoComments" name="comments" class="form-textarea" rows="4" placeholder="Briefly describe your objectives for CSC336 Web Technologies..."></textarea>
+            </div>
+
+            <!-- Form Actions (Submit & Reset) -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="btnSubmitForm">
+                Submit Enrollment Application
+              </button>
+              <button type="reset" class="btn btn-secondary" id="btnResetForm">
+                Reset Form
+              </button>
+            </div>
+          </form>
+
+          <!-- Feedback notification container -->
+          <div id="formFeedback" style="display: none;" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle5">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle5">Key Takeaways: Lecture 05</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Always pair <code>&lt;label for="..."&gt;</code> with <code>&lt;input id="..."&gt;</code> for accessible screen-reader interactions.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Use <code>method="POST"</code> for forms conveying sensitive credentials or database mutations.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Radio buttons share identical <code>name</code> attributes to enforce single selection; checkboxes allow multiple selections.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Native HTML5 validation attributes (<code>required</code>, <code>type="email"</code>, <code>minlength</code>) prevent invalid data dispatch.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture4.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 04: Block, Inline &amp; Semantics</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="lecture6.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Next Module <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Lecture 06: CSS Fundamentals</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

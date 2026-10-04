@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 08: CSS3, Flexbox & Grid — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Flexbox 1D layouts, CSS Grid 2D matrices, axes, and interactive layout demonstrations.">
+  <title>Lecture 08: CSS3, Flexbox &amp; Grid | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 08</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>08 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">Modern CSS Layouts</span>
+      </div>
+
+      <h1 class="lecture-page-h1">CSS3, Flexbox &amp; Grid</h1>
+      <p class="lecture-lead-desc">
+        Modern layout engineering without floats or clearfixes. Mastering one-dimensional Flexbox flow, two-dimensional CSS Grid matrices, responsive media queries, and layout demonstrations.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle8">
+        <h2 class="objectives-title" id="objTitle8">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Identify modern CSS3 enhancements (variables, shadows, gradients).</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Configure Flex containers, items, main axes, and cross axes.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Define two-dimensional column and row tracks using CSS Grid.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Compare when to utilize Flexbox versus CSS Grid in real production.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: CSS3 & Modern Features -->
+      <section class="content-block" id="css3-features">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. What is CSS3? Modern Web Capabilities
+        </h2>
+        <p class="content-p">
+          <strong>CSS3</strong> is the modular evolution of the Cascading Style Sheets standard. Rather than releasing as a single monolithic specification, CSS3 was divided into independent modules (Color, Fonts, Selectors, Box Model, Animations, Flexible Box, Grid).
+        </p>
+        <p class="content-p">
+          Key CSS3 capabilities transformed the web from flat, static pages into vibrant software interfaces:
+        </p>
+
+        <div class="feature-info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title">Custom Properties (Variables)</h3>
+            <p class="info-card-body">Declare global design tokens (<code>--primary-color: #2563eb;</code>) reuseable across stylesheets for instant theme switching.</p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">Rounded Corners &amp; Shadows</h3>
+            <p class="info-card-body"><code>border-radius</code> and <code>box-shadow</code> eliminate the historic need for sliced background images to achieve pill cards.</p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">Fluid Gradients</h3>
+            <p class="info-card-body">Native <code>linear-gradient()</code> and <code>radial-gradient()</code> render vector-smooth background color transitions.</p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">Transitions &amp; Micro-animations</h3>
+            <p class="info-card-body">Smoothly interpolate changes in CSS properties over time (<code>transition: transform 0.2s ease;</code>) for tactile interactive feedback.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topic 2: CSS Flexbox (1D Layouts) -->
+      <section class="content-block" id="flexbox">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. CSS Flexible Box Layout (Flexbox)
+        </h2>
+        <p class="content-p">
+          <strong>Flexbox</strong> is a one-dimensional layout model designed to distribute space between items along either a horizontal row or a vertical column. It excels at aligning elements, centering content vertically and horizontally, and dynamically reordering items.
+        </p>
+
+        <h3 class="content-heading-3">Container vs. Item Properties</h3>
+        <ul class="content-list">
+          <li><strong>Container Properties:</strong>
+            <code>display: flex</code> activates the flex formatting context.
+            <code>flex-direction: row | column</code> sets the direction.
+            <code>justify-content: flex-start | center | space-between</code> controls alignment along the <strong>Main Axis</strong>.
+            <code>align-items: stretch | center | flex-start</code> controls alignment along the perpendicular <strong>Cross Axis</strong>.
+            <code>flex-wrap: nowrap | wrap</code> allows items to wrap onto multiple lines.
+          </li>
+          <li><strong>Item Properties:</strong>
+            <code>flex-grow</code> allows an item to expand and consume leftover space.
+            <code>flex-shrink</code> dictates how items shrink when space is restricted.
+            <code>flex-basis</code> sets the default size before growing or shrinking.
+            <code>align-self</code> overrides the parent container's <code>align-items</code> for an individual item.
+          </li>
+        </ul>
+
+        <!-- Live Demonstration: Flexbox -->
+        <h3 class="content-heading-3">Live Demonstration: Flexbox (Justify-Content: Space-Between)</h3>
+        <div class="layout-playground" aria-label="Interactive Flexbox Playground">
+          <div class="demo-flex-box">
+            <div class="layout-item" style="flex: 1 1 180px;">Flex Item 1 (Auto Grow)</div>
+            <div class="layout-item" style="flex: 1 1 180px;">Flex Item 2 (Auto Grow)</div>
+            <div class="layout-item" style="flex: 1 1 180px;">Flex Item 3 (Auto Grow)</div>
+          </div>
+        </div>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">CSS Example — Classic Centered Flexbox Container</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-selector">.flex-center-container</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-direction</span>: <span class="token-val">row</span>;              <span class="token-comment">/* Main Axis is horizontal */</span>
+  <span class="token-property">justify-content</span>: <span class="token-val">space-between</span>;    <span class="token-comment">/* Distributes space on Main Axis */</span>
+  <span class="token-property">align-items</span>: <span class="token-val">center</span>;              <span class="token-comment">/* Centers vertically on Cross Axis */</span>
+  <span class="token-property">flex-wrap</span>: <span class="token-val">wrap</span>;                  <span class="token-comment">/* Wraps cleanly on mobile */</span>
+  <span class="token-property">gap</span>: <span class="token-val">1.5rem</span>;
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Topic 3: CSS Grid (2D Layouts) -->
+      <section class="content-block" id="grid">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. CSS Grid Layout (2-Dimensional)
+        </h2>
+        <p class="content-p">
+          While Flexbox is one-dimensional, <strong>CSS Grid</strong> is a true two-dimensional layout system that manages both columns and rows simultaneously. It allows developers to divide a webpage into major landmark regions and define precise geometric relationships between components.
+        </p>
+
+        <h3 class="content-heading-3">Columns, Rows &amp; The Fraction (fr) Unit</h3>
+        <p class="content-p">
+          CSS Grid introduced the revolutionary <code>fr</code> (fractional) unit, representing a fraction of the available free space in the grid container.
+        </p>
+
+        <!-- Live Demonstration: CSS Grid -->
+        <h3 class="content-heading-3">Live Demonstration: 3-Column Responsive CSS Grid</h3>
+        <div class="layout-playground" aria-label="Interactive CSS Grid Playground">
+          <div class="demo-grid-box">
+            <div class="layout-item">Grid Col 1</div>
+            <div class="layout-item">Grid Col 2</div>
+            <div class="layout-item">Grid Col 3</div>
+            <div class="layout-item">Grid Col 4</div>
+            <div class="layout-item">Grid Col 5</div>
+            <div class="layout-item">Grid Col 6</div>
+          </div>
+        </div>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">CSS Example — Responsive Auto-Fitting Grid Track</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-selector">.modern-grid-layout</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-comment">/* Automatically calculates columns without media queries! */</span>
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">repeat(auto-fit, minmax(280px, 1fr))</span>;
+  <span class="token-property">gap</span>: <span class="token-val">1.75rem</span>;
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Topic 4: Flexbox vs. CSS Grid Comparison -->
+      <section class="content-block" id="flexbox-vs-grid">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 4. Flexbox vs. CSS Grid: Architectural Decision Matrix
+        </h2>
+        <p class="content-p">
+          Modern web engineers do not choose between Flexbox or Grid; they use both complementary tools in harmony:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="Flexbox vs Grid Comparison">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th>CSS Flexbox</th>
+                <th>CSS Grid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dimensionality</strong></td>
+                <td>1-Dimensional (Row OR Column)</td>
+                <td>2-Dimensional (Rows AND Columns simultaneously)</td>
+              </tr>
+              <tr>
+                <td><strong>Design Paradigm</strong></td>
+                <td>Content-First (Elements dictate space allocation)</td>
+                <td>Layout-First (Rigid tracks define where elements snap)</td>
+              </tr>
+              <tr>
+                <td><strong>Primary Sweet Spot</strong></td>
+                <td>Navigation bars, form button groups, cards with uneven content</td>
+                <td>Overall page layouts, photo galleries, dashboard widget boards</td>
+              </tr>
+              <tr>
+                <td><strong>Item Wrapping</strong></td>
+                <td>Wrapped items flow independently across rows</td>
+                <td>Items are strictly locked to predefined vertical column tracks</td>
+              </tr>
+              <tr>
+                <td><strong>Gap Support</strong></td>
+                <td>Fully supported (<code>gap: 1rem;</code>)</td>
+                <td>Fully supported (<code>gap: 1rem;</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Topic 5: Responsive Design & Media Queries -->
+      <section class="content-block" id="responsive-design">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 5. Responsive Layouts &amp; Media Queries
+        </h2>
+        <p class="content-p">
+          <strong>Responsive Web Design (RWD)</strong> ensures that a single website delivers an optimized reading and navigational experience across all screen sizes (mobile smartphones, tablets, laptops, and ultra-wide desktops).
+        </p>
+        <p class="content-p">
+          Media queries utilize the <code>@media</code> rule to conditionally apply CSS declarations only when specific viewport criteria are met:
+        </p>
+
+        <div class="code-wrapper">
+          <div class="code-header">
+            <span class="code-title">CSS Example — Mobile-First Responsive Breakpoint</span>
+            <button class="code-copy-btn" aria-label="Copy code">Copy</button>
+          </div>
+          <pre class="code-pre"><code><span class="token-comment">/* Mobile Default: 1 Column */</span>
+<span class="token-selector">.lectures-grid</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">1fr</span>;
+  <span class="token-property">gap</span>: <span class="token-val">1.5rem</span>;
+}
+
+<span class="token-comment">/* Tablet Breakpoint (min-width: 768px): 2 Columns */</span>
+<span class="token-selector">@media screen and (min-width: 768px)</span> {
+  <span class="token-selector">.lectures-grid</span> {
+    <span class="token-property">grid-template-columns</span>: <span class="token-val">repeat(2, 1fr)</span>;
+  }
+}
+
+<span class="token-comment">/* Desktop Breakpoint (min-width: 1024px): 4 Columns */</span>
+<span class="token-selector">@media screen and (min-width: 1024px)</span> {
+  <span class="token-selector">.lectures-grid</span> {
+    <span class="token-property">grid-template-columns</span>: <span class="token-val">repeat(4, 1fr)</span>;
+  }
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle8">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle8">Key Takeaways: Lecture 08</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>CSS3 introduced modular specifications including custom properties (variables), transitions, and border radius.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Flexbox manages 1-dimensional layouts (main axis vs cross axis) ideal for components and navbars.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>CSS Grid manages 2-dimensional layouts (rows and columns simultaneously) using the fractional <code>fr</code> unit.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Combine Flexbox for internal component alignment with CSS Grid for macro-layout structure, styled responsively using media queries.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture7.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 07: CSS Box Model</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="../index.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Completed Syllabus <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Return to Course Home</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

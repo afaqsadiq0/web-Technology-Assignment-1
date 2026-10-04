@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lecture 02: Tiered Web Architecture — CSC336 Web Technologies by Muhammad Afaq (FA23-BSE-012). Detailed analysis of One-Tier, Two-Tier, and N-Tier web architectures with HTML/CSS diagrams.">
+  <title>Lecture 02: Tiered Web Architecture | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Lecture 02</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>PROGRESS:</span>
+          <span>02 / 08</span>
+        </div>
+        <span class="lecture-cat-badge">System Design &amp; Architecture</span>
+      </div>
+
+      <h1 class="lecture-page-h1">Tiered Web Architecture</h1>
+      <p class="lecture-lead-desc">
+        A deep architectural analysis of software layering in web systems. Examining the structure, component separation, scalability trade-offs, and use cases of 1-Tier, 2-Tier, and N-Tier architectures.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitle2">
+        <h2 class="objectives-title" id="objTitle2">
+          <span>🎯</span> Learning Objectives
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Distinguish between functional layers (logical) and physical tiers.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Analyze the monolithic structure and limitations of One-Tier systems.</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Examine Two-Tier client-server dynamics (Thick vs. Thin clients).</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Evaluate N-Tier (3-Tier) enterprise systems for scalability and security.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: Overview of Tiered Architecture -->
+      <section class="content-block" id="concept">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. What is Tiered Web Architecture?
+        </h2>
+        <p class="content-p">
+          In software engineering, <strong>Tiered Architecture</strong> refers to the structural organization of an application where functional responsibilities are separated into distinct physical or logical layers. Each tier delivers a specialized service and communicates with adjacent tiers through clearly defined interfaces.
+        </p>
+        <p class="content-p">
+          A fundamental distinction exists between <em>layers</em> and <em>tiers</em>:
+        </p>
+        <ul class="content-list">
+          <li><strong>Logical Layers:</strong> Conceptual separation of code responsibilities (e.g., UI code, business logic functions, database queries) within software codebases.</li>
+          <li><strong>Physical Tiers:</strong> Physical separation of software execution across distinct physical or virtual machines on a computer network.</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 The 3 Canonical Application Layers</div>
+          <p>
+            Virtually all modern web applications consist of: (1) <strong>Presentation Layer</strong> (User interface and client interactions), (2) <strong>Application / Business Logic Layer</strong> (Calculations, domain rules, and data processing), and (3) <strong>Data Layer</strong> (Persistent storage, relational databases, or file systems).
+          </p>
+        </div>
+      </section>
+
+      <!-- Topic 2: One-Tier Architecture -->
+      <section class="content-block" id="one-tier">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 2. One-Tier (Single-Tier) Architecture
+        </h2>
+        <p class="content-p">
+          In a <strong>One-Tier Architecture</strong>, all software layers—the presentation interface, business logic, and database storage—reside and execute within a single physical machine or device. There is no network communication required to process transactions.
+        </p>
+
+        <!-- HTML/CSS Diagram: One-Tier -->
+        <div class="arch-diagram-card">
+          <h3 class="arch-tier-header" style="text-align: center; margin-bottom: 1rem;">One-Tier Architectural Topology</h3>
+          <div class="arch-canvas">
+            <div class="arch-tier-box" style="border-color: #64748b; background: #f8fafc; max-width: 380px; width: 100%;">
+              <div class="arch-tier-header">Single Physical Computer / Local Host</div>
+              <div class="arch-tier-name">Desktop Machine / Workstation</div>
+              <div style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 0.75rem; margin: 0.5rem 0;">
+                <span style="font-weight: 700; color: #1e293b;">1. Presentation Layer (UI)</span><br>
+                <span style="font-size: 0.8rem; color: #64748b;">GUI / Terminal Display</span>
+              </div>
+              <div style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 0.75rem; margin: 0.5rem 0;">
+                <span style="font-weight: 700; color: #1e293b;">2. Business Logic Layer</span><br>
+                <span style="font-size: 0.8rem; color: #64748b;">Internal Calculations &amp; Rules</span>
+              </div>
+              <div style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 0.75rem; margin: 0.5rem 0;">
+                <span style="font-weight: 700; color: #1e293b;">3. Data Storage Layer</span><br>
+                <span style="font-size: 0.8rem; color: #64748b;">Local SQLite, MS Access, or Flat Files</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="content-heading-3">Key Characteristics</h3>
+        <ul class="content-list">
+          <li><strong>Zero Network Overhead:</strong> Because everything is colocated, execution speed is high and there is zero transmission latency.</li>
+          <li><strong>Simplicity:</strong> Easiest to install and configure; no web servers or firewalls are required.</li>
+          <li><strong>Critical Disadvantages:</strong> Cannot be shared across multiple concurrent users; software updates must be installed manually on every individual machine; difficult to scale.</li>
+          <li><strong>Common Use Cases:</strong> Local spreadsheets (MS Excel), desktop word processors, standalone SQLite database tools, local media players.</li>
+        </ul>
+      </section>
+
+      <!-- Topic 3: Two-Tier Architecture -->
+      <section class="content-block" id="two-tier">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. Two-Tier Architecture (Client-Server)
+        </h2>
+        <p class="content-p">
+          A <strong>Two-Tier Architecture</strong> separates the system into two distinct physical endpoints: a <strong>Client Tier</strong> and a <strong>Database Server Tier</strong>, communicating over a local area network (LAN) or the Internet.
+        </p>
+
+        <!-- HTML/CSS Diagram: Two-Tier -->
+        <div class="arch-diagram-card">
+          <h3 class="arch-tier-header" style="text-align: center; margin-bottom: 1rem;">Two-Tier Architectural Topology</h3>
+          <div class="arch-canvas">
+            <!-- Tier 1: Client -->
+            <div class="arch-tier-box">
+              <div class="arch-tier-header">Tier 1: Client Node</div>
+              <div class="arch-tier-name">User Workstation</div>
+              <p class="arch-tier-desc">Presentation Layer + Application Logic (Thick Client)</p>
+            </div>
+
+            <!-- Connector -->
+            <div class="arch-connector">
+              <span class="arch-connector-arrow">&harr;</span>
+              <span>Network / SQL Queries</span>
+            </div>
+
+            <!-- Tier 2: Server -->
+            <div class="arch-tier-box" style="border-color: #059669;">
+              <div class="arch-tier-header" style="color: #059669;">Tier 2: Database Server</div>
+              <div class="arch-tier-name">DBMS Server</div>
+              <p class="arch-tier-desc">Data Layer (Relational Tables, Stored Procedures)</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="content-heading-3">Thick Client vs. Thin Client</h3>
+        <p class="content-p">
+          In a classic 2-Tier setup, the client is usually a <strong>Thick (Fat) Client</strong> where both the user interface and the business logic are compiled into the client desktop software. The client software connects directly to the remote database via ODBC/JDBC.
+        </p>
+        <ul class="content-list">
+          <li><strong>Advantages:</strong> Centralized database storage ensures multiple users access identical data simultaneously; high performance for dedicated LAN setups.</li>
+          <li><strong>Disadvantages:</strong> Poor security because database credentials or ports must be accessible to clients; difficult maintenance when updating business logic; limited scalability due to direct database connection limits.</li>
+          <li><strong>Common Use Cases:</strong> Legacy banking branch software, internal corporate ERP inventory systems running over private local company networks.</li>
+        </ul>
+      </section>
+
+      <!-- Topic 4: N-Tier / Three-Tier Architecture -->
+      <section class="content-block" id="n-tier">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 4. N-Tier (Three-Tier) Web Architecture
+        </h2>
+        <p class="content-p">
+          Modern web systems adopt an <strong>N-Tier Architecture</strong> (most commonly structured as a <strong>3-Tier Model</strong>). Here, business logic is completely decoupled from both client devices and the persistent database, running on dedicated application web servers.
+        </p>
+
+        <!-- HTML/CSS Diagram: 3-Tier -->
+        <div class="arch-diagram-card">
+          <h3 class="arch-tier-header" style="text-align: center; margin-bottom: 1rem;">Three-Tier Web Architecture Topology</h3>
+          <div class="arch-canvas">
+            <!-- Tier 1: Presentation -->
+            <div class="arch-tier-box" style="border-color: #2563eb;">
+              <div class="arch-tier-header" style="color: #2563eb;">Tier 1: Client</div>
+              <div class="arch-tier-name">Presentation Tier</div>
+              <p class="arch-tier-desc">Web Browser (HTML5, CSS3, DOM UI)</p>
+            </div>
+
+            <!-- Connector 1 -->
+            <div class="arch-connector">
+              <span class="arch-connector-arrow">&harr;</span>
+              <span>HTTP / HTTPS</span>
+            </div>
+
+            <!-- Tier 2: Application -->
+            <div class="arch-tier-box" style="border-color: #f59e0b;">
+              <div class="arch-tier-header" style="color: #d97706;">Tier 2: Server</div>
+              <div class="arch-tier-name">Application Tier</div>
+              <p class="arch-tier-desc">Web &amp; Business Logic Server (Node, Python, Java)</p>
+            </div>
+
+            <!-- Connector 2 -->
+            <div class="arch-connector">
+              <span class="arch-connector-arrow">&harr;</span>
+              <span>TCP / SQL / ORM</span>
+            </div>
+
+            <!-- Tier 3: Database -->
+            <div class="arch-tier-box" style="border-color: #10b981;">
+              <div class="arch-tier-header" style="color: #059669;">Tier 3: Storage</div>
+              <div class="arch-tier-name">Data Tier</div>
+              <p class="arch-tier-desc">Database Management System (PostgreSQL, MySQL)</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="content-heading-3">Component Breakdown of the 3 Tiers</h3>
+        <ul class="content-list">
+          <li>
+            <strong>1. Presentation Tier (Frontend):</strong> Runs on the client's browser. Responsible for translating user actions into HTTP requests and rendering HTML/CSS visual outputs. It has zero direct access to the database.
+          </li>
+          <li>
+            <strong>2. Application / Logic Tier (Middle Tier):</strong> The engine of the web system. Evaluates business rules, validates incoming request parameters, enforces security authentication, and determines what data to fetch or modify.
+          </li>
+          <li>
+            <strong>3. Data Tier (Backend Storage):</strong> Dedicated DBMS (e.g., MySQL, Oracle, MongoDB). Handles ACID transaction safety, storage persistence, and indexing, shielded safely behind private firewalls.
+          </li>
+        </ul>
+
+        <div class="callout callout-tip">
+          <div class="callout-title">🛡️ Major Security Advantage of 3-Tier Systems</div>
+          <p>
+            In a 3-tier architecture, the client never communicates directly with the database. The database server resides inside an isolated private subnet, completely shielded from public Internet traffic, preventing direct SQL port exploits.
+          </p>
+        </div>
+      </section>
+
+      <!-- Topic 5: Architectural Comparison -->
+      <section class="content-block" id="comparison">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 5. Comprehensive Architectural Comparison
+        </h2>
+        <p class="content-p">
+          The table below contrasts the three major architectural patterns across scalability, security, development complexity, and maintenance parameters:
+        </p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="Architecture Comparison">
+            <thead>
+              <tr>
+                <th>Evaluation Metric</th>
+                <th>One-Tier</th>
+                <th>Two-Tier</th>
+                <th>N-Tier / 3-Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Physical Nodes</strong></td>
+                <td>1 (All-in-one local host)</td>
+                <td>2 (Client &amp; Database Server)</td>
+                <td>3 or More (Client, App Server, DB)</td>
+              </tr>
+              <tr>
+                <td><strong>Scalability</strong></td>
+                <td>None (Restricted to 1 user)</td>
+                <td>Low (Database connection bottlenecks)</td>
+                <td>High (Horizontal scaling via load balancers)</td>
+              </tr>
+              <tr>
+                <td><strong>Security Posture</strong></td>
+                <td>High local; No network risk</td>
+                <td>Weak (Clients talk directly to DB)</td>
+                <td>Excellent (DB protected behind app tier)</td>
+              </tr>
+              <tr>
+                <td><strong>Maintenance Cost</strong></td>
+                <td>High (Update every device)</td>
+                <td>Moderate (Update client software)</td>
+                <td>Low (Update central web server code)</td>
+              </tr>
+              <tr>
+                <td><strong>Network Dependency</strong></td>
+                <td>Zero network needed</td>
+                <td>High LAN dependency</td>
+                <td>Internet / WAN optimized</td>
+              </tr>
+              <tr>
+                <td><strong>Standard Web Fit</strong></td>
+                <td>Unsuitable for Web</td>
+                <td>Limited (Intranet tools)</td>
+                <td>The standard for all modern web apps</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitle2">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitle2">Key Takeaways: Lecture 02</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Tiers represent physical separation across hardware, while layers represent logical software modules.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>One-Tier systems bundle UI, logic, and data locally; they cannot support modern distributed web clients.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Two-Tier systems introduce network client-server communication but expose databases directly to clients.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Three-Tier/N-Tier is the gold standard for the modern Web, ensuring horizontal scaling, security isolation, and code maintainability.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture1.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 01: Web Dev Overview</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="lecture3.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Next Module <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Lecture 03: HTML &amp; HTML5</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
