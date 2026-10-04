@@ -17,12 +17,14 @@
 | **Course Code & Title**| CSC336 Web Technologies |
 | **Semester** | Fall 2026 |
 | **Campus** | COMSATS University Islamabad, Vehari Campus |
+| **GitHub Repository** | **[https://github.com/afaqsadiq0/web-Technology-Assignment-1](https://github.com/afaqsadiq0/web-Technology-Assignment-1)** |
 | **Live Vercel URL** | **[https://web-technologies-csc336.vercel.app](https://web-technologies-csc336.vercel.app)** |
 
 ---
 
-## 🌐 Live Production Deployment
-- **Live URL:** [https://web-technologies-csc336.vercel.app](https://web-technologies-csc336.vercel.app)
+## 🌐 Live Production Deployment & Code Repository
+- **Live Website:** [https://web-technologies-csc336.vercel.app](https://web-technologies-csc336.vercel.app)
+- **GitHub Repository:** [https://github.com/afaqsadiq0/web-Technology-Assignment-1](https://github.com/afaqsadiq0/web-Technology-Assignment-1)
 - **Deployment Status:** Production Ready (Vercel)
 
 ---
