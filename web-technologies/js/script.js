@@ -463,7 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       runNextStep();
     });
-  }
 });
 
 // Global smart back navigation function for lecture pages

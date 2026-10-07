@@ -703,18 +703,19 @@ code, pre, kbd {
 }
 
 .student-avatar {
-  width: 3rem;
-  height: 3rem;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: #ffffff;
-  border-radius: var(--radius-md);
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1.1rem;
   flex-shrink: 0;
-  border: 2px solid var(--primary-100);
+  border: 2.5px solid var(--primary-500);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  background: var(--bg-alt);
+  padding: 0;
 }
 
 .student-info {
@@ -2308,12 +2309,14 @@ code, pre, kbd {
 }
 
 .nav-avatar-img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.85rem;
+  height: 1.85rem;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--primary-500);
   vertical-align: middle;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .developer-showcase-card {
