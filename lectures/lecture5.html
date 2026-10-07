@@ -287,6 +287,234 @@
 
           <!-- Feedback notification container -->
           <div id="formFeedback" style="display: none;" role="status" aria-live="polite"></div>
+
+          <!-- LIVE OUTPUT PREVIEW: Form Data Serialization -->
+          <div class="code-output-card" style="margin-top: 1.5rem;">
+            <div class="output-card-header">
+              <div class="output-card-title-group">
+                <div class="output-window-dots">
+                  <span class="output-window-dot dot-red"></span>
+                  <span class="output-window-dot dot-yellow"></span>
+                  <span class="output-window-dot dot-green"></span>
+                </div>
+                <span>⚡ Live HTTP POST Payload Serialization Output</span>
+              </div>
+              <span class="output-badge-live">
+                <span class="output-badge-dot"></span>
+                application/x-www-form-urlencoded
+              </span>
+            </div>
+            <div class="output-card-body" style="font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.6;">
+              <div style="background: var(--bg-muted); padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
+                <div style="color: var(--primary-600); font-weight: 700; margin-bottom: 0.25rem;">[HTTP BODY PAYLOAD PREVIEW]</div>
+                <div style="color: var(--text-main); word-break: break-all;">
+                  studentName=Muhammad+Afaq&amp;email=fa23-bse-012%40ciitvehari.edu.pk&amp;course=CSC336&amp;semester=Fall2026&amp;shift=Morning
+                </div>
+              </div>
+            </div>
+            <div class="output-explanation-bar">
+              <span>🔐</span>
+              <span><strong>Encoding Standard:</strong> Spaces are percent-encoded as <code>+</code> or <code>%20</code>, and <code>@</code> becomes <code>%40</code> according to RFC 3986 URL encoding specifications.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL5">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL5">Lecture 05 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on HTML Forms &amp; Input Controls? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL5" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL5" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL5Q1">1. Why must passwords never be sent via method="GET"?</option>
+                <option value="ansL5Q2">2. How do radio buttons enforce single mutual selection?</option>
+                <option value="ansL5Q3">3. What is the role of the label "for" attribute in a11y?</option>
+                <option value="ansL5Q4">4. Why is client-side validation alone insufficient for security?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL5Q1">
+                <span>🚫 GET vs POST for Sensitive Data</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL5Q2">
+                <span>🔘 Radio Button "name" Grouping</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL5Q3">
+                <span>🏷️ Accessible &lt;label for="..."&gt;</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL5Q4">
+                <span>🛡️ Server-Side vs Client Validation</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL5Q1">
+              <div class="query-solution-title"><span>🚫</span> Solution: GET Security Pitfall</div>
+              <div class="query-solution-text">
+                When using <code>method="GET"</code>, all form inputs are appended in plain text to the URL string (e.g. <code>/login?user=afaq&amp;pass=secret123</code>). This causes passwords to be permanently recorded in browser histories, proxy logs, web server access logs, and HTTP Referer headers. <code>POST</code> keeps the payload inside the HTTP request body.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL5Q2">
+              <div class="query-solution-title"><span>🔘</span> Solution: Radio Button Mutual Exclusion</div>
+              <div class="query-solution-text">
+                Radio buttons belong to a unified group only when they share the exact same <strong><code>name</code></strong> attribute (e.g. <code>name="shift"</code>). The browser then automatically unchecks any other radio button in that group when the user selects one. Each individual button specifies its distinct payload via the <code>value</code> attribute.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL5Q3">
+              <div class="query-solution-title"><span>🏷️</span> Solution: Label Binding &amp; Tap Targets</div>
+              <div class="query-solution-text">
+                Pairing <code>&lt;label for="userEmail"&gt;</code> with <code>&lt;input id="userEmail"&gt;</code> provides two huge benefits: (1) When a user taps or clicks the textual label, the browser automatically focuses the input or checks the checkbox (massively boosting mobile usability); (2) Screen readers announce the label text immediately upon focusing the control.
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL5Q4">
+              <div class="query-solution-title"><span>🛡️</span> Solution: Defense-in-Depth Validation</div>
+              <div class="query-solution-text">
+                Client-side HTML5 validation (e.g. <code>required</code>, <code>pattern</code>) is strictly a User Experience (UX) convenience to assist honest visitors. Anyone can bypass client-side checks in 5 seconds using Browser DevTools or sending HTTP requests directly via cURL or Postman. Therefore, <strong>server-side validation is mandatory</strong> to prevent SQL Injection and malicious payloads.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL5">
+              <div>
+                <label for="queryCatL5" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL5" class="query-dropdown query-category-select">
+                  <option value="Form Submission">HTTP Methods (GET vs POST / Multipart)</option>
+                  <option value="Input Controls">Form Controls (Radio, Checkbox, Select)</option>
+                  <option value="Validation &amp; Security">HTML5 Validation &amp; CSRF Security</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL5" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL5" class="query-textarea" placeholder="Type your question or query here (e.g., When should enctype='multipart/form-data' be specified?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL5"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 05 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL5">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l5_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Which HTTP transmission method places submitted form inputs inside the request body rather than visible in the browser address bar?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>GET</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>POST</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>HEAD</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>OPTIONS</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! The <strong>POST</strong> method packages form entries into the HTTP body, shielding sensitive information from browser history and URL query strings.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l5_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>To ensure that only ONE radio button can be selected in a group, what attribute must all radio buttons share identically?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>id</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">B</span>
+                <span>value</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">C</span>
+                <span>name</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>class</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Exactly right! The <strong>name</strong> attribute groups radio inputs together so that choosing one unchecks the others. The <code>id</code> must always remain unique for each element.
+            </div>
+          </div>
         </div>
       </section>
 

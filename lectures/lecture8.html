@@ -203,6 +203,43 @@
   <span class="token-property">gap</span>: <span class="token-val">1.5rem</span>;
 }</code></pre>
         </div>
+
+        <!-- LIVE OUTPUT PREVIEW 1: Flexbox 1D Distribution -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Flexbox 1D Distribution Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem; background: var(--bg-muted); border: 2px dashed #3b82f6; border-radius: 8px;">
+              <div style="background: var(--primary-600); color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">
+                🚀 Brand Logo
+              </div>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <span style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Home</span>
+                <span style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Lectures</span>
+                <span style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Contact</span>
+              </div>
+              <button style="background: #10b981; color: white; border: none; padding: 0.45rem 0.95rem; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer;">
+                Get Started
+              </button>
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>↔️</span>
+            <span><strong>Axis Behavior:</strong> <code>justify-content: space-between</code> pushes the left brand and right button to extreme opposite margins along the horizontal Main Axis.</span>
+          </div>
+        </div>
       </section>
 
       <!-- Topic 3: CSS Grid (2D Layouts) -->
@@ -332,6 +369,204 @@
     <span class="token-property">grid-template-columns</span>: <span class="token-val">repeat(4, 1fr)</span>;
   }
 }</code></pre>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL8">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL8">Lecture 08 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on CSS3, Flexbox &amp; CSS Grid? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL8" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL8" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL8Q1">1. When should I choose Flexbox versus CSS Grid?</option>
+                <option value="ansL8Q2">2. How does repeat(auto-fit, minmax(...)) create fluid layouts without media queries?</option>
+                <option value="ansL8Q3">3. Difference between justify-content and align-items</option>
+                <option value="ansL8Q4">4. What is the difference between auto-fit and auto-fill in CSS Grid?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL8Q1">
+                <span>⚖️ Flexbox vs CSS Grid Decision</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL8Q2">
+                <span>📱 Auto-Fit Responsive Magic</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL8Q3">
+                <span>🧭 Main Axis vs Cross Axis</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL8Q4">
+                <span>🔄 auto-fit vs auto-fill Tracks</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL8Q1">
+              <div class="query-solution-title"><span>⚖️</span> Solution: Flexbox vs. CSS Grid Choice</div>
+              <div class="query-solution-text">
+                Choose <strong>Flexbox</strong> when aligning items along a single dimension (either a row or a column)—ideal for navbars, toolbars, icon lists, and distributing spacing between buttons. Choose <strong>CSS Grid</strong> when designing two-dimensional layouts where components must align cleanly across both columns AND rows simultaneously—ideal for overall page structures, card dashboards, and photo galleries.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL8Q2">
+              <div class="query-solution-title"><span>📱</span> Solution: Responsive Without Media Queries</div>
+              <div class="query-solution-text">
+                <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));</code> instructs the browser to: (1) Fit as many columns as possible into the container, (2) Ensure each column never shrinks below <code>280px</code>, (3) Expand all columns equally (<code>1fr</code>) to fill extra space. On mobile, if the screen is under 560px, it collapses automatically into a 1-column stack without writing a single line of <code>@media</code> code!
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL8Q3">
+              <div class="query-solution-title"><span>🧭</span> Solution: Main Axis vs. Cross Axis Alignment</div>
+              <div class="query-solution-text">
+                In Flexbox: <strong><code>justify-content</code></strong> aligns flex items along the <strong>Main Axis</strong> (horizontally when <code>flex-direction: row</code>). <strong><code>align-items</code></strong> aligns items along the perpendicular <strong>Cross Axis</strong> (vertically when <code>flex-direction: row</code>). Setting both to <code>center</code> perfectly centers any child element in two lines of CSS!
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL8Q4">
+              <div class="query-solution-title"><span>🔄</span> Solution: auto-fit vs. auto-fill</div>
+              <div class="query-solution-text">
+                With <code>auto-fill</code>, the browser creates as many tracks as mathematically fit, even if empty (leaving empty placeholder columns on the right). With <code>auto-fit</code>, the browser drops any empty tracks and expands existing columns to stretch and consume the entire remaining container width, creating an elegant filled layout.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL8">
+              <div>
+                <label for="queryCatL8" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL8" class="query-dropdown query-category-select">
+                  <option value="Flexbox Architecture">Flexbox (Main/Cross Axis &amp; Flex Properties)</option>
+                  <option value="CSS Grid Systems">CSS Grid (Tracks, Fractions &amp; Template Areas)</option>
+                  <option value="Responsive Design">Responsive Breakpoints &amp; Fluid Units</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL8" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL8" class="query-textarea" placeholder="Type your question or query here (e.g., How does flex-shrink: 0 prevent icon compression?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL8"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 08 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL8">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l8_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Flexbox is fundamentally a __ layout system, whereas CSS Grid is a __ layout system.</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>2-Dimensional; 1-Dimensional</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>1-Dimensional (Row OR Col); 2-Dimensional (Rows AND Cols simultaneously)</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>3-Dimensional; 4-Dimensional</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>Non-responsive; Responsive</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! <strong>Flexbox</strong> is designed for 1D space allocation along one axis at a time, whereas <strong>CSS Grid</strong> coordinates items in 2D space across both rows and columns.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l8_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>Which CSS Grid property formula allows responsive cards to automatically wrap into multi-column tracks without media queries?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>display: inline-block;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">B</span>
+                <span>float: left; width: 33.33%;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">C</span>
+                <span>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>position: absolute;</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Spot on! The <code>repeat(auto-fit, minmax(...))</code> pattern is the modern industry standard for responsive fluid grids without manual breakpoint boilerplate.
+            </div>
+          </div>
         </div>
       </section>
 

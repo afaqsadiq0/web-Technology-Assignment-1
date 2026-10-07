@@ -281,6 +281,189 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // -------------------------------------------------------------------------
+  // 8. Lecture Query Station & Preset Doubt Options Handler
+  // -------------------------------------------------------------------------
+  const queryDropdowns = document.querySelectorAll('.query-dropdown');
+  queryDropdowns.forEach(dropdown => {
+    dropdown.addEventListener('change', () => {
+      const parentSection = dropdown.closest('.lecture-query-section');
+      if (!parentSection) return;
+      const targetSolutionId = dropdown.value;
+      const solutionBoxes = parentSection.querySelectorAll('.query-solution-display');
+      solutionBoxes.forEach(box => { box.style.display = 'none'; });
+
+      if (targetSolutionId) {
+        const targetBox = parentSection.querySelector(`#${targetSolutionId}`);
+        if (targetBox) {
+          targetBox.style.display = 'block';
+          targetBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    });
+  });
+
+  const queryChipButtons = document.querySelectorAll('.query-chip-btn');
+  queryChipButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parentSection = btn.closest('.lecture-query-section');
+      if (!parentSection) return;
+
+      // Update active chip state
+      const siblingChips = parentSection.querySelectorAll('.query-chip-btn');
+      siblingChips.forEach(chip => chip.classList.remove('active'));
+      btn.classList.add('active');
+
+      const targetId = btn.getAttribute('data-target');
+      const solutionBoxes = parentSection.querySelectorAll('.query-solution-display');
+      solutionBoxes.forEach(box => { box.style.display = 'none'; });
+
+      if (targetId) {
+        const targetBox = parentSection.querySelector(`#${targetId}`);
+        if (targetBox) {
+          targetBox.style.display = 'block';
+          targetBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      // Sync dropdown value if matching
+      const dropdown = parentSection.querySelector('.query-dropdown');
+      if (dropdown && targetId) {
+        dropdown.value = targetId;
+      }
+    });
+  });
+
+  // Custom Query Form Submission Handler
+  const customQueryForms = document.querySelectorAll('.query-custom-form');
+  customQueryForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const parentSection = form.closest('.lecture-query-section');
+      const textarea = form.querySelector('.query-textarea');
+      const categorySelect = form.querySelector('.query-category-select');
+      const historyLog = parentSection ? parentSection.querySelector('.query-history-log') : null;
+
+      if (textarea && textarea.value.trim().length > 0) {
+        const userQuery = textarea.value.trim();
+        const category = categorySelect ? categorySelect.value : 'General Query';
+        const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        if (historyLog) {
+          historyLog.style.display = 'block';
+          historyLog.innerHTML = `
+            <div style="font-weight: 700; margin-bottom: 0.35rem; display: flex; align-items: center; justify-content: space-between;">
+              <span>✓ Query Received &amp; Logged [${category}]</span>
+              <span style="font-size: 0.75rem; font-weight: normal; opacity: 0.85;">${now}</span>
+            </div>
+            <div style="font-size: 0.88rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.6); padding: 0.5rem 0.75rem; border-radius: 6px;">
+              <em>"${userQuery}"</em>
+            </div>
+            <p style="margin: 0; font-size: 0.84rem; line-height: 1.5;">
+              <strong>Academic Guidance:</strong> Your query has been recorded. Review the comprehensive lecture breakdown above or select from the pre-verified questions on the left for immediate verified solutions!
+            </p>
+          `;
+          historyLog.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        textarea.value = '';
+      }
+    });
+  });
+
+  // -------------------------------------------------------------------------
+  // 9. Interactive Knowledge Check & MCQ Quiz Handler
+  // -------------------------------------------------------------------------
+  let quizScores = {};
+
+  const quizOptionButtons = document.querySelectorAll('.quiz-option-btn');
+  quizOptionButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const quizCard = btn.closest('.quiz-card');
+      const quizContainer = btn.closest('.quiz-station-container');
+      if (!quizCard || !quizContainer) return;
+
+      const questionId = quizCard.getAttribute('data-quiz-id') || 'q1';
+      const isCorrect = btn.getAttribute('data-correct') === 'true';
+      const allButtonsInCard = quizCard.querySelectorAll('.quiz-option-btn');
+      const explanationBox = quizCard.querySelector('.quiz-explanation-box');
+
+      // Disable all options in this card once clicked
+      allButtonsInCard.forEach(b => {
+        b.disabled = true;
+        b.style.cursor = 'default';
+        if (b.getAttribute('data-correct') === 'true') {
+          b.classList.add('selected-correct');
+        }
+      });
+
+      if (!isCorrect) {
+        btn.classList.add('selected-wrong');
+      }
+
+      // Display Explanation
+      if (explanationBox) {
+        explanationBox.className = isCorrect ? 'quiz-explanation-box correct' : 'quiz-explanation-box wrong';
+        explanationBox.style.display = 'block';
+      }
+
+      // Update score tracker for this lecture
+      if (isCorrect) {
+        quizScores[questionId] = 1;
+      } else {
+        quizScores[questionId] = 0;
+      }
+
+      const scoreBadge = quizContainer.querySelector('.quiz-score-num');
+      if (scoreBadge) {
+        const totalAnswered = Object.keys(quizScores).length;
+        const totalCorrect = Object.values(quizScores).reduce((a, b) => a + b, 0);
+        scoreBadge.textContent = `${totalCorrect} / ${totalAnswered}`;
+      }
+    });
+  });
+
+  // -------------------------------------------------------------------------
+  // 10. Multi-Tier Data Flow Interactive Simulator (Lecture 2)
+  // -------------------------------------------------------------------------
+  const tierSimBtn = document.getElementById('btnSimulateTierFlow');
+  if (tierSimBtn) {
+    tierSimBtn.addEventListener('click', () => {
+      const steps = [
+        { id: 'tierNodeClient', status: 'Client sends HTTP GET /catalog' },
+        { id: 'tierNodeWeb', status: 'Web Server terminates SSL & routes to App Tier' },
+        { id: 'tierNodeApp', status: 'App Server validates auth & queries Database' },
+        { id: 'tierNodeDb', status: 'Database executes SQL query & returns recordset' },
+        { id: 'tierNodeApp', status: 'App Server serializes JSON payload' },
+        { id: 'tierNodeClient', status: 'Client browser renders HTML/DOM' }
+      ];
+
+      const simLog = document.getElementById('tierSimLog');
+      tierSimBtn.disabled = true;
+      let stepIndex = 0;
+
+      function runNextStep() {
+        if (stepIndex < steps.length) {
+          const step = steps[stepIndex];
+          document.querySelectorAll('.tier-sim-node').forEach(n => n.classList.remove('active-node'));
+          const activeNode = document.getElementById(step.id);
+          if (activeNode) activeNode.classList.add('active-node');
+          if (simLog) {
+            simLog.innerHTML = `<span style="color:#10b981; font-weight:700;">Step ${stepIndex + 1}/${steps.length}:</span> ${step.status}`;
+          }
+          stepIndex++;
+          setTimeout(runNextStep, 800);
+        } else {
+          tierSimBtn.disabled = false;
+          if (simLog) {
+            simLog.innerHTML = `<span style="color:#10b981; font-weight:700;">✓ Transaction Complete!</span> Round-trip latency: <strong>42ms</strong> (HTTP 200 OK)`;
+          }
+        }
+      }
+      runNextStep();
+    });
+  }
 });
 
 // Global smart back navigation function for lecture pages

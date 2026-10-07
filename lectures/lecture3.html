@@ -200,6 +200,35 @@
 <span class="token-tag">&lt;h3&gt;</span>Detailed Subsection Topic<span class="token-tag">&lt;/h3&gt;</span></code></pre>
         </div>
 
+        <!-- LIVE OUTPUT PREVIEW: Headings & Paragraphs -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Browser Rendered Output (Headings &amp; Prose)</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.5rem; border: 1px dashed var(--border-light); border-radius: 6px;">
+            <div style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); padding-bottom: 0.25rem;">Main Document Topic (One per page for SEO)</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">The paragraph element defines a block of running prose.</p>
+            <div style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Major Sub-Section Topic</div>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">Browsers automatically append vertical margins before and after paragraphs.</p>
+            <div style="font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem;">Detailed Subsection Topic</div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>✨</span>
+            <span><strong>Visual Output Breakdown:</strong> Browsers apply default user-agent stylesheets (font sizing and block margins) reflecting hierarchy from h1 down to h6.</span>
+          </div>
+        </div>
+
         <div class="callout callout-warning">
           <div class="callout-title">⚠️ Accessibility Rule: Heading Hierarchy</div>
           <p>
@@ -276,6 +305,44 @@
   <span class="token-tag">&lt;li&gt;</span>Apply modern CSS styles<span class="token-tag">&lt;/li&gt;</span>
   <span class="token-tag">&lt;li&gt;</span>Test across responsive viewports<span class="token-tag">&lt;/li&gt;</span>
 <span class="token-tag">&lt;/ol&gt;</span></code></pre>
+        <!-- LIVE OUTPUT PREVIEW: Lists -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Lists Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-600); text-transform: uppercase; margin-bottom: 0.5rem;">Unordered List (&lt;ul&gt;):</div>
+              <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-main); line-height: 1.7;">
+                <li>HTML - HyperText Markup Language</li>
+                <li>CSS - Cascading Style Sheets</li>
+                <li>JavaScript - Dynamic Interactivity</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-600); text-transform: uppercase; margin-bottom: 0.5rem;">Ordered List (&lt;ol&gt;):</div>
+              <ol style="margin: 0; padding-left: 1.25rem; color: var(--text-main); line-height: 1.7;">
+                <li>Write semantic markup</li>
+                <li>Apply modern CSS styles</li>
+                <li>Test across responsive viewports</li>
+              </ol>
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>📋</span>
+            <span><strong>Structural Insight:</strong> &lt;ul&gt; applies disc markers without implied chronology, while &lt;ol&gt; uses sequential decimal numerals.</span>
+          </div>
         </div>
       </section>
 
@@ -335,6 +402,204 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL3">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL3">Lecture 03 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on HTML &amp; HTML5 Fundamentals? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL3" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL3" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL3Q1">1. Semantic difference between &lt;b&gt; vs &lt;strong&gt; and &lt;i&gt; vs &lt;em&gt;</option>
+                <option value="ansL3Q2">2. Why is rel="noopener noreferrer" essential with target="_blank"?</option>
+                <option value="ansL3Q3">3. Why is the alt attribute legally mandated on &lt;img&gt;?</option>
+                <option value="ansL3Q4">4. What happens if &lt;!DOCTYPE html&gt; is omitted?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL3Q1">
+                <span>🔤 &lt;b&gt; vs &lt;strong&gt; &amp; &lt;i&gt; vs &lt;em&gt;</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL3Q2">
+                <span>🛡️ Security of target="_blank"</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL3Q3">
+                <span>🖼️ Importance of Image alt Attribute</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL3Q4">
+                <span>📄 The Role of &lt;!DOCTYPE html&gt;</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL3Q1">
+              <div class="query-solution-title"><span>🔤</span> Solution: Visual vs. Semantic Formatting</div>
+              <div class="query-solution-text">
+                Legacy tags <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> are purely presentational: they dictate visual boldness and italics without conveying semantic meaning. Modern tags <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> convey <em>importance</em> and <em>stress emphasis</em>. Assistive screen readers change vocal pitch when reading <code>&lt;em&gt;</code>, and search crawlers weigh <code>&lt;strong&gt;</code> content as key keywords.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL3Q2">
+              <div class="query-solution-title"><span>🛡️</span> Solution: Tabnabbing Security Vulnerability</div>
+              <div class="query-solution-text">
+                When opening external links via <code>target="_blank"</code>, the new tab obtains access to your page's window object via <code>window.opener</code>. A malicious third-party site could redirect your original tab to a fake phishing login page. Adding <code>rel="noopener noreferrer"</code> severs this JavaScript link and prevents HTTP referrer leakage.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL3Q3">
+              <div class="query-solution-title"><span>🖼️</span> Solution: Accessibility &amp; Fallbacks</div>
+              <div class="query-solution-text">
+                The <code>alt</code> attribute fulfills three essential functions: (1) Screen readers read it aloud to visually impaired students; (2) If an image fails to load due to 404 error or poor connectivity, the browser displays the alt text as a fallback; (3) Search engine bots use alt text to index image content for Google Image Search.
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL3Q4">
+              <div class="query-solution-title"><span>📄</span> Solution: Quirks Mode Prevention</div>
+              <div class="query-solution-text">
+                Omitting <code>&lt;!DOCTYPE html&gt;</code> triggers <strong>Quirks Mode</strong> in modern web browsers, causing them to emulate bugs from 1999-era Netscape Navigator and Internet Explorer 5. The modern HTML5 doctype instructs the layout engine to render according to modern W3C standards.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL3">
+              <div>
+                <label for="queryCatL3" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL3" class="query-dropdown query-category-select">
+                  <option value="Markup Syntax">HTML Syntax &amp; Nesting Rules</option>
+                  <option value="Accessibility">Web Accessibility &amp; Alt Attributes</option>
+                  <option value="Document Structure">Head Metadata &amp; Document Tree</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL3" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL3" class="query-textarea" placeholder="Type your question or query here (e.g., How do description lists &lt;dl&gt; differ from &lt;ul&gt;?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL3"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 03 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL3">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l3_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Which document section contains machine-readable metadata that is NOT directly displayed in the visible viewport?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>&lt;body&gt;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>&lt;head&gt;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>&lt;footer&gt;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>&lt;section&gt;</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! The <strong>&lt;head&gt;</strong> element houses metadata such as character encoding, title, viewport configuration, and stylesheet links, while <strong>&lt;body&gt;</strong> contains visible viewport content.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l3_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>Why should modern web developers choose &lt;strong&gt; over the legacy &lt;b&gt; tag?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>The &lt;b&gt; tag has been deleted from all modern web browsers.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>&lt;strong&gt; conveys semantic importance to search engines and assistive screen readers, not just cosmetic boldness.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>&lt;strong&gt; automatically changes font color to green.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>&lt;b&gt; requires an expensive paid commercial software license.</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Exactly right! Semantic HTML emphasizes the <em>meaning</em> and <em>importance</em> of content rather than just visual styling.
+            </div>
+          </div>
         </div>
       </section>
 

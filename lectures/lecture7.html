@@ -273,7 +273,235 @@
   <span class="token-property">background</span>: <span class="token-val">#ef4444</span>;
   <span class="token-property">color</span>: <span class="token-val">white</span>;
   <span class="token-property">z-index</span>: <span class="token-val">10</span>;
-}</code></pre>
+        <!-- LIVE OUTPUT PREVIEW: Absolute inside Relative -->
+        <div class="code-output-card" style="margin-top: 1.5rem;">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Absolute Positioning Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.5rem;">
+            <div style="position: relative; padding: 1.5rem; border: 2px solid var(--border-light); border-radius: 8px; background: var(--bg-muted); max-width: 420px;">
+              <span style="position: absolute; top: -10px; right: 12px; background: #ef4444; color: #ffffff; padding: 0.25rem 0.65rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);">
+                🔴 LIVE BADGE (Absolute)
+              </span>
+              <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--text-main);">Parent Container (.card-container)</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                This card has <code>position: relative</code>, serving as the local coordinate origin (0,0) for the red notification badge pinned to the top right.
+              </p>
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>📍</span>
+            <span><strong>Coordinate Anchoring:</strong> If the parent container lacked <code>position: relative</code>, the badge would escape and pin to the outer browser <code>&lt;html&gt;</code> viewport.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL7">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL7">Lecture 07 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on CSS Box Model &amp; Positioning? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL7" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL7" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL7Q1">1. Why does box-sizing: border-box prevent broken responsive layouts?</option>
+                <option value="ansL7Q2">2. Why must parents use position: relative for absolute children?</option>
+                <option value="ansL7Q3">3. Why does z-index have zero effect on position: static?</option>
+                <option value="ansL7Q4">4. What is Margin Collapsing and how can it be prevented?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL7Q1">
+                <span>📦 border-box vs content-box</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL7Q2">
+                <span>📍 Relative Parent Anchor Rule</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL7Q3">
+                <span>📚 Why z-index Fails on Static</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL7Q4">
+                <span>📉 Margin Collapsing Mechanics</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL7Q1">
+              <div class="query-solution-title"><span>📦</span> Solution: border-box Calculation</div>
+              <div class="query-solution-text">
+                Under the default <code>box-sizing: content-box</code>, declaring <code>width: 50%</code> with <code>padding: 20px</code> creates an element wider than 50%, causing 2-column layouts to break and drop to the next line. With <code>box-sizing: border-box</code>, padding and borders are subtracted from the declared width, guaranteeing the element consumes exactly 50% of the parent container.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL7Q2">
+              <div class="query-solution-title"><span>📍</span> Solution: The Containing Block Context</div>
+              <div class="query-solution-text">
+                An element with <code>position: absolute</code> looks up the DOM tree for the nearest ancestor with a <code>position</code> other than <code>static</code>. If all ancestors are <code>static</code>, it defaults to the initial containing block (the browser viewport). Setting <code>position: relative</code> on the parent creates an anchor coordinate system without moving the parent.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL7Q3">
+              <div class="query-solution-title"><span>📚</span> Solution: Stacking Context Activation</div>
+              <div class="query-solution-text">
+                The W3C specification dictates that <code>z-index</code> only applies to positioned elements (elements whose <code>position</code> is <code>relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>) or flex/grid items. An element with default <code>position: static</code> does not generate a local Stacking Context, rendering <code>z-index</code> completely inert.
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL7Q4">
+              <div class="query-solution-title"><span>📉</span> Solution: Margin Collapsing Mechanics</div>
+              <div class="query-solution-text">
+                When two vertical block margins touch (e.g. <code>margin-bottom: 30px</code> on an h1 and <code>margin-top: 20px</code> on a subsequent p), the browser does NOT add them up to 50px. Instead, they "collapse" into a single margin equal to the larger of the two (30px). Margin collapsing only affects vertical margins of block-level elements in normal flow.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL7">
+              <div>
+                <label for="queryCatL7" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL7" class="query-dropdown query-category-select">
+                  <option value="Box Model Dimensions">Box Model (Margin / Border / Padding)</option>
+                  <option value="Positioning Modes">Positioning (Relative / Absolute / Fixed / Sticky)</option>
+                  <option value="Stacking &amp; z-index">Stacking Context &amp; z-index</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL7" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL7" class="query-textarea" placeholder="Type your question or query here (e.g., How does sticky positioning behave inside overflow: hidden containers?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL7"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 07 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL7">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l7_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Under default content-box sizing, if a box has width: 200px, padding: 20px on both sides, and a 5px border on both sides, what is its total rendered width?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>200px</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">B</span>
+                <span>225px</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">C</span>
+                <span>250px (200 + 20 + 20 + 5 + 5)</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>150px</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! In <code>content-box</code>, declared width only applies to the content. The total rendered width equals 200 + (20 * 2) + (5 * 2) = 250px.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l7_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>Which CSS positioning scheme removes an element from normal flow and fixes it relative to the browser window viewport during page scrolling?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>position: static</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">B</span>
+                <span>position: relative</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">C</span>
+                <span>position: fixed</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>position: inherit</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Exactly right! <strong>position: fixed</strong> anchors the element directly to the visible browser viewport coordinates, keeping it in place as the user scrolls.
+            </div>
+          </div>
         </div>
       </section>
 

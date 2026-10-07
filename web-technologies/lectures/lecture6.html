@@ -218,6 +218,39 @@
 <span class="token-comment">&lt;!-- 3. External CSS (inside &lt;head&gt;) --&gt;</span>
 <span class="token-tag">&lt;link</span> <span class="token-attr">rel=</span><span class="token-val">"stylesheet"</span> <span class="token-attr">href=</span><span class="token-val">"../css/style.css"</span><span class="token-tag">&gt;</span></code></pre>
         </div>
+
+        <!-- LIVE OUTPUT PREVIEW 1: Three Methods of Applying CSS -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Output of the 3 CSS Methods</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Render Engine
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.25rem;">
+            <div style="color: #ef4444; font-weight: 700; padding: 0.5rem 0.75rem; background: rgba(239, 68, 68, 0.08); border-radius: 4px; margin-bottom: 0.5rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+              1. Inline CSS: Rendered with color: red; font-weight: bold; (Specificity: 1,0,0,0)
+            </div>
+            <div style="color: #10b981; font-weight: 600; padding: 0.5rem 0.75rem; background: rgba(16, 185, 129, 0.08); border-radius: 4px; margin-bottom: 0.5rem; border: 1px solid rgba(16, 185, 129, 0.2);">
+              2. Internal CSS: Rendered with p.custom { color: green; } (Specificity: 0,0,1,1)
+            </div>
+            <div style="color: var(--primary-700); font-weight: 600; padding: 0.5rem 0.75rem; background: var(--primary-50); border-radius: 4px; border: 1px solid var(--primary-200);">
+              3. External CSS: Styles fetched and cached from external style.css (Production Standard)
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>🎨</span>
+            <span><strong>Rendering Observation:</strong> All three methods produce styled DOM nodes, but External CSS separates logic cleanly and benefits from HTTP 304 browser caching.</span>
+          </div>
+        </div>
       </section>
 
       <!-- Topic 4: CSS Selectors -->
@@ -328,6 +361,209 @@
           <li><strong>Render Tree:</strong> The browser merges the DOM and CSSOM, omitting invisible elements (e.g., <code>&lt;head&gt;</code>, elements with <code>display: none</code>).</li>
           <li><strong>Layout (Reflow) &amp; Paint:</strong> The browser computes the exact pixel coordinates and dimensions of each box on screen, then draws colors, borders, and text into the display buffer.</li>
         </ul>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL6">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL6">Lecture 06 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on CSS Fundamentals &amp; Selectors? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL6" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL6" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL6Q1">1. How is CSS Specificity mathematically calculated?</option>
+                <option value="ansL6Q2">2. Why is !important discouraged in modern codebases?</option>
+                <option value="ansL6Q3">3. Difference between pseudo-classes vs pseudo-elements</option>
+                <option value="ansL6Q4">4. What is the browser Critical Rendering Path?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL6Q1">
+                <span>🔢 Specificity Calculation (a,b,c,d)</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL6Q2">
+                <span>⚠️ Why Avoid !important</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL6Q3">
+                <span>🎭 Pseudo-Class vs Pseudo-Element</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL6Q4">
+                <span>⚡ DOM + CSSOM = Render Tree</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL6Q1">
+              <div class="query-solution-title"><span>🔢</span> Solution: Specificity Calculation Matrix</div>
+              <div class="query-solution-text">
+                Specificity is represented as a 4-part tuple <code>(a, b, c, d)</code>:
+                <br>• <strong>a (1,0,0,0):</strong> Inline styles written inside the HTML <code>style=""</code> attribute.
+                <br>• <strong>b (0,1,0,0):</strong> ID selectors like <code>#header</code>.
+                <br>• <strong>c (0,0,1,0):</strong> Class selectors (<code>.card</code>), attribute selectors (<code>[type="text"]</code>), and pseudo-classes (<code>:hover</code>).
+                <br>• <strong>d (0,0,0,1):</strong> Element type selectors (<code>h1</code>, <code>p</code>) and pseudo-elements (<code>::before</code>).
+                <br>A higher category always trumps any number of lower categories (e.g. 1 ID beats 100 classes).
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL6Q2">
+              <div class="query-solution-title"><span>⚠️</span> Solution: The Danger of !important</div>
+              <div class="query-solution-text">
+                Adding <code>!important</code> forcibly overrides the normal cascade and specificity hierarchy. Overusing it creates an "arms race" where future developers are forced to write even more <code>!important</code> rules to override existing ones, destroying maintainability and modular component design.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL6Q3">
+              <div class="query-solution-title"><span>🎭</span> Solution: Pseudo-Class vs. Pseudo-Element</div>
+              <div class="query-solution-text">
+                A <strong>Pseudo-class</strong> (single colon <code>:</code>) selects an element based on its dynamic <em>state</em> or position (e.g., <code>:hover</code>, <code>:focus</code>, <code>:nth-child(2)</code>). A <strong>Pseudo-element</strong> (double colon <code>::</code>) creates and styles a virtual element that does not exist in the DOM (e.g., <code>::before</code>, <code>::after</code>, <code>::placeholder</code>).
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL6Q4">
+              <div class="query-solution-title"><span>⚡</span> Solution: Critical Rendering Path Flow</div>
+              <div class="query-solution-text">
+                The browser's layout engine parses HTML into the <strong>DOM</strong> and CSS into the <strong>CSSOM</strong>. It marries both trees into the <strong>Render Tree</strong> (containing only visible nodes). It then calculates exact viewport coordinates in the <strong>Layout/Reflow</strong> phase, and converts elements into screen pixels in the <strong>Paint &amp; Composite</strong> phase.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL6">
+              <div>
+                <label for="queryCatL6" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL6" class="query-dropdown query-category-select">
+                  <option value="Specificity &amp; Cascade">Cascade &amp; Specificity Calculation</option>
+                  <option value="Selector Syntax">Complex Selectors &amp; Combinators</option>
+                  <option value="Render Pipeline">DOM / CSSOM / Browser Rendering</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL6" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL6" class="query-textarea" placeholder="Type your question or query here (e.g., What is the difference between > child and descendant selector?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL6"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 06 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL6">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l6_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Between an ID selector (#main-card) and a Class selector (.main-card), which one possesses higher CSS specificity?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>The Class selector possesses higher specificity.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>The ID selector possesses higher specificity (0,1,0,0 vs 0,0,1,0).</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>Both selectors have exactly the same specificity.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>Specificity only applies when using JavaScript.</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! An <strong>ID selector</strong> has a specificity score of (0, 1, 0, 0), which easily overrides any class selector (0, 0, 1, 0).
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l6_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>Which two internal tree representations does the browser engine synthesize to generate the Render Tree?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">A</span>
+                <span>The DOM (Document Object Model) and CSSOM (CSS Object Model)</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">B</span>
+                <span>The SQL Database Table and the TCP Socket</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>The DNS Cache and the IP Routing Table</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>The Keyboard Buffer and GPU Texture</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Exactly right! The browser merges the semantic <strong>DOM</strong> structure with calculated styles in the <strong>CSSOM</strong> to form the Render Tree, discarding non-visible elements like <code>&lt;head&gt;</code>.
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Key Takeaways Card -->

@@ -354,8 +354,269 @@
                 <td>Limited (Intranet tools)</td>
                 <td>The standard for all modern web apps</td>
               </tr>
-            </tbody>
-          </table>
+        <div class="code-output-card" style="margin-top: 1.5rem;">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>⚡ Live Multi-Tier Network Request Simulator</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Interactive Sandbox
+            </span>
+          </div>
+          <div class="output-card-body">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+              Click the button below to simulate an end-to-end HTTP transaction through a modern 3-Tier architecture:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+              <div class="tier-sim-node" id="tierNodeClient" style="background: var(--bg-muted); border: 2px solid var(--border-light); border-radius: 8px; padding: 0.75rem; text-align: center; transition: all 0.3s ease;">
+                <div style="font-size: 1.3rem;">💻</div>
+                <div style="font-weight: 700; font-size: 0.8rem; margin-top: 0.25rem;">Client (Tier 1)</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Web Browser</div>
+              </div>
+              <div class="tier-sim-node" id="tierNodeWeb" style="background: var(--bg-muted); border: 2px solid var(--border-light); border-radius: 8px; padding: 0.75rem; text-align: center; transition: all 0.3s ease;">
+                <div style="font-size: 1.3rem;">🌐</div>
+                <div style="font-weight: 700; font-size: 0.8rem; margin-top: 0.25rem;">Web Tier</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Nginx / Edge</div>
+              </div>
+              <div class="tier-sim-node" id="tierNodeApp" style="background: var(--bg-muted); border: 2px solid var(--border-light); border-radius: 8px; padding: 0.75rem; text-align: center; transition: all 0.3s ease;">
+                <div style="font-size: 1.3rem;">⚙️</div>
+                <div style="font-weight: 700; font-size: 0.8rem; margin-top: 0.25rem;">App Tier (Tier 2)</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Business Logic</div>
+              </div>
+              <div class="tier-sim-node" id="tierNodeDb" style="background: var(--bg-muted); border: 2px solid var(--border-light); border-radius: 8px; padding: 0.75rem; text-align: center; transition: all 0.3s ease;">
+                <div style="font-size: 1.3rem;">🗄️</div>
+                <div style="font-weight: 700; font-size: 0.8rem; margin-top: 0.25rem;">DB Tier (Tier 3)</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">SQL Database</div>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <button type="button" class="btn btn-primary" id="btnSimulateTierFlow" style="font-size: 0.88rem; padding: 0.6rem 1.25rem;">
+                <span>▶️ Run Live Tier Request Simulation</span>
+              </button>
+              <div id="tierSimLog" style="font-size: 0.88rem; font-family: var(--font-mono); color: var(--text-secondary); background: var(--bg-muted); padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid var(--border-light); flex: 1;">
+                Ready. Press simulate to trace data packet flow.
+              </div>
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>🛡️</span>
+            <span><strong>Architectural Isolation:</strong> The Database Tier has zero public internet access; queries can only originate from authenticated Application Servers via a Virtual Private Cloud (VPC).</span>
+          </div>
+        </div>
+
+        <style>
+          .tier-sim-node.active-node {
+            border-color: #10b981 !important;
+            background: rgba(16, 185, 129, 0.15) !important;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+          }
+        </style>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL2">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL2">Lecture 02 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on Tiered Web Architecture? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL2" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL2" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL2Q1">1. Why is 2-Tier architecture unsuitable for public web apps?</option>
+                <option value="ansL2Q2">2. What is the concrete difference between Layers and Tiers?</option>
+                <option value="ansL2Q3">3. How does horizontal scalability work in 3-Tier systems?</option>
+                <option value="ansL2Q4">4. Where should business validation logic be placed?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL2Q1">
+                <span>⚠️ Why 2-Tier Fails on Web</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL2Q2">
+                <span>🧱 Layers vs Physical Tiers</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL2Q3">
+                <span>📈 3-Tier Horizontal Scaling</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL2Q4">
+                <span>⚙️ Placement of Business Logic</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL2Q1">
+              <div class="query-solution-title"><span>⚠️</span> Solution: Security &amp; Concurrency Flaws of 2-Tier</div>
+              <div class="query-solution-text">
+                In a 2-Tier setup, clients connect directly to the database server. On the public internet: (1) <strong>Catastrophic Security Risk:</strong> Direct database credentials must be exposed to client machines, allowing malicious users to run arbitrary destructive SQL commands. (2) <strong>Database Connection Exhaustion:</strong> Each web user would consume a dedicated database socket, crashing the server when reaching a few hundred simultaneous sessions.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL2Q2">
+              <div class="query-solution-title"><span>🧱</span> Solution: Layers vs. Tiers</div>
+              <div class="query-solution-text">
+                <strong>Layers</strong> are <em>logical separations</em> in source code (e.g., separating React components, Express route controllers, and Mongoose ORM models inside a single repo). <strong>Tiers</strong> are <em>physical separations</em> across hardware nodes (e.g., user's smartphone, an AWS EC2 instance running Node.js, and an AWS RDS server running PostgreSQL separated by networks).
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL2Q3">
+              <div class="query-solution-title"><span>📈</span> Solution: Horizontal Scaling Mechanics</div>
+              <div class="query-solution-text">
+                In a 3-Tier architecture, when traffic surges, you can deploy a <strong>Load Balancer</strong> and spin up 10 identical Application Server instances horizontally without modifying the database schema. The Application Tier remains stateless, while connection poolers (like PgBouncer) multiplex thousands of client queries over a small pool of database connections.
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL2Q4">
+              <div class="query-solution-title"><span>⚙️</span> Solution: Business Logic Placement</div>
+              <div class="query-solution-text">
+                Business rules (e.g., student GPA calculations, discount limits, banking transfer validations) belong strictly inside the <strong>Application Tier (Middle Tier)</strong>. While client-side JavaScript can perform cosmetic UX checks, client code can be bypassed via Postman or DevTools; therefore, the Application Server remains the single authoritative source of truth.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL2">
+              <div>
+                <label for="queryCatL2" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL2" class="query-dropdown query-category-select">
+                  <option value="Architectural Concept">Architectural Concept (1-Tier / 2-Tier / 3-Tier)</option>
+                  <option value="Security &amp; Networking">Security &amp; Network Isolation</option>
+                  <option value="Scalability &amp; Load Balancing">Scalability &amp; Load Balancing</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL2" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL2" class="query-textarea" placeholder="Type your question or query here (e.g., How does an API Gateway fit into N-Tier architecture?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL2"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 02 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL2">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l2_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Where does the relational database reside in a canonical 3-tier web architecture?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>Inside the end-user's web browser local storage</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>In the Data Tier on a dedicated private network behind the Application Tier</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>Inside the HTML CSS stylesheet definitions</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>On the public client desktop workstation</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! The <strong>Data Tier</strong> is physically separated on private internal subnets, shielded from the public internet by Application Servers and firewalls.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l2_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>What is the primary operational distinction between logical "Layers" and physical "Tiers"?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>Layers are physical network servers, while Tiers are JavaScript variables.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>Layers represent logical software code division, while Tiers represent physical hardware distribution across a network.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>There is absolutely zero difference between layers and tiers.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>Layers only exist in mobile applications, while Tiers only exist in printers.</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Spot on! Layers refer to modular software engineering in code, whereas Tiers denote distinct physical or virtual machines executing on a network.
+            </div>
+          </div>
         </div>
       </section>
 

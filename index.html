@@ -45,7 +45,7 @@
       <div style="display: flex; align-items: center; gap: 0.75rem;">
         <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
         <div class="nav-student-badge">
-          <span class="badge-dot" aria-hidden="true"></span>
+          <img src="assets/images/afaq-profile.jpg" alt="Muhammad Afaq" class="nav-avatar-img">
           <span>FA23-BSE-012</span>
         </div>
       </div>
@@ -80,15 +80,17 @@
               Explore the foundations of modern web development, from HTML structure to responsive CSS layouts.
             </p>
 
-            <!-- Student Bio Card -->
+            <!-- Student Bio Card with Profile Photo -->
             <div class="student-bio-card">
-              <div class="student-avatar" aria-hidden="true">MA</div>
+              <div class="student-avatar" aria-label="Student Avatar Muhammad Afaq">
+                <img src="assets/images/afaq-profile.jpg" alt="Muhammad Afaq (FA23-BSE-012)" class="student-avatar-img">
+              </div>
               <div class="student-info">
                 <div class="student-name-row">
                   <span class="student-name">Muhammad Afaq</span>
                   <span class="student-reg-tag">FA23-BSE-012</span>
                 </div>
-                <span class="student-dept">BS Software Engineering • CSC336 Coursework</span>
+                <span class="student-dept">BS Software Engineering • COMSATS Vehari Campus</span>
               </div>
             </div>
 
@@ -440,11 +442,40 @@
       <div class="container">
         <header class="section-header">
           <span class="section-eyebrow">Academic Submission</span>
-          <h2 class="section-title">About This Project</h2>
+          <h2 class="section-title">About This Project &amp; Developer</h2>
           <p class="section-subtitle">
             Front-end development educational platform engineered according to university assignment guidelines.
           </p>
         </header>
+
+        <!-- Featured Developer & Student Profile -->
+        <article class="developer-showcase-card">
+          <div class="developer-photo-wrapper">
+            <img src="assets/images/afaq-profile.jpg" alt="Muhammad Afaq (FA23-BSE-012)" class="developer-photo">
+            <div class="developer-status-badge">
+              <span class="developer-status-dot"></span>
+              <span>FA23-BSE-012</span>
+            </div>
+          </div>
+          <div class="developer-meta-group">
+            <div class="developer-name">
+              <span>Muhammad Afaq</span>
+              <span class="developer-role-tag">BS Software Engineering</span>
+            </div>
+            <p class="developer-bio-text">
+              Welcome to my official academic web portal for <strong>CSC336 Web Technologies</strong> at <strong>COMSATS University Islamabad, Vehari Campus</strong>. Engineered strictly with semantic HTML5, modern CSS3 layout engines (Flexbox &amp; CSS Grid), and interactive JavaScript widgets. Featuring in-depth technical explanations, live rendered outputs, and interactive student query &amp; quiz stations for all 8 lectures.
+            </p>
+            <div class="developer-skills-pills">
+              <span class="dev-skill-pill">🏛️ COMSATS University Vehari</span>
+              <span class="dev-skill-pill">🎓 Registration: FA23-BSE-012</span>
+              <span class="dev-skill-pill">🌐 HTML5 Semantic Web</span>
+              <span class="dev-skill-pill">🎨 CSS3 (Flexbox &amp; Grid)</span>
+              <span class="dev-skill-pill">⚡ Interactive JavaScript</span>
+              <span class="dev-skill-pill">📱 Responsive Design</span>
+              <span class="dev-skill-pill">🐙 Git &amp; GitHub</span>
+            </div>
+          </div>
+        </article>
 
         <div class="about-grid">
           <!-- Statement Card -->

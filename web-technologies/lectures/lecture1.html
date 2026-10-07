@@ -368,11 +368,293 @@ code .
 npx serve .</code></pre>
         </div>
 
+        <!-- LIVE OUTPUT PREVIEW 1: Terminal Server Output -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Terminal Execution Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live Process
+            </span>
+          </div>
+          <div class="terminal-output-window">
+            <div style="color: #94a3b8; margin-bottom: 0.5rem;">Antigravity PowerShell v7.4 • Node.js v20.11.0</div>
+            <div><span class="terminal-stdout-green">PS C:\Users\SCS\Desktop\web-technologies&gt;</span> npx serve .</div>
+            <div class="terminal-stdout-green" style="margin-top: 0.35rem;">┌──────────────────────────────────────────────────┐</div>
+            <div class="terminal-stdout-green">│                                                  │</div>
+            <div class="terminal-stdout-green">│   <span class="terminal-stdout-yellow">Serving!</span>                                       │</div>
+            <div class="terminal-stdout-green">│                                                  │</div>
+            <div class="terminal-stdout-green">│   - <span style="color:#ffffff; font-weight:700;">Local:</span>            http://localhost:3000      │</div>
+            <div class="terminal-stdout-green">│   - <span style="color:#ffffff; font-weight:700;">Network:</span>          http://192.168.1.15:3000   │</div>
+            <div class="terminal-stdout-green">│                                                  │</div>
+            <div class="terminal-stdout-green">│   Copied local address to clipboard!             │</div>
+            <div class="terminal-stdout-green">│                                                  │</div>
+            <div class="terminal-stdout-green">└──────────────────────────────────────────────────┘</div>
+            <div class="terminal-stdout-dim" style="margin-top: 0.5rem;">[HTTP] 200 OK GET /index.html (1.2ms)</div>
+            <div class="terminal-stdout-dim">[HTTP] 200 OK GET /css/style.css (0.8ms)</div>
+            <div class="terminal-stdout-dim">[HTTP] 200 OK GET /js/script.js (0.6ms)</div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>💡</span>
+            <span><strong>Output Analysis:</strong> The local HTTP server successfully hosts the root directory at port 3000 with zero cross-origin (CORS) file protocol blocking.</span>
+          </div>
+        </div>
+
+        <!-- Deep Concept Breakdown: HTTP Request/Response Inspection -->
+        <h3 class="content-heading-3">HTTP Request-Response Wire Inspection</h3>
+        <p class="content-p">
+          When the client initiates a request, raw application packets travel across TCP/IP. Here is the exact rendered breakdown of a live standard HTTP request and response cycle:
+        </p>
+
+        <!-- LIVE OUTPUT PREVIEW 2: HTTP Packet Inspector -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>⚡ HTTP Network Wire Packet Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Status 200 OK
+            </span>
+          </div>
+          <div class="output-card-body" style="font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.6;">
+            <div style="background: var(--bg-muted); padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 0.75rem; border: 1px solid var(--border-light);">
+              <div style="color: var(--primary-600); font-weight: 700;">&gt;&gt;&gt; CLIENT REQUEST:</div>
+              <div><strong style="color: #2563eb;">GET</strong> /lectures/lecture1.html HTTP/1.1</div>
+              <div style="color: var(--text-secondary);">Host: ciitvehari.edu.pk</div>
+              <div style="color: var(--text-secondary);">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0</div>
+              <div style="color: var(--text-secondary);">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div>
+            </div>
+            <div style="background: #ecfdf5; padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid #10b981; color: #065f46;">
+              <div style="font-weight: 700; color: #047857;">&lt;&lt;&lt; SERVER RESPONSE:</div>
+              <div><strong style="color: #047857;">HTTP/1.1 200 OK</strong></div>
+              <div>Content-Type: text/html; charset=UTF-8</div>
+              <div>Content-Length: 23836 bytes</div>
+              <div>Server: Nginx/1.24.0 (Ubuntu)</div>
+              <div>Connection: keep-alive</div>
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>🛡️</span>
+            <span><strong>Deep Security Insight:</strong> HTTPS wraps this plain text payload inside an encrypted TLS cryptographic tunnel, preventing Man-in-the-Middle (MITM) snooping.</span>
+          </div>
+        </div>
+
         <ul class="content-list">
           <li><strong>Integrated Development Environments (IDEs):</strong> Visual Studio Code, WebStorm, or Sublime Text featuring syntax highlighting, IntelliSense auto-completion, and linter extensions.</li>
           <li><strong>Browser Developer Tools (DevTools):</strong> Built into Chrome, Edge, and Firefox to inspect the live DOM tree, test CSS rules in real time, monitor network waterfalls, and debug JavaScript.</li>
           <li><strong>Version Control Systems (VCS):</strong> Git combined with remote platforms (GitHub, GitLab) enabling branching, collaboration, history tracking, and deployment automation.</li>
         </ul>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL1">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL1">Lecture 01 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on Lecture 01? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL1" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL1" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL1Q1">1. Difference between Internet vs World Wide Web</option>
+                <option value="ansL1Q2">2. Why is HTTPS mandatory over HTTP?</option>
+                <option value="ansL1Q3">3. What happens if W3C standards are violated?</option>
+                <option value="ansL1Q4">4. Step-by-step DNS name resolution process</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL1Q1">
+                <span>🌐 Internet vs World Wide Web</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL1Q2">
+                <span>🔒 Why HTTPS is Mandatory</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL1Q3">
+                <span>⚖️ Consequence of W3C Violations</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL1Q4">
+                <span>🔍 Step-by-step DNS Resolution</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL1Q1">
+              <div class="query-solution-title"><span>💡</span> Solution: Internet vs. WWW</div>
+              <div class="query-solution-text">
+                The <strong>Internet</strong> is the massive physical and logical infrastructure of billions of networked computers connecting worldwide via fiber cables, routers, and satellite links (governed by TCP/IP). The <strong>World Wide Web (WWW)</strong> is merely <em>one software service</em> operating on top of that internet infrastructure, utilizing HTTP/HTTPS to transmit hyperlinked HTML web documents. Other non-web services using the Internet include FTP, SMTP email, SSH, and VoIP telephony.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL1Q2">
+              <div class="query-solution-title"><span>🔒</span> Solution: Why HTTPS is Mandatory</div>
+              <div class="query-solution-text">
+                Standard HTTP transmits data in clear plaintext, meaning passwords, cookies, and credit card numbers can be intercepted by network sniffers (Packet Sniffing / Man-In-The-Middle attacks). <strong>HTTPS (Hypertext Transfer Protocol Secure)</strong> encapsulates HTTP packets within an encrypted TLS (Transport Layer Security) session. Modern browsers actively flag unencrypted HTTP sites as "Not Secure" and block features like Geolocation and Service Workers.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL1Q3">
+              <div class="query-solution-title"><span>⚖️</span> Solution: W3C Violation Impact</div>
+              <div class="query-solution-text">
+                Violating W3C specifications forces web browsers into unpredictable <strong>Quirks Mode</strong>, causing visual layout distortion across different browsers (e.g. Chrome vs Safari). Additionally, invalid semantic markup damages search engine ranking (SEO) and blocks screen readers used by visually impaired users, violating international accessibility standards (WCAG).
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL1Q4">
+              <div class="query-solution-title"><span>🔍</span> Solution: DNS Resolution Flow</div>
+              <div class="query-solution-text">
+                When you enter a URL like <code>comsats.edu.pk</code>, the browser queries: (1) Local Browser &amp; OS DNS Cache &rarr; (2) ISP Recursive DNS Resolver &rarr; (3) Root Nameserver (<code>.</code>) &rarr; (4) TLD Nameserver (<code>.pk</code>) &rarr; (5) Authoritative Nameserver for <code>comsats.edu.pk</code>. The authoritative server returns the numerical IP address (e.g., <code>202.83.164.25</code>), enabling your computer to establish an IP connection.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL1">
+              <div>
+                <label for="queryCatL1" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL1" class="query-dropdown query-category-select">
+                  <option value="Conceptual Doubt">Conceptual Doubt (Client/Server / Protocols)</option>
+                  <option value="Tooling &amp; Environment">Tooling (VS Code / Terminal / Git)</option>
+                  <option value="Standards &amp; Constraints">Standards &amp; Browser Constraints</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL1" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL1" class="query-textarea" placeholder="Type your question or query here (e.g., How does HTTP/2 differ from HTTP/1.1?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL1"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 01 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL1">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l1_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Which governing consortium is formally responsible for standardizing HTML and CSS specifications?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>IEEE (Institute of Electrical and Electronics Engineers)</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>W3C (World Wide Web Consortium) &amp; WHATWG</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>ISO (International Organization for Standardization)</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>Apache Software Foundation</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! The <strong>W3C</strong> (founded by Tim Berners-Lee) and <strong>WHATWG</strong> develop and maintain the open specifications for HTML and CSS to guarantee cross-vendor browser interoperability.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l1_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>What is the core structural difference between the Internet and the World Wide Web (WWW)?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>The Internet and WWW are completely identical terms with zero technical difference.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>The Internet is the global physical network of interconnected computers, while the WWW is an application service transferring hyperlinked documents via HTTP.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>The WWW is the physical fiber optic cable infrastructure, while the Internet is just a web browser.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>The Internet only transmits email packets, while the WWW only connects printers.</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Exactly right! The Internet provides the underlying network routing infrastructure (TCP/IP), whereas the Web is an application layer information system operating atop the Internet.
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Key Takeaways Card -->

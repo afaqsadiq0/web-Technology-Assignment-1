@@ -139,6 +139,36 @@
 <span class="token-tag">&lt;div</span> <span class="token-attr">style=</span><span class="token-val">"background-color: #dbeafe; padding: 10px;"</span><span class="token-tag">&gt;</span>First Block (100% width)<span class="token-tag">&lt;/div&gt;</span>
 <span class="token-tag">&lt;div</span> <span class="token-attr">style=</span><span class="token-val">"background-color: #bfdbfe; padding: 10px;"</span><span class="token-tag">&gt;</span>Second Block (stacks below)<span class="token-tag">&lt;/div&gt;</span></code></pre>
         </div>
+
+        <!-- LIVE OUTPUT PREVIEW 1: Block Elements -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Block Elements Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.25rem;">
+            <div style="background-color: #dbeafe; color: #1e40af; padding: 10px; font-weight: 600; border-radius: 4px; margin-bottom: 0.5rem; border: 1px solid #93c5fd;">
+              First Block (100% width • Stretches across entire available container width)
+            </div>
+            <div style="background-color: #bfdbfe; color: #1e3a8a; padding: 10px; font-weight: 600; border-radius: 4px; border: 1px solid #60a5fa;">
+              Second Block (stacks below automatically on a new line)
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>📦</span>
+            <span><strong>Layout Physics:</strong> Block elements establish a new formatting context, breaking to the next line and claiming 100% width.</span>
+          </div>
+        </div>
       </section>
 
       <!-- Topic 2: Inline Elements -->
@@ -164,6 +194,36 @@
   <span class="token-tag">&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"#"</span><span class="token-tag">&gt;</span>inline hyperlink<span class="token-tag">&lt;/a&gt;</span>, and a
   <span class="token-tag">&lt;span</span> <span class="token-attr">style=</span><span class="token-val">"color: #2563eb;"</span><span class="token-tag">&gt;</span>styled inline span<span class="token-tag">&lt;/span&gt;</span>.
 <span class="token-tag">&lt;/p&gt;</span></code></pre>
+        </div>
+
+        <!-- LIVE OUTPUT PREVIEW 2: Inline Elements -->
+        <div class="code-output-card">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Inline Flow Output</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.25rem;">
+            <p style="margin: 0; font-size: 1.05rem; line-height: 1.8; color: var(--text-main);">
+              This is normal prose containing an
+              <strong style="background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 4px; border: 1px dashed #10b981;">inline strong tag</strong>, an
+              <a href="#inline-elements" style="color: #2563eb; text-decoration: underline; background: rgba(37, 99, 235, 0.1); padding: 2px 6px; border-radius: 4px; border: 1px dashed #3b82f6;">inline hyperlink</a>, and a
+              <span style="color: #8b5cf6; font-weight: 600; background: rgba(139, 92, 246, 0.1); padding: 2px 6px; border-radius: 4px; border: 1px dashed #8b5cf6;">styled inline span</span>.
+            </p>
+          </div>
+          <div class="output-explanation-bar">
+            <span>🌊</span>
+            <span><strong>Flow Physics:</strong> Notice how inline elements share horizontal space smoothly without forcing carriage returns.</span>
+          </div>
         </div>
       </section>
 
@@ -314,6 +374,249 @@
             <strong>Maintainability &amp; Developer Ergonomics:</strong> Reading <code>&lt;nav&gt;</code> or <code>&lt;article&gt;</code> conveys immediate developer intent compared to analyzing dozens of nested <code>&lt;div&gt;</code> wrappers with arbitrary class names.
           </li>
         </ul>
+      </section>
+
+        <!-- LIVE OUTPUT PREVIEW 3: Semantic Layout Wireframe -->
+        <div class="code-output-card" style="margin-top: 1.5rem;">
+          <div class="output-card-header">
+            <div class="output-card-title-group">
+              <div class="output-window-dots">
+                <span class="output-window-dot dot-red"></span>
+                <span class="output-window-dot dot-yellow"></span>
+                <span class="output-window-dot dot-green"></span>
+              </div>
+              <span>🖥️ Live Rendered Semantic Layout Wireframe</span>
+            </div>
+            <span class="output-badge-live">
+              <span class="output-badge-dot"></span>
+              Live DOM
+            </span>
+          </div>
+          <div class="output-card-body" style="background: var(--bg-surface); padding: 1.25rem;">
+            <div style="border: 2px dashed #3b82f6; background: rgba(59, 130, 246, 0.08); padding: 0.75rem; border-radius: 6px; text-align: center; font-weight: 700; color: #1d4ed8; margin-bottom: 0.75rem;">
+              &lt;header&gt; Site Branding &amp; Hero Banner &lt;/header&gt;
+            </div>
+            <div style="border: 2px dashed #06b6d4; background: rgba(6, 182, 212, 0.08); padding: 0.5rem; border-radius: 6px; text-align: center; font-weight: 600; color: #0891b2; margin-bottom: 0.75rem;">
+              &lt;nav&gt; Primary Navigation Links &lt;/nav&gt;
+            </div>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <div style="border: 2px dashed #10b981; background: rgba(16, 185, 129, 0.08); padding: 1rem; border-radius: 6px; color: #047857;">
+                <div style="font-weight: 700; margin-bottom: 0.5rem;">&lt;main&gt; Primary Central Content</div>
+                <div style="border: 1px solid #10b981; background: rgba(255,255,255,0.7); padding: 0.5rem; border-radius: 4px; font-size: 0.85rem;">
+                  &lt;article&gt; Self-contained Academic Essay / Post &lt;/article&gt;
+                </div>
+              </div>
+              <div style="border: 2px dashed #f59e0b; background: rgba(245, 158, 11, 0.08); padding: 1rem; border-radius: 6px; color: #b45309; text-align: center; font-weight: 600;">
+                &lt;aside&gt;<br>Related Sidebar Links &amp; Author Bio
+              </div>
+            </div>
+            <div style="border: 2px dashed #64748b; background: rgba(100, 116, 139, 0.08); padding: 0.65rem; border-radius: 6px; text-align: center; font-weight: 600; color: #475569;">
+              &lt;footer&gt; Copyright, Campus Affiliation &amp; Legal Notices &lt;/footer&gt;
+            </div>
+          </div>
+          <div class="output-explanation-bar">
+            <span>🏛️</span>
+            <span><strong>Semantic Architecture:</strong> Assistive screen readers construct a navigable Landmark Hierarchy directly from these native HTML5 tags.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
+           ======================================================================= -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL4">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingL4">Lecture 04 Doubt &amp; Query Assistant</h2>
+          <p class="query-section-subtitle">
+            Need clarification on Block, Inline &amp; Semantic HTML Elements? Select a common query from the pre-defined options below to receive an instant verified explanation, or submit your own custom doubt.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Queries -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Query Option
+            </h3>
+            <p class="query-card-sub">Choose any question below or pick from the dropdown for instant verified answers:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectL4" class="query-input-label">Select Pre-defined Doubt:</label>
+              <select id="querySelectL4" class="query-dropdown" aria-label="Select common question">
+                <option value="">-- Choose a Query Option --</option>
+                <option value="ansL4Q1">1. Why does CSS width have no effect on an inline &lt;span&gt;?</option>
+                <option value="ansL4Q2">2. What is the semantic difference between &lt;section&gt; and &lt;article&gt;?</option>
+                <option value="ansL4Q3">3. How does inline-block solve the limitations of inline elements?</option>
+                <option value="ansL4Q4">4. Why is "div soup" considered bad frontend engineering practice?</option>
+              </select>
+            </div>
+
+            <!-- Clickable Option Chips -->
+            <div class="preset-query-chips">
+              <button type="button" class="query-chip-btn" data-target="ansL4Q1">
+                <span>📏 Width/Height on Inline Elements</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL4Q2">
+                <span>📰 &lt;section&gt; vs &lt;article&gt;</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL4Q3">
+                <span>🧩 The Power of display: inline-block</span>
+                <span>&rarr;</span>
+              </button>
+              <button type="button" class="query-chip-btn" data-target="ansL4Q4">
+                <span>🥣 The Problem with "Div Soup"</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansL4Q1">
+              <div class="query-solution-title"><span>📏</span> Solution: Inline Formatting Context</div>
+              <div class="query-solution-text">
+                According to the W3C CSS specification, elements participating in an <strong>Inline Formatting Context</strong> (like <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>) derive their dimensions solely from their inner line-box glyphs. Browsers explicitly ignore <code>width</code>, <code>height</code>, <code>margin-top</code>, and <code>margin-bottom</code> on inline elements. To apply custom dimensions, set <code>display: inline-block;</code> or <code>display: block;</code>.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansL4Q2">
+              <div class="query-solution-title"><span>📰</span> Solution: &lt;section&gt; vs. &lt;article&gt;</div>
+              <div class="query-solution-text">
+                An <strong><code>&lt;article&gt;</code></strong> represents an independent, self-contained composition that makes complete sense on its own if syndicated outside the site (e.g. a blog post, news story, product card, or forum post). A <strong><code>&lt;section&gt;</code></strong> represents a generic thematic grouping of content, typically introduced by an explicit heading (e.g. "Curriculum Overview", "Contact Information"). An <code>&lt;article&gt;</code> can contain multiple <code>&lt;section&gt;</code>s, and vice versa.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansL4Q3">
+              <div class="query-solution-title"><span>🧩</span> Solution: Why display: inline-block Exists</div>
+              <div class="query-solution-text">
+                <code>inline-block</code> combines the best of both worlds: from the outside, it flows inline on the same horizontal line without forcing carriage returns; from the inside, it behaves like a block box, honoring explicit <code>width</code>, <code>height</code>, vertical padding, and vertical margins. It is commonly used for navigation buttons, badges, and image galleries.
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansL4Q4">
+              <div class="query-solution-title"><span>🥣</span> Solution: Eliminating "Div Soup"</div>
+              <div class="query-solution-text">
+                "Div soup" refers to heavily nesting non-semantic <code>&lt;div&gt;</code> elements with classes like <code>&lt;div class="header-nav-wrap"&gt;</code> instead of native semantic elements. Div soup strips semantic landmarks from the browser's Accessibility Tree (forcing blind students using screen readers to listen to every element sequentially rather than jumping to <code>&lt;main&gt;</code> or <code>&lt;nav&gt;</code>) and hampers search engine indexing.
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission with Selectable Options -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Your Custom Query
+            </h3>
+            <p class="query-card-sub">Choose your query category and enter your question for instant logging:</p>
+
+            <form class="query-custom-form" id="formCustomQueryL4">
+              <div>
+                <label for="queryCatL4" class="query-input-label">Select Query Category:</label>
+                <select id="queryCatL4" class="query-dropdown query-category-select">
+                  <option value="Display Modes">Display Modes (Block vs Inline vs Inline-block)</option>
+                  <option value="Semantic Landmarks">Semantic Landmarks (&lt;main&gt;, &lt;aside&gt;, &lt;nav&gt;)</option>
+                  <option value="Accessibility (a11y)">Web Accessibility &amp; Screen Readers</option>
+                  <option value="Exam Preparation">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextL4" class="query-input-label">Describe Your Doubt / Question:</label>
+                <textarea id="queryTextL4" class="query-textarea" placeholder="Type your question or query here (e.g., Can an &lt;aside&gt; element be placed inside a &lt;main&gt; container?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogL4"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Lecture Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your understanding of Lecture 04 concepts. Click any option to see instant verification.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumL4">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="l4_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>Which of the following HTML elements exhibits inline-level display behavior by default?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>&lt;div&gt;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">B</span>
+                <span>&lt;p&gt;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">C</span>
+                <span>&lt;span&gt;</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>&lt;section&gt;</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! The <strong>&lt;span&gt;</strong> tag is an inline container that wraps text content without breaking onto a new line, whereas &lt;div&gt;, &lt;p&gt;, and &lt;section&gt; are block-level elements.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="l4_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>What is the primary architectural purpose of HTML5 semantic elements like &lt;main&gt; and &lt;article&gt;?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>They render 3D animation shaders without requiring JavaScript.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>They provide structural meaning to search engines and assistive screen readers rather than generic uninformative &lt;div&gt; tags.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>They automatically translate text into five languages.</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>They prevent browsers from downloading images.</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Perfectly answered! Semantic tags define the architectural role of content, constructing an accessible navigation tree and improving search rankings.
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Key Takeaways Card -->
