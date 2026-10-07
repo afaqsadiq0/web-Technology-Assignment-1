@@ -91,94 +91,113 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Section Preservation & Dynamic Scroll-Spy in Navbar
   // -------------------------------------------------------------------------
   const navLinks = document.querySelectorAll('.nav-menu .nav-link');
-  const spySections = document.querySelectorAll('section[id], header[id]');
+  const pageSections = document.querySelectorAll('section[id]');
 
   function updateActiveNavLink() {
-    if (!spySections || spySections.length === 0) return;
+    if (!pageSections || pageSections.length === 0 || !navLinks || navLinks.length === 0) return;
 
-    let currentSectionId = '';
-    const scrollPosition = window.scrollY + 160;
+    let activeId = 'hero';
+    const scrollPos = window.scrollY || window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
 
-    spySections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      if (scrollPosition >= top && scrollPosition < top + height) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-
-    if (currentSectionId) {
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href') || '';
-        const isMatch = (
-          (currentSectionId === 'hero' && (href === 'index.html' || href === '#hero' || href === '#')) ||
-          href === '#' + currentSectionId ||
-          href.endsWith('#' + currentSectionId)
-        );
-        if (isMatch) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    } else if (window.scrollY < 250) {
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href') || '';
-        if (href === 'index.html' || href === '#hero' || href === '#') {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
+    // Check if user is scrolled near bottom of page
+    if (scrollPos + windowHeight >= docHeight - 70) {
+      activeId = 'contact';
+    } else if (scrollPos < 140) {
+      activeId = 'hero';
+    } else {
+      // Find section currently occupying the viewport
+      pageSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 180 && rect.bottom >= 140) {
+          activeId = section.getAttribute('id');
         }
       });
     }
+
+    navLinks.forEach(link => {
+      const href = (link.getAttribute('href') || '').trim();
+      let targetId = '';
+      if (href.startsWith('#')) {
+        targetId = href.substring(1);
+      } else if (href === 'index.html' || href === './' || href === '/') {
+        targetId = 'hero';
+      } else if (href.includes('#')) {
+        targetId = href.split('#')[1];
+      }
+
+      if (targetId === activeId || (activeId === 'hero' && (targetId === 'hero' || href === 'index.html'))) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
   }
 
   window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+  window.addEventListener('resize', updateActiveNavLink, { passive: true });
   updateActiveNavLink();
 
-  // Smooth scroll to hash anchor and preserve user position without reset
-  function scrollToHashTarget(hash) {
-    if (!hash) return;
-    try {
-      const targetElement = document.querySelector(hash);
-      if (targetElement) {
-        setTimeout(() => {
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          updateActiveNavLink();
-        }, 80);
+  // Smooth scroll click handler for all in-page links (including navbar & hero buttons)
+  const inPageLinks = document.querySelectorAll('a[href^="#"], a[href*="index.html#"]');
+  inPageLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      const hash = href.substring(hashIndex);
+      if (hash === '#' || hash === '') return;
+
+      const target = document.querySelector(hash);
+      if (target) {
+        e.preventDefault();
+        const headerOffset = 80;
+        const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth'
+        });
+        if (history.pushState) {
+          history.pushState(null, null, hash);
+        }
+        setTimeout(updateActiveNavLink, 200);
       }
-    } catch (e) {
-      // Ignore invalid selector
-    }
-  }
+    });
+  });
 
   // Handle initial page load if hash exists
   if (window.location.hash) {
-    scrollToHashTarget(window.location.hash);
+    const targetHash = window.location.hash;
+    const targetElement = document.querySelector(targetHash);
+    if (targetElement) {
+      setTimeout(() => {
+        const headerOffset = 80;
+        const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth'
+        });
+        updateActiveNavLink();
+      }, 120);
+    }
   }
 
   // Listen for back/forward browser history changes
   window.addEventListener('popstate', () => {
     if (window.location.hash) {
-      scrollToHashTarget(window.location.hash);
-    }
-  });
-
-  // Intercept in-page section links to ensure history and smooth scroll without reload
-  const sectionLinks = document.querySelectorAll('a[href^="#"]');
-  sectionLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetHash = link.getAttribute('href');
-      if (targetHash && targetHash !== '#') {
-        const targetElement = document.querySelector(targetHash);
-        if (targetElement) {
-          e.preventDefault();
-          history.pushState(null, null, targetHash);
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          setTimeout(updateActiveNavLink, 150);
-        }
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        const headerOffset = 80;
+        const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth'
+        });
+        setTimeout(updateActiveNavLink, 150);
       }
-    });
+    }
   });
 
   // When clicking any "View Lecture" link, store that we came from #lectures
@@ -463,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       runNextStep();
     });
+  }
 });
 
 // Global smart back navigation function for lecture pages

@@ -392,8 +392,13 @@ html {
   color: var(--text-main);
   background-color: var(--bg-body);
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+section[id], header[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 body {
@@ -576,6 +581,50 @@ code, pre, kbd {
 [data-theme="dark"] .nav-link.active::before {
   background-color: #60a5fa;
   box-shadow: 0 0 8px #60a5fa;
+}
+
+/* Theme Toggle Button (Light/Dark Switcher) */
+.theme-toggle-btn {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  border-radius: var(--radius-full);
+  width: 2.45rem;
+  height: 2.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+  user-select: none;
+  padding: 0;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-100);
+  border-color: var(--primary-300);
+  transform: scale(1.08);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #fbbf24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background: #334155;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.35);
 }
 
 /* Nav Actions (Student ID badge) */
