@@ -52,7 +52,9 @@ web-Assignment-1/
     │   ├── lecture5.html           # Lecture 05: HTML Forms
     │   ├── lecture6.html           # Lecture 06: CSS Fundamentals
     │   ├── lecture7.html           # Lecture 07: CSS Box Model & Positioning
-    │   └── lecture8.html           # Lecture 08: CSS3, Flexbox & Grid
+    │   ├── lecture8.html           # Lecture 08: CSS3, Flexbox & Grid
+    │   ├── grid-garden.html        # Special Lab: CSS Grid Garden (1–28)
+    │   └── lab4-forms-tables.html  # Lab 04: HTML Forms & Table Layouts
     │
     ├── css/
     │   └── style.css               # Unified Design System & Responsive Styles
@@ -110,6 +112,14 @@ web-Assignment-1/
   - **28-Level Proof Catalog Matrix:** Visual card gallery with responsive lightbox zoom.
   - **Doubt & Viva Station:** Common interview questions and custom query logging.
   - **Knowledge Check Quiz:** Selectable MCQs with live scoring.
+
+### 10. Lab 04 Coursework: HTML Forms &amp; Table-Based Web Templates
+- **Topics Covered:** Practical laboratory assignments from CSC336 Lab Manual 04 covering form input validation, accessible controls, and two-column web layout design using HTML tables and external CSS.
+- **Features:**
+  - **Lab Task 1 (Sign-Up Form):** Clean responsive card with Email, Password, Repeat Password confirmation check, Remember Me checkbox, Terms &amp; Privacy link, and dual Cancel (Red) &amp; Sign Up (Green) action buttons. Includes real-time validation and payload serialization.
+  - **Lab Task 2 (Table Template):** Design matching the instructor specification (*"Design the web template given below using tables and external CSS"*), featuring grey header/footer bars, blue "Contact Now" panel, and white feedback panel with social media buttons and icon inputs.
+  - **Interactive Live Playground:** In-browser live editor with one-click presets to test, edit, and render both tasks instantly.
+  - **Viva &amp; Theory Station:** Academic explanations on semantic markup vs table layouts, external CSS modularity, and scored self-check quiz.
 
 ---
 

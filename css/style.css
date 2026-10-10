@@ -3760,3 +3760,498 @@ code, pre, kbd {
     right: 10px;
   }
 }
+
+/* ==========================================================================
+   LAB 04: HTML FORMS & TABLE-BASED TEMPLATES
+   COMSATS University Islamabad, Vehari Campus
+   Course: CSC336 Web Technologies — Muhammad Afaq (FA23-BSE-012)
+   ========================================================================== */
+
+/* --- Lab Task Tabs Navigation --- */
+.lab-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.lab-tab-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.lab-tab-btn:hover {
+  background: var(--bg-muted);
+  color: var(--text-main);
+  border-color: var(--border-subtle);
+}
+
+.lab-tab-btn.active {
+  background: var(--primary-600);
+  color: #ffffff;
+  border-color: var(--primary-600);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* --- Tab Panels --- */
+.lab-tab-panel {
+  display: none;
+  animation: fadeInTab 0.3s ease-in-out;
+}
+
+.lab-tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Task Header & Specification Card --- */
+.lab-spec-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--primary-600);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lab-spec-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.lab-spec-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.lab-badge-task {
+  background: var(--primary-100);
+  color: var(--primary-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- LAB TASK 1: SIGN-UP FORM --- */
+.lab1-form-wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.lab1-form-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.lab1-form-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.lab1-form-divider {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.lab1-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.lab1-input-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.lab1-input-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.lab1-input-control:focus {
+  outline: none;
+  background: var(--bg-surface);
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.lab1-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0.5rem 0 1rem;
+}
+
+.lab1-terms-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.lab1-terms-text a {
+  color: #1e88e5;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.lab1-btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.lab1-btn-cancel {
+  flex: 1;
+  background-color: #f44336;
+  color: #ffffff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.lab1-btn-cancel:hover {
+  background-color: #d32f2f;
+}
+
+.lab1-btn-signup {
+  flex: 1;
+  background-color: #04AA6D;
+  color: #ffffff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.lab1-btn-signup:hover {
+  background-color: #038f5c;
+}
+
+/* --- LAB TASK 2: TABLE & EXTERNAL CSS TEMPLATE --- */
+.lab2-template-frame {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.lab2-grey-bar {
+  background-color: #7b8590;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  text-align: right;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.lab2-content-area {
+  padding: 2.5rem 2rem;
+  background: #eaeff5;
+  display: flex;
+  justify-content: center;
+}
+
+/* The exact HTML Table structure required by Lab Task 2 */
+.lab2-table-card {
+  width: 100%;
+  max-width: 780px;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.lab2-td-blue {
+  width: 44%;
+  background-color: #0ea5e9;
+  background-image: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  color: #ffffff;
+  padding: 2.5rem 2rem;
+  vertical-align: top;
+}
+
+.lab2-blue-annotation {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.lab2-blue-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.75rem;
+}
+
+.lab2-blue-field {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.9rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.lab2-blue-field::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.lab2-blue-field:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+}
+
+.lab2-blue-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lab2-blue-btn:hover {
+  background: #ffffff;
+  color: #0284c7;
+}
+
+.lab2-td-white {
+  width: 56%;
+  background: #ffffff;
+  padding: 2rem 2.25rem;
+  vertical-align: top;
+}
+
+.lab2-social-strip {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.lab2-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.lab2-social-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.lab2-social-fb { background: #3b5998; }
+.lab2-social-tw { background: #00aced; }
+.lab2-social-ig { background: #ea4c89; }
+.lab2-social-gp { background: #4a4a4a; }
+
+.lab2-icon-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.lab2-white-input {
+  width: 100%;
+  padding: 0.75rem 2.75rem 0.75rem 0.9rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.lab2-white-input:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.lab2-input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0284c7;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.lab2-white-select {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  color: #475569;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.lab2-white-select:focus {
+  outline: none;
+  border-color: #0284c7;
+}
+
+.lab2-white-textarea {
+  width: 100%;
+  height: 120px;
+  padding: 0.75rem 0.9rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.lab2-white-textarea:focus {
+  outline: none;
+  border-color: #0284c7;
+}
+
+/* --- Code Snippet & Interactive Inspector --- */
+.lab-code-viewer-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  margin-top: 1.75rem;
+  overflow: hidden;
+}
+
+.lab-code-viewer-header {
+  background: var(--bg-muted);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.lab-code-viewer-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lab-copy-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.lab-copy-btn:hover {
+  color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+@media screen and (max-width: 768px) {
+  .lab2-table-card, 
+  .lab2-table-card tbody, 
+  .lab2-table-card tr, 
+  .lab2-table-card td {
+    display: block;
+    width: 100% !important;
+  }
+  .lab1-btn-group {
+    flex-direction: column;
+  }
+}
