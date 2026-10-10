@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Special Academic Lab: CSS Grid Garden (Levels 1 to 28 Walkthrough & Interactive Lab) by Muhammad Afaq (FA23-BSE-012) for CSC336 Web Technologies at COMSATS University Islamabad. Complete visual proof, code solutions, live CSS Grid simulator, and theory.">
+  <meta name="author" content="Muhammad Afaq (FA23-BSE-012)">
+  <title>Special Lab: CSS Grid Garden (Levels 1 to 28) | CSC336 — Muhammad Afaq</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="header" id="topHeader">
+    <div class="container navbar">
+      <a href="../index.html" class="logo-brand" aria-label="Course Home">
+        <div class="logo-icon" aria-hidden="true">&lt;/&gt;</div>
+        <div class="logo-text-group">
+          <span class="logo-title">Web Technologies</span>
+          <span class="logo-subtitle">CSC336 Course Portal</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#lectures" class="nav-link active">Lectures</a></li>
+          <li><a href="../index.html#overview" class="nav-link">Course Topics</a></li>
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle & Student Badge in Navbar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
+        <div class="nav-student-badge" title="Developer: Muhammad Afaq (FA23-BSE-012)">
+          <img src="../assets/images/afaq-profile.jpg?v=3" alt="Muhammad Afaq" class="nav-avatar-img" loading="eager" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/afaqsadiq0/web-Technology-Assignment-1/main/assets/images/afaq-profile.jpg';">
+          <span>FA23-BSE-012</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LECTURE HEADER & BREADCRUMB
+       ========================================================================= -->
+  <header class="lecture-header-hero">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="margin-bottom: 0;">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="../index.html#lectures">Lectures</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Special Lab: CSS Grid Garden</span>
+        </nav>
+        <button type="button" class="btn-back-history" onclick="goBackToPreviousSection()">
+          <span aria-hidden="true">←</span> Back to Lectures
+        </button>
+      </div>
+
+      <div class="lecture-meta-bar">
+        <div class="lecture-progress-pill">
+          <span>SPECIAL LAB:</span>
+          <span>ALL 28 LEVELS</span>
+        </div>
+        <span class="lecture-cat-badge">Gamified CSS Grid Mastery</span>
+      </div>
+
+      <h1 class="lecture-page-h1">CSS Grid Garden: All 28 Levels Walkthrough &amp; Interactive Lab</h1>
+      <p class="lecture-lead-desc">
+        A complete, gamified laboratory module for mastering CSS Grid layouts. Features full visual proof of completion across all 28 levels, syntax-validated solutions, technical taxonomy, in-browser simulator, and viva knowledge check.
+      </p>
+
+      <!-- Learning Objectives -->
+      <section class="objectives-card" aria-labelledby="objTitleGarden">
+        <h2 class="objectives-title" id="objTitleGarden">
+          <span>🎯</span> Learning Objectives &amp; Practical Outcomes
+        </h2>
+        <ul class="objectives-list">
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Master grid line coordinates using <code>grid-column-start</code> and <code>grid-column-end</code> (Levels 1–5).</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Employ relative track spanning with the <code>span</code> keyword and negative indexing (Levels 6–9).</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Harness shorthands: <code>grid-column</code>, <code>grid-row</code>, and the 4-value <code>grid-area</code> master shorthand (Levels 10–17).</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Manipulate visual source ordering via the <code>order</code> property without modifying HTML DOM hierarchy (Levels 18–19).</span>
+          </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Architect responsive track templates using fractional <code>fr</code> units, <code>repeat()</code>, and <code>grid-template</code> (Levels 20–28).</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN LECTURE CONTENT
+       ========================================================================= -->
+  <main class="lecture-content-area">
+    <div class="container-narrow">
+
+      <!-- Topic 1: Architectural Taxonomy of Grid Garden -->
+      <section class="content-block" id="grid-taxonomy">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 1. Pedagogical Taxonomy of the 28 Grid Garden Levels
+        </h2>
+        <p class="content-p">
+          <strong>Grid Garden</strong> by Codepip is a gamified interactive learning platform specifically engineered to teach the W3C CSS Grid Layout specification. Through 28 incremental challenges, students learn how to water carrots and eliminate weeds by positioning water blocks and defining custom garden grids.
+        </p>
+
+        <div class="feature-info-grid">
+          <div class="info-card">
+            <h3 class="info-card-title">🌱 Part I: Grid Lines &amp; Spanning (L1–L9)</h3>
+            <p class="info-card-body">Introduces vertical grid lines (1 to 6), negative boundary indices (-1 to -6), and the flexible <code>span [n]</code> syntax for relative item stretching.</p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">📐 Part II: 2D Coordinates &amp; Shorthands (L10–L17)</h3>
+            <p class="info-card-body">Consolidates separate start/end rules into <code>grid-column: start / end</code>, adds vertical <code>grid-row</code>, and combines them into <code>grid-area: row-start / col-start / row-end / col-end</code>.</p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">🔄 Part III: Order Manipulation (L18–L19)</h3>
+            <p class="info-card-body">Overrides source-code document order using <code>order: [integer]</code>, enabling dynamic item rearrangement without DOM manipulation.</p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">⚡ Part IV: Template Tracks &amp; Master Sizing (L20–L28)</h3>
+            <p class="info-card-body">Transitions to container properties: defining column and row tracks with <code>grid-template-columns</code>, <code>repeat()</code>, <code>fr</code> fractional units, and master <code>grid-template</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topic 2: Interactive 28-Level Explorer & Live Simulator -->
+      <section class="garden-lab-section" id="gardenLevelExplorer">
+        <div class="garden-section-header">
+          <div class="garden-badge-pill">
+            <span>🎮</span> Interactive Lab Explorer
+          </div>
+          <h2 class="garden-section-title">All 28 Levels Interactive Showcase &amp; Live Simulator</h2>
+          <p class="garden-section-subtitle">
+            Explore every individual level from 1 to 28. Review the official challenge brief, examine the verified code solution with one-click copy, inspect the high-resolution screenshot, and experiment inside the live in-browser garden simulator.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="garden-filter-bar">
+          <span class="garden-filter-label">Filter Category:</span>
+          <button type="button" class="garden-filter-btn active" data-filter="all">All 28 Levels</button>
+          <button type="button" class="garden-filter-btn" data-filter="lines">Grid Lines (1–5)</button>
+          <button type="button" class="garden-filter-btn" data-filter="span">Spanning (6–9)</button>
+          <button type="button" class="garden-filter-btn" data-filter="shorthand">Shorthands (10–11)</button>
+          <button type="button" class="garden-filter-btn" data-filter="rows">Rows (12–13)</button>
+          <button type="button" class="garden-filter-btn" data-filter="coords">2D Coords (14–15)</button>
+          <button type="button" class="garden-filter-btn" data-filter="area">Grid Area (16–17)</button>
+          <button type="button" class="garden-filter-btn" data-filter="order">Order (18–19)</button>
+          <button type="button" class="garden-filter-btn" data-filter="tracks">Tracks &amp; fr (20–26)</button>
+          <button type="button" class="garden-filter-btn" data-filter="template">Template (27–28)</button>
+        </div>
+
+        <!-- 28-Level Fast Pill Selector Strip -->
+        <div class="garden-pills-wrapper">
+          <div class="garden-pills-header">
+            <span>Select Level to Inspect (Click any level):</span>
+            <span id="gardenLevelCounter">1 / 28</span>
+          </div>
+          <div class="garden-pills-grid" id="gridGardenPills">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+        <!-- Active Level Display Card -->
+        <div class="garden-explorer-card">
+          <div class="garden-explorer-grid">
+            
+            <!-- Left Column: Problem Brief & Solution -->
+            <div class="garden-meta-col">
+              <span class="garden-concept-badge" id="gardenLevelBadge">grid-column-start (Left Grid Line Index)</span>
+              <h3 class="garden-level-h2" id="gardenLevelTitle">Level 1: grid-column-start (Left Grid Line Index)</h3>
+              
+              <div class="garden-instruction-box">
+                <strong style="display: block; margin-bottom: 0.35rem; color: var(--primary-700);">📋 Challenge Instructions:</strong>
+                <span id="gardenLevelInstruction">
+                  Welcome to Grid Garden, where you write CSS code to grow your carrot garden! Water only the areas that have carrots by using the grid-column-start property. For example, grid-column-start: 3; will water the area starting at the 3rd vertical grid line.
+                </span>
+              </div>
+
+              <!-- Solution Code Panel -->
+              <div class="garden-code-panel">
+                <div class="garden-code-header">
+                  <span class="garden-code-header-title">Verified Solution CSS</span>
+                  <button type="button" class="garden-copy-btn" id="gardenCopySolutionBtn" title="Copy solution code to clipboard">
+                    <span>📋 Copy Solution</span>
+                  </button>
+                </div>
+                <pre class="garden-code-pre"><code id="gardenLevelCode">grid-column-start: 3;</code></pre>
+              </div>
+
+              <!-- Pager Navigation Between Levels -->
+              <div class="garden-nav-row">
+                <button type="button" class="garden-nav-btn" id="gardenPrevBtn" disabled>
+                  <span>&larr; Previous Level</span>
+                </button>
+                <button type="button" class="garden-nav-btn" id="gardenNextBtn">
+                  <span>Next Level &rarr;</span>
+                </button>
+              </div>
+
+              <!-- Live Simulator Card -->
+              <div class="garden-sim-card">
+                <div class="garden-sim-title">
+                  <span>🧪</span> Live CSS Grid Playground (Test In-Browser)
+                </div>
+                <div class="garden-sim-board" id="gardenSimBoard" aria-label="Interactive Garden Simulation Board">
+                  <div class="garden-element-water" id="gardenSimWater">WATER</div>
+                </div>
+                <div class="garden-sim-controls">
+                  <label for="gardenSimCodeInput" style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);">
+                    Edit or Enter CSS Declaration:
+                  </label>
+                  <input type="text" id="gardenSimCodeInput" class="garden-sim-input" value="grid-column-start: 3;">
+                  <div class="garden-sim-btn-group">
+                    <button type="button" class="garden-sim-btn garden-sim-btn-apply" id="gardenSimApplyBtn">
+                      <span>▶ Apply Live CSS</span>
+                    </button>
+                    <button type="button" class="garden-sim-btn garden-sim-btn-reset" id="gardenSimResetBtn">
+                      <span>↺ Reset</span>
+                    </button>
+                  </div>
+                  <div id="gardenSimFeedback" style="font-size: 0.8rem; margin-top: 0.25rem;"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Column: High-Res Screenshot & Lightbox Trigger -->
+            <div class="garden-preview-col">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);">
+                  📸 Full Resolution Completion Screenshot
+                </span>
+                <button type="button" class="code-copy-btn" id="gardenZoomScreenshotBtn" style="padding: 0.25rem 0.65rem;">
+                  <span>🔍 Expand / Zoom</span>
+                </button>
+              </div>
+              
+              <div class="garden-screenshot-wrapper" title="Click to view full screen in Lightbox">
+                <img src="../assets/images/grid-garden/levels/level-01.png" alt="Grid Garden Level 1 Screenshot" id="gardenLevelScreenshot" class="garden-screenshot-img">
+                <div class="garden-zoom-badge">🔍 Click to Expand</div>
+              </div>
+              <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+                Captured in 1280x730 high-definition viewport showing verified completion state.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Topic 3: Complete 28-Level Solutions Catalog & Visual Proof Matrix -->
+      <section class="content-block" id="all-levels-matrix">
+        <h2 class="content-heading-2">
+          <span class="heading-anchor">#</span> 3. Complete 28-Level Visual Solutions Catalog &amp; Proof Matrix
+        </h2>
+        <p class="content-p">
+          Below is the complete, unbroken visual matrix for all 28 levels. Click any thumbnail to view its full-screen screenshot, or click <strong>Inspect Level</strong> to load it inside the interactive simulator above.
+        </p>
+
+        <div class="garden-matrix-grid" id="gardenSolutionsMatrix">
+          <!-- Dynamically populated via JS with all 28 levels -->
+        </div>
+      </section>
+
+      <!-- Topic 4: Doubts & Viva Assistant for CSS Grid Garden -->
+      <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingGarden">
+        <header class="query-section-header">
+          <div class="query-eyebrow">
+            <span>💬</span>
+            <span>Interactive Learning Station</span>
+          </div>
+          <h2 class="query-section-title" id="queryHeadingGarden">Grid Garden Doubt &amp; Viva Assistant</h2>
+          <p class="query-section-subtitle">
+            Have questions about CSS Grid line indexing, <code>grid-area</code> ordering, or fraction sizing? Select a common viva question below or submit a custom query.
+          </p>
+        </header>
+
+        <div class="query-dual-grid">
+          <!-- Col 1: Pre-defined Selectable Doubts -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>🎯</span> Select a Pre-defined Question
+            </h3>
+            <p class="query-card-sub">Choose any question below for immediate verified academic explanations:</p>
+
+            <div class="query-dropdown-wrapper">
+              <label for="querySelectGarden" class="query-input-label">Select Doubt:</label>
+              <select id="querySelectGarden" class="query-dropdown">
+                <option value="" disabled selected>-- Select a Grid Garden doubt --</option>
+                <option value="ansGardenQ1">Q1: Why does grid-column-start: span 3 mean width and not line 3?</option>
+                <option value="ansGardenQ2">Q2: What is the sequence of values in grid-area: 1 / 2 / 4 / 6?</option>
+                <option value="ansGardenQ3">Q3: How does order: -1 move an item before other grid children?</option>
+                <option value="ansGardenQ4">Q4: How does Level 28 grid-template: 1fr 50px / 20% 1fr solve the garden?</option>
+              </select>
+            </div>
+
+            <!-- Answer Box 1 -->
+            <div class="query-solution-display" id="ansGardenQ1">
+              <div class="query-solution-title"><span>🔄</span> Solution: span Keyword Mechanics</div>
+              <div class="query-solution-text">
+                When you pass a raw number like <code>grid-column-start: 3;</code>, it targets the <strong>3rd vertical line</strong> from the left edge. However, when preceded by the <code>span</code> keyword (<code>grid-column-start: span 3;</code>), it acts as a relative width declaration, instructing the element to span across <strong>3 consecutive tracks</strong> relative to its terminating anchor line.
+              </div>
+            </div>
+
+            <!-- Answer Box 2 -->
+            <div class="query-solution-display" id="ansGardenQ2">
+              <div class="query-solution-title"><span>📐</span> Solution: grid-area Coordinate Sequence</div>
+              <div class="query-solution-text">
+                The <code>grid-area</code> 4-value shorthand follows the exact clockwise-adjacent pattern: <code>grid-row-start / grid-column-start / grid-row-end / grid-column-end</code>. In Level 16, <code>grid-area: 1 / 2 / 4 / 6;</code> places the item starting at row 1 and column 2, ending at row 4 and column 6.
+              </div>
+            </div>
+
+            <!-- Answer Box 3 -->
+            <div class="query-solution-display" id="ansGardenQ3">
+              <div class="query-solution-title"><span>🔄</span> Solution: Visual Reordering via order</div>
+              <div class="query-solution-text">
+                By default, all grid items possess an initial <code>order: 0</code>. Setting <code>order: -1</code> assigns a priority lower than 0, causing the browser layout engine to paint that item ahead of all default siblings along the auto-placement flow without altering the source HTML.
+              </div>
+            </div>
+
+            <!-- Answer Box 4 -->
+            <div class="query-solution-display" id="ansGardenQ4">
+              <div class="query-solution-title"><span>⚡</span> Solution: Level 28 Master Shorthand</div>
+              <div class="query-solution-text">
+                The master <code>grid-template</code> syntax is <code>[rows] / [columns]</code>. In Level 28, <code>1fr 50px / 20% 1fr</code> specifies two rows (first row consumes all flexible free space, second row is exactly 50px) and two columns (first column is 20% width, second column consumes all remaining space with 1fr).
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Custom Query Submission Form -->
+          <div class="query-interactive-card">
+            <h3 class="query-card-heading">
+              <span>✍️</span> Submit Custom Grid Query
+            </h3>
+            <p class="query-card-sub">Submit your query for logging and immediate academic review:</p>
+
+            <form class="query-custom-form" id="formCustomQueryGarden">
+              <div>
+                <label for="queryCatGarden" class="query-input-label">Select Category:</label>
+                <select id="queryCatGarden" class="query-dropdown query-category-select">
+                  <option value="Grid Lines & Coordinates">Grid Lines &amp; Coordinates (L1–L9)</option>
+                  <option value="Shorthands & Grid Area">Shorthands &amp; Grid Area (L10–L17)</option>
+                  <option value="Item Reordering">Item Reordering (L18–L19)</option>
+                  <option value="Tracks & Templates">Tracks &amp; Templates (L20–L28)</option>
+                  <option value="Exam & Viva Prep">Exam &amp; Viva Preparation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="queryTextGarden" class="query-input-label">Describe Your Doubt:</label>
+                <textarea id="queryTextGarden" class="query-textarea" placeholder="Type your doubt here (e.g., Why do we use repeat(8, 12.5%) in Level 21?)..." required></textarea>
+              </div>
+
+              <button type="submit" class="query-submit-btn">
+                <span>🚀 Submit Query</span>
+              </button>
+            </form>
+
+            <div class="query-history-log" id="historyLogGarden"></div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             PRACTICE STATION: SELECTABLE MCQ QUIZ
+             =================================================================== -->
+        <div class="quiz-station-container" aria-label="Grid Garden Knowledge Practice">
+          <div class="quiz-station-header">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.2rem;">
+                🧠 Knowledge Check: Select The Correct Option
+              </h3>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin: 0;">
+                Test your mastery of CSS Grid Garden concepts. Click any option for instant evaluation.
+              </p>
+            </div>
+            <div class="quiz-score-badge">
+              <span>Score:</span>
+              <span class="quiz-score-num" id="scoreNumGarden">0 / 2</span>
+            </div>
+          </div>
+
+          <!-- MCQ 1 -->
+          <div class="quiz-card" data-quiz-id="garden_q1">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q1</span>
+              <span>In CSS Grid, what is the exact order of values in the <code>grid-area</code> 4-parameter shorthand?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>col-start / row-start / col-end / row-end</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>row-start / col-start / row-end / col-end</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>top / right / bottom / left</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>row-start / row-end / col-start / col-end</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Correct! The 4-value <code>grid-area</code> shorthand specifies <code>grid-row-start / grid-column-start / grid-row-end / grid-column-end</code> in sequence.
+            </div>
+          </div>
+
+          <!-- MCQ 2 -->
+          <div class="quiz-card" data-quiz-id="garden_q2">
+            <div class="quiz-question-title">
+              <span class="quiz-num-pill">Q2</span>
+              <span>In Level 28 of Grid Garden, what does the slash (<code>/</code>) in <code>grid-template: 1fr 50px / 20% 1fr;</code> separate?</span>
+            </div>
+            <div class="quiz-options-list">
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">A</span>
+                <span>Columns on the left, rows on the right</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="true">
+                <span class="quiz-option-letter">B</span>
+                <span>Row tracks on the left, column tracks on the right</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">C</span>
+                <span>Start lines on the left, end lines on the right</span>
+              </button>
+              <button type="button" class="quiz-option-btn" data-correct="false">
+                <span class="quiz-option-letter">D</span>
+                <span>Percentages on the left, pixel values on the right</span>
+              </button>
+            </div>
+            <div class="quiz-explanation-box">
+              <strong>Explanation:</strong> Exactly right! The <code>grid-template</code> shorthand always places <code>grid-template-rows</code> before the slash and <code>grid-template-columns</code> after the slash.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Takeaways Card -->
+      <section class="takeaways-card" aria-labelledby="takeawaysTitleGarden">
+        <div class="takeaways-header">
+          <div class="takeaways-icon" aria-hidden="true">★</div>
+          <h2 class="takeaways-title" id="takeawaysTitleGarden">Key Takeaways: CSS Grid Garden Lab</h2>
+        </div>
+        <ul class="takeaways-list">
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>All 28 levels successfully solved and validated with 100% visual proof and high-resolution screenshots.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>Grid line indexes are 1-based, run along borders (not items), and support negative numbering from opposite margins.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>The <code>span</code> keyword eliminates the requirement to calculate exact terminating line numbers for dynamic components.</span>
+          </li>
+          <li class="takeaways-item">
+            <span class="takeaway-bullet">›</span>
+            <span>The <code>grid-template</code> master shorthand combines row and column track definitions into a single, clean CSS declaration.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Lecture Pager Navigation -->
+      <nav class="lecture-pager" aria-label="Lecture Navigation">
+        <a href="lecture8.html" class="pager-btn pager-prev" id="prevLectureBtn">
+          <span class="pager-direction"><span aria-hidden="true">&larr;</span> Previous Module</span>
+          <span class="pager-title">Lecture 08: CSS3, Flexbox &amp; Grid</span>
+        </a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button type="button" class="pager-home-btn" onclick="goBackToPreviousSection()">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <a href="../index.html#lectures" class="pager-home-btn">
+            <span aria-hidden="true">🏠</span> All Lectures
+          </a>
+        </div>
+        <a href="../index.html" class="pager-btn pager-next" id="nextLectureBtn">
+          <span class="pager-direction">Completed Portal <span aria-hidden="true">&rarr;</span></span>
+          <span class="pager-title">Return to Course Home</span>
+        </a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       LIGHTBOX MODAL FOR HIGH-RES SCREENSHOTS
+       ========================================================================= -->
+  <div class="garden-lightbox-modal" id="gardenLightboxModal" aria-modal="true" role="dialog" aria-label="Screenshot Lightbox Viewer">
+    <div class="garden-lightbox-container">
+      <button type="button" class="garden-lightbox-close" id="gardenLightboxClose" aria-label="Close Lightbox">&times;</button>
+      <button type="button" class="garden-lightbox-nav-btn garden-lightbox-prev" id="gardenLightboxPrev" aria-label="Previous Screenshot">&larr;</button>
+      <img src="" alt="" class="garden-lightbox-img" id="gardenLightboxImg">
+      <button type="button" class="garden-lightbox-nav-btn garden-lightbox-next" id="gardenLightboxNext" aria-label="Next Screenshot">&rarr;</button>
+      <div class="garden-lightbox-caption" id="gardenLightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       ACADEMIC FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-title">Web Technologies</div>
+          <p class="footer-brand-desc">
+            CSC336 academic portal created to demonstrate foundational web development concepts, semantic HTML5, CSS Grid, and responsive styling.
+          </p>
+          <div class="footer-academic-meta">
+            <p><strong>Student:</strong> Muhammad Afaq (FA23-BSE-012)</p>
+            <p><strong>Program:</strong> BS Software Engineering</p>
+            <p><strong>Campus:</strong> COMSATS University Islamabad, Vehari Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 1</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture1.html">Lecture 01: Web Dev Overview</a></li>
+            <li><a href="lecture2.html">Lecture 02: Tiered Web Architecture</a></li>
+            <li><a href="lecture3.html">Lecture 03: HTML &amp; HTML5 Fundamentals</a></li>
+            <li><a href="lecture4.html">Lecture 04: Block, Inline &amp; Semantic HTML</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Lectures Part 2 &amp; Labs</h4>
+          <ul class="footer-nav-list">
+            <li><a href="lecture5.html">Lecture 05: HTML Forms</a></li>
+            <li><a href="lecture6.html">Lecture 06: CSS Fundamentals</a></li>
+            <li><a href="lecture7.html">Lecture 07: CSS Box Model &amp; Positioning</a></li>
+            <li><a href="lecture8.html">Lecture 08: CSS3, Flexbox &amp; Grid</a></li>
+            <li><a href="grid-garden.html" style="color: var(--primary-600); font-weight: 700;">🌱 Special Lab: CSS Grid Garden (1–28)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Fall 2026 <strong>Muhammad Afaq</strong> (FA23-BSE-012) — CSC336 Web Technologies, COMSATS University Islamabad, Vehari Campus.
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span aria-hidden="true">&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/grid-garden-data.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/grid-garden-explorer.js"></script>
+</body>
+</html>

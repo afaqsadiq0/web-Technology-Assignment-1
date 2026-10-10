@@ -101,6 +101,16 @@ web-Assignment-1/
 - **Topics Covered:** Modular CSS3 enhancements (CSS custom properties, `box-shadow`, `border-radius`, `linear-gradient`, transitions), one-dimensional Flexbox (container vs. item properties, main axis, cross axis), two-dimensional CSS Grid (column/row tracks, `fr` fractional units, `grid-template-columns`), an architectural comparison matrix (Flexbox vs. Grid), and mobile-first responsive media queries (`@media`).
 - **Features:** Interactive live playgrounds demonstrating Flexbox spacing distribution and a responsive multi-column CSS Grid.
 
+### 9. Special Laboratory Module: CSS Grid Garden (All 28 Levels Completed)
+- **Topics Covered:** Gamified W3C CSS Grid mastery across all 28 levels: `grid-column-start`, `grid-column-end`, negative index coordinates (`-1`), relative track stretching via `span`, shorthand properties (`grid-column`, `grid-row`, `grid-area`), source-order manipulation with `order`, flexible fractional sizing (`fr`), `repeat()`, `grid-template-columns`, `grid-template-rows`, and master `grid-template`.
+- **Features:** 
+  - **100% Visual Proof:** Exactly 28 full-resolution verified screenshots (`level-01.png` to `level-28.png`).
+  - **Interactive 28-Level Explorer:** Dynamic category filtering, fast pill switcher, syntax-highlighted solutions, and one-click copy.
+  - **In-Browser Live Garden Simulator:** 5x5 responsive CSS grid board with real-time DOM garden rendering.
+  - **28-Level Proof Catalog Matrix:** Visual card gallery with responsive lightbox zoom.
+  - **Doubt & Viva Station:** Common interview questions and custom query logging.
+  - **Knowledge Check Quiz:** Selectable MCQs with live scoring.
+
 ---
 
 ## 🎨 Design System & Technical Highlights
