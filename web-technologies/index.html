@@ -37,6 +37,7 @@
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#overview" class="nav-link">Course Topics</a></li>
           <li><a href="#lectures" class="nav-link">Lectures</a></li>
+          <li><a href="#profile" class="nav-link">Student Profile</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -45,10 +46,11 @@
       <!-- Theme Toggle & Student Badge in Navbar -->
       <div style="display: flex; align-items: center; gap: 0.75rem;">
         <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Switch Theme">🌙</button>
-        <div class="nav-student-badge" title="Student & Developer: Muhammad Afaq (FA23-BSE-012)">
+        <button class="nav-student-badge interactive-trigger" id="navProfileBadge" aria-label="Open Student Profile Modal" title="Click to view full Student Profile & Data">
           <img src="assets/images/afaq-profile.jpg?v=3" alt="Muhammad Afaq" class="nav-avatar-img" loading="eager" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/afaqsadiq0/web-Technology-Assignment-1/main/assets/images/afaq-profile.jpg';">
           <span>FA23-BSE-012</span>
-        </div>
+          <span class="nav-badge-pill">Profile</span>
+        </button>
       </div>
 
       <!-- Hamburger Button for Mobile -->
@@ -81,8 +83,8 @@
               Explore the foundations of modern web development, from HTML structure to responsive CSS layouts.
             </p>
 
-            <!-- Student Bio Card with Profile Photo -->
-            <div class="student-bio-card">
+            <!-- Student Bio Card with Profile Photo (Click to View Profile) -->
+            <div class="student-bio-card interactive-trigger" id="heroProfileCard" role="button" tabindex="0" title="Click to view complete Student Profile & Data">
               <div class="student-avatar" aria-label="Student Avatar Muhammad Afaq">
                 <img src="assets/images/afaq-profile.jpg?v=3" alt="Muhammad Afaq (FA23-BSE-012)" class="student-avatar-img" loading="eager" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/afaqsadiq0/web-Technology-Assignment-1/main/assets/images/afaq-profile.jpg';">
               </div>
@@ -92,6 +94,9 @@
                   <span class="student-reg-tag">FA23-BSE-012</span>
                 </div>
                 <span class="student-dept">BS Software Engineering • COMSATS Vehari Campus</span>
+              </div>
+              <div class="student-card-action">
+                <span class="click-reveal-badge">View Profile ↗</span>
               </div>
             </div>
 
@@ -487,7 +492,325 @@
     </section>
 
     <!-- =======================================================================
-         5. ABOUT SECTION
+         5. STUDENT PROFILE SECTION (INTERACTIVE DOSSIER & DATA VIEWER)
+         ======================================================================= -->
+    <section class="section section-bg-muted" id="profile">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-eyebrow">Academic Candidate Portfolio</span>
+          <h2 class="section-title">Student Profile &amp; Credentials</h2>
+          <p class="section-subtitle">
+            Comprehensive academic record, verified university credentials, technical proficiencies, and coursework deliverables. Click any tab or the master button below to explore all data.
+          </p>
+        </header>
+
+        <div class="profile-showcase-container">
+          <!-- Top Identity Card -->
+          <article class="profile-header-card">
+            <div class="profile-hero-top">
+              <div class="profile-avatar-box">
+                <img src="assets/images/afaq-profile.jpg?v=3" alt="Muhammad Afaq" class="profile-avatar-img" loading="eager" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/afaqsadiq0/web-Technology-Assignment-1/main/assets/images/afaq-profile.jpg';">
+                <span class="profile-avatar-badge" title="COMSATS Verified Student">✓</span>
+              </div>
+              <div class="profile-meta-main">
+                <div class="profile-name-row">
+                  <h3 class="profile-name-title">Muhammad Afaq</h3>
+                  <span class="profile-verified-chip">✓ Verified Candidate</span>
+                  <button class="copy-reg-btn" id="copyRegBtn" title="Click to copy registration number">
+                    <span>📋 FA23-BSE-012</span>
+                    <span style="font-size: 0.72rem; opacity: 0.85;">Copy</span>
+                  </button>
+                </div>
+                <div class="profile-degree-line">
+                  Bachelor of Science in Software Engineering (BS-SE)
+                </div>
+                <div class="profile-sub-meta">
+                  <span class="profile-sub-item">🏛️ COMSATS University Islamabad, Vehari Campus</span>
+                  <span class="profile-sub-item">💻 Dept. of Computer Science</span>
+                  <span class="profile-sub-item">📅 Semester: Fall 2026 (Semester 4)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Master Actions Bar -->
+            <div class="profile-actions-bar">
+              <button class="btn-profile-primary" id="openProfileModalBtn">
+                <span>⚡ Open Full Profile Dossier (Click to View All Data)</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+              <a href="https://github.com/afaqsadiq0/web-Technology-Assignment-1" target="_blank" rel="noopener noreferrer" class="btn-profile-ghost">
+                <span>🐙 GitHub Repository</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://web-technologies-csc336.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-profile-ghost">
+                <span>🌐 Live Production</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Quick Academic Metrics -->
+          <div class="profile-stats-grid">
+            <div class="profile-stat-box">
+              <div class="profile-stat-icon stat-icon-blue">📚</div>
+              <div class="profile-stat-info">
+                <span class="profile-stat-val">08 Modules</span>
+                <span class="profile-stat-lbl">Full Lectures Completed</span>
+              </div>
+            </div>
+            <div class="profile-stat-box">
+              <div class="profile-stat-icon stat-icon-emerald">🌱</div>
+              <div class="profile-stat-info">
+                <span class="profile-stat-val">28 / 28 Levels</span>
+                <span class="profile-stat-lbl">CSS Grid Garden Mastered</span>
+              </div>
+            </div>
+            <div class="profile-stat-box">
+              <div class="profile-stat-icon stat-icon-amber">📝</div>
+              <div class="profile-stat-info">
+                <span class="profile-stat-val">Lab 04</span>
+                <span class="profile-stat-lbl">HTML Forms &amp; Tables Engine</span>
+              </div>
+            </div>
+            <div class="profile-stat-box">
+              <div class="profile-stat-icon stat-icon-purple">🎯</div>
+              <div class="profile-stat-info">
+                <span class="profile-stat-val">CSC336</span>
+                <span class="profile-stat-lbl">Web Technologies (Fall 2026)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Tabbed Data Viewer -->
+          <div class="profile-tabs-wrapper">
+            <div class="profile-tabs-header" role="tablist" aria-label="Student Data Tabs">
+              <button class="profile-tab-btn active" role="tab" aria-selected="true" data-tab="tab-academic" id="tabBtnAcademic">
+                <span>🎓 Academic Credentials</span>
+              </button>
+              <button class="profile-tab-btn" role="tab" aria-selected="false" data-tab="tab-skills" id="tabBtnSkills">
+                <span>💻 Technical Skill Set</span>
+              </button>
+              <button class="profile-tab-btn" role="tab" aria-selected="false" data-tab="tab-submissions" id="tabBtnSubmissions">
+                <span>📂 Course Deliverables</span>
+              </button>
+              <button class="profile-tab-btn" role="tab" aria-selected="false" data-tab="tab-institutional" id="tabBtnInstitutional">
+                <span>🏛️ University &amp; Affiliation</span>
+              </button>
+            </div>
+
+            <div class="profile-tab-content">
+              <!-- Tab 1: Academic Data -->
+              <div class="profile-tab-pane active" id="tab-academic" role="tabpanel" aria-labelledby="tabBtnAcademic">
+                <table class="profile-data-table" aria-label="Student Academic Dossier Table">
+                  <tbody>
+                    <tr>
+                      <th>Candidate Full Name</th>
+                      <td>Muhammad Afaq</td>
+                    </tr>
+                    <tr>
+                      <th>Registration Number</th>
+                      <td><span style="font-family: var(--font-mono); font-weight: 700; color: var(--primary-600);">FA23-BSE-012</span></td>
+                    </tr>
+                    <tr>
+                      <th>Academic Degree Program</th>
+                      <td>Bachelor of Science in Software Engineering (BS-SE)</td>
+                    </tr>
+                    <tr>
+                      <th>Academic Discipline</th>
+                      <td>Faculty of Information Sciences &amp; Technology</td>
+                    </tr>
+                    <tr>
+                      <th>Academic Department</th>
+                      <td>Department of Computer Science</td>
+                    </tr>
+                    <tr>
+                      <th>Degree Level &amp; Session</th>
+                      <td>Undergraduate (4 Years) • Session 2023–2027</td>
+                    </tr>
+                    <tr>
+                      <th>Current Academic Term</th>
+                      <td>Fall 2026 Semester (Semester 4)</td>
+                    </tr>
+                    <tr>
+                      <th>Course Code &amp; Title</th>
+                      <td>CSC336 — Web Technologies</td>
+                    </tr>
+                    <tr>
+                      <th>Course Credit Weightage</th>
+                      <td>3 Credit Hours (Theory &amp; Practical Hands-On Labs)</td>
+                    </tr>
+                    <tr>
+                      <th>Project Submission Type</th>
+                      <td>Course Assignment 1 &amp; Interactive Learning Web Portal</td>
+                    </tr>
+                    <tr>
+                      <th>Enrollment Status</th>
+                      <td><span style="color: #10b981; font-weight: 700;">✓ Regular Active Student</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Tab 2: Technical Skills -->
+              <div class="profile-tab-pane" id="tab-skills" role="tabpanel" aria-labelledby="tabBtnSkills">
+                <div class="profile-skills-grid">
+                  <div class="profile-skill-card">
+                    <div class="profile-skill-header">
+                      <span class="profile-skill-title">🌐 Semantic HTML5 Markup</span>
+                      <span class="profile-skill-pct">100%</span>
+                    </div>
+                    <div class="profile-skill-bar">
+                      <div class="profile-skill-progress" style="width: 100%;"></div>
+                    </div>
+                    <p class="profile-skill-desc">Accessible landmark tags, semantic hierarchies, form validation, metadata, and modern standards compliance.</p>
+                  </div>
+
+                  <div class="profile-skill-card">
+                    <div class="profile-skill-header">
+                      <span class="profile-skill-title">🎨 Modern CSS3 &amp; Layout Systems</span>
+                      <span class="profile-skill-pct">100%</span>
+                    </div>
+                    <div class="profile-skill-bar">
+                      <div class="profile-skill-progress" style="width: 100%;"></div>
+                    </div>
+                    <p class="profile-skill-desc">Mastery in CSS Grid, Flexbox, Box Model, CSS custom variables, dark/light theme switching, and responsive design.</p>
+                  </div>
+
+                  <div class="profile-skill-card">
+                    <div class="profile-skill-header">
+                      <span class="profile-skill-title">⚡ Interactive Vanilla JavaScript</span>
+                      <span class="profile-skill-pct">95%</span>
+                    </div>
+                    <div class="profile-skill-bar">
+                      <div class="profile-skill-progress" style="width: 95%;"></div>
+                    </div>
+                    <p class="profile-skill-desc">DOM manipulation, LocalStorage theme persistence, typewriter animations, tab switching, and dynamic modal dialogs.</p>
+                  </div>
+
+                  <div class="profile-skill-card">
+                    <div class="profile-skill-header">
+                      <span class="profile-skill-title">🏗️ Tiered Web Architecture</span>
+                      <span class="profile-skill-pct">100%</span>
+                    </div>
+                    <div class="profile-skill-bar">
+                      <div class="profile-skill-progress" style="width: 100%;"></div>
+                    </div>
+                    <p class="profile-skill-desc">Deep understanding of 1-Tier, 2-Tier Client-Server, 3-Tier/N-Tier data flows, HTTP/HTTPS protocols, and web standards.</p>
+                  </div>
+
+                  <div class="profile-skill-card">
+                    <div class="profile-skill-header">
+                      <span class="profile-skill-title">🐙 Git &amp; GitHub Version Control</span>
+                      <span class="profile-skill-pct">100%</span>
+                    </div>
+                    <div class="profile-skill-bar">
+                      <div class="profile-skill-progress" style="width: 100%;"></div>
+                    </div>
+                    <p class="profile-skill-desc">Repository lifecycle management, atomic git commits, branch management, remote tracking, and deployment hooks.</p>
+                  </div>
+
+                  <div class="profile-skill-card">
+                    <div class="profile-skill-header">
+                      <span class="profile-skill-title">🚀 Cloud Hosting &amp; CI/CD (Vercel)</span>
+                      <span class="profile-skill-pct">100%</span>
+                    </div>
+                    <div class="profile-skill-bar">
+                      <div class="profile-skill-progress" style="width: 100%;"></div>
+                    </div>
+                    <p class="profile-skill-desc">Configured Vercel production hosting with clean URLs, responsive asset optimization, and live deployment verification.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 3: Course Submissions -->
+              <div class="profile-tab-pane" id="tab-submissions" role="tabpanel" aria-labelledby="tabBtnSubmissions">
+                <div class="profile-submissions-grid">
+                  <a href="lectures/lecture1.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 01</span>
+                    <h4 class="profile-sub-title">Web Dev Foundations</h4>
+                    <p class="profile-sub-desc">Client-server model, web platforms, international standards (W3C/ECMA), and core terminology.</p>
+                  </a>
+                  <a href="lectures/lecture2.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 02</span>
+                    <h4 class="profile-sub-title">Tiered Web Architecture</h4>
+                    <p class="profile-sub-desc">1-Tier, 2-Tier, and N-Tier physical and logical architectures with interactive live data flow simulation.</p>
+                  </a>
+                  <a href="lectures/lecture3.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 03</span>
+                    <h4 class="profile-sub-title">HTML &amp; HTML5 Fundamentals</h4>
+                    <p class="profile-sub-desc">Document boilerplate anatomy, element hierarchies, semantic tags, and client-server request cycle.</p>
+                  </a>
+                  <a href="lectures/lecture4.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 04</span>
+                    <h4 class="profile-sub-title">Block, Inline &amp; Semantics</h4>
+                    <p class="profile-sub-desc">Display mechanics, box behavior, accessible HTML5 landmark tags, and visual semantic wireframes.</p>
+                  </a>
+                  <a href="lectures/lecture5.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 05</span>
+                    <h4 class="profile-sub-title">Interactive HTML Forms</h4>
+                    <p class="profile-sub-desc">All standard input types, accessible labels, validation states, and live student registration form widget.</p>
+                  </a>
+                  <a href="lectures/lecture6.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 06</span>
+                    <h4 class="profile-sub-title">CSS Fundamentals &amp; Cascade</h4>
+                    <p class="profile-sub-desc">Syntax rules, selector specificity calculations, and browser render tree synthesis pipelines.</p>
+                  </a>
+                  <a href="lectures/lecture7.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 07</span>
+                    <h4 class="profile-sub-title">Box Model &amp; Positioning</h4>
+                    <p class="profile-sub-desc">Concentric layer breakdown, border-box vs content-box, and static/relative/absolute/fixed/sticky modes.</p>
+                  </a>
+                  <a href="lectures/lecture8.html" class="profile-submission-card">
+                    <span class="profile-sub-tag">Module 08</span>
+                    <h4 class="profile-sub-title">CSS3, Flexbox &amp; CSS Grid</h4>
+                    <p class="profile-sub-desc">Modern 1D and 2D layout engines, responsive grid tracks, and layout alignment paradigms.</p>
+                  </a>
+                  <a href="lectures/grid-garden.html" class="profile-submission-card" style="border-color: var(--accent-emerald);">
+                    <span class="profile-sub-tag" style="background: #ecfdf5; color: #065f46;">Special Lab</span>
+                    <h4 class="profile-sub-title" style="color: var(--accent-emerald);">CSS Grid Garden (1–28)</h4>
+                    <p class="profile-sub-desc">Interactive explorer with verified solutions, CSS code panels, and full screenshot records for all 28 game levels.</p>
+                  </a>
+                  <a href="lectures/lab4-forms-tables.html" class="profile-submission-card" style="border-color: var(--primary-500);">
+                    <span class="profile-sub-tag">Lab 04</span>
+                    <h4 class="profile-sub-title" style="color: var(--primary-600);">HTML Forms &amp; Table Layouts</h4>
+                    <p class="profile-sub-desc">Comprehensive lab report with clean table structures, form playgrounds, and technical viva Q&amp;A solutions.</p>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tab 4: Institutional & Affiliation -->
+              <div class="profile-tab-pane" id="tab-institutional" role="tabpanel" aria-labelledby="tabBtnInstitutional">
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                  <div style="background: var(--bg-surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
+                    <h4 style="margin: 0 0 0.5rem; color: var(--text-main); font-size: 1.1rem;">🏛️ Institutional Affiliation</h4>
+                    <p style="margin: 0 0 1rem; color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">
+                      <strong>COMSATS University Islamabad, Vehari Campus</strong><br>
+                      Department of Computer Science • Faculty of Information Sciences &amp; Technology<br>
+                      Mailsi Road, Off Multan Road, Vehari, Punjab, Pakistan
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                      <span class="topic-tag">Course: CSC336 Web Technologies</span>
+                      <span class="topic-tag">Session: Fall 2026</span>
+                      <span class="topic-tag">Student ID: FA23-BSE-012</span>
+                    </div>
+                  </div>
+
+                  <div style="background: var(--bg-surface-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
+                    <h4 style="margin: 0 0 0.5rem; color: var(--text-main); font-size: 1.1rem;">📜 Candidate Academic Declaration</h4>
+                    <p style="margin: 0; color: var(--text-secondary); line-height: 1.7; font-size: 0.92rem; font-style: italic;">
+                      "I, <strong>Muhammad Afaq</strong> (Registration Number: <strong>FA23-BSE-012</strong>), student of BS Software Engineering at COMSATS University Islamabad, Vehari Campus, hereby declare that this web portal and all coursework solutions presented herein represent my authentic academic work developed for the CSC336 Web Technologies course."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. ABOUT SECTION
          ======================================================================= -->
     <section class="section section-bg-muted" id="about">
       <div class="container">
@@ -673,6 +996,120 @@
       </div>
     </div>
   </footer>
+
+  <!-- =========================================================================
+       STUDENT PROFILE INTERACTIVE MODAL DIALOG
+       ========================================================================= -->
+  <div class="profile-modal-overlay" id="profileModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalStudentName">
+    <div class="profile-modal">
+      <!-- Modal Header -->
+      <div class="profile-modal-header">
+        <div class="profile-modal-header-left">
+          <img src="assets/images/afaq-profile.jpg?v=3" alt="Muhammad Afaq" class="profile-modal-avatar" loading="eager" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/afaqsadiq0/web-Technology-Assignment-1/main/assets/images/afaq-profile.jpg';">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <h3 id="modalStudentName" style="margin: 0; font-size: 1.25rem; font-weight: 800; color: var(--text-main);">Muhammad Afaq</h3>
+              <span class="profile-verified-chip">✓ Verified Student</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">Reg: FA23-BSE-012 • BS Software Engineering</span>
+          </div>
+        </div>
+        <button class="profile-modal-close-btn" id="closeProfileModalBtn" aria-label="Close Student Profile Modal" title="Close Modal">&times;</button>
+      </div>
+
+      <!-- Modal Body (All Student Data in Full View) -->
+      <div class="profile-modal-body">
+        <!-- Quick Copy Bar -->
+        <div style="background: var(--bg-surface-elevated); padding: 1rem 1.25rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.04em;">Official University Registration</div>
+            <div style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-mono); color: var(--primary-600);">FA23-BSE-012</div>
+          </div>
+          <button class="copy-reg-btn" id="modalCopyRegBtn" title="Copy Registration ID">
+            <span>📋 Copy Reg ID</span>
+          </button>
+        </div>
+
+        <!-- Complete Data Table -->
+        <table class="profile-data-table" aria-label="Student Complete Dossier">
+          <tbody>
+            <tr>
+              <th>Student Full Name</th>
+              <td>Muhammad Afaq</td>
+            </tr>
+            <tr>
+              <th>Registration ID</th>
+              <td><strong style="color: var(--primary-600); font-family: var(--font-mono);">FA23-BSE-012</strong></td>
+            </tr>
+            <tr>
+              <th>Degree &amp; Program</th>
+              <td>Bachelor of Science in Software Engineering (BS-SE)</td>
+            </tr>
+            <tr>
+              <th>Academic Session</th>
+              <td>2023 – 2027 (Undergraduate)</td>
+            </tr>
+            <tr>
+              <th>Current Semester</th>
+              <td>Fall 2026 Semester (Semester 4)</td>
+            </tr>
+            <tr>
+              <th>Academic Department</th>
+              <td>Department of Computer Science</td>
+            </tr>
+            <tr>
+              <th>University &amp; Campus</th>
+              <td>COMSATS University Islamabad, Vehari Campus</td>
+            </tr>
+            <tr>
+              <th>Course Code &amp; Title</th>
+              <td>CSC336 — Web Technologies (3 Credit Hours)</td>
+            </tr>
+            <tr>
+              <th>Assignment Project</th>
+              <td>Comprehensive Academic Course Portal &amp; Lab Solutions</td>
+            </tr>
+            <tr>
+              <th>Technical Competencies</th>
+              <td>HTML5 Semantics, CSS3 (Grid &amp; Flexbox), Vanilla JavaScript, Git &amp; GitHub, Vercel Hosting</td>
+            </tr>
+            <tr>
+              <th>Curriculum Modules</th>
+              <td>8 Lecture Modules + CSS Grid Garden (1–28) + Lab 04 Forms &amp; Tables</td>
+            </tr>
+            <tr>
+              <th>GitHub Repository</th>
+              <td><a href="https://github.com/afaqsadiq0/web-Technology-Assignment-1" target="_blank" rel="noopener noreferrer" style="color: var(--primary-600); text-decoration: underline;">afaqsadiq0/web-Technology-Assignment-1 ↗</a></td>
+            </tr>
+            <tr>
+              <th>Production Deployment</th>
+              <td><a href="https://web-technologies-csc336.vercel.app" target="_blank" rel="noopener noreferrer" style="color: var(--primary-600); text-decoration: underline;">web-technologies-csc336.vercel.app ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="profile-modal-footer">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          🏛️ COMSATS University Islamabad, Vehari Campus
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn-profile-ghost" id="printProfileBtn" title="Print or save this profile">
+            <span>🖨️ Print Profile</span>
+          </button>
+          <button class="btn-profile-primary" id="modalDismissBtn" style="padding: 0.65rem 1.25rem;">
+            <span>Close</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Feedback Element -->
+  <div class="profile-toast" id="profileToast" role="status" aria-live="polite">
+    <span id="profileToastText">✓ Copied FA23-BSE-012 to clipboard!</span>
+  </div>
 
   <!-- Master JavaScript File -->
   <script src="js/script.js"></script>

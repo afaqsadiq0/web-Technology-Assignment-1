@@ -483,6 +483,139 @@ document.addEventListener('DOMContentLoaded', () => {
       runNextStep();
     });
   }
+
+  // -------------------------------------------------------------------------
+  // 11. Student Profile Interactive Modal & Dossier System
+  // -------------------------------------------------------------------------
+  const profileModal = document.getElementById('profileModal');
+  const closeProfileModalBtn = document.getElementById('closeProfileModalBtn');
+  const modalDismissBtn = document.getElementById('modalDismissBtn');
+  const profileToast = document.getElementById('profileToast');
+  const profileToastText = document.getElementById('profileToastText');
+  let toastTimeout = null;
+
+  function showProfileToast(message) {
+    if (!profileToast) return;
+    if (profileToastText) profileToastText.textContent = message;
+    profileToast.classList.add('show');
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      profileToast.classList.remove('show');
+    }, 2500);
+  }
+
+  function openProfileModal() {
+    if (!profileModal) return;
+    profileModal.classList.add('is-active');
+    profileModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProfileModal() {
+    if (!profileModal) return;
+    profileModal.classList.remove('is-active');
+    profileModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Trigger buttons that open the modal
+  const openModalTriggers = [
+    document.getElementById('navProfileBadge'),
+    document.getElementById('heroProfileCard'),
+    document.getElementById('openProfileModalBtn')
+  ];
+
+  openModalTriggers.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openProfileModal();
+      });
+      // Allow Enter/Space key to trigger if focused
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openProfileModal();
+        }
+      });
+    }
+  });
+
+  // Close buttons
+  if (closeProfileModalBtn) closeProfileModalBtn.addEventListener('click', closeProfileModal);
+  if (modalDismissBtn) modalDismissBtn.addEventListener('click', closeProfileModal);
+
+  // Close on backdrop click
+  if (profileModal) {
+    profileModal.addEventListener('click', (e) => {
+      if (e.target === profileModal) {
+        closeProfileModal();
+      }
+    });
+  }
+
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && profileModal && profileModal.classList.contains('is-active')) {
+      closeProfileModal();
+    }
+  });
+
+  // Copy Registration Number Handlers
+  const regCopyButtons = [
+    document.getElementById('copyRegBtn'),
+    document.getElementById('modalCopyRegBtn')
+  ];
+
+  regCopyButtons.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const regNo = 'FA23-BSE-012';
+        navigator.clipboard.writeText(regNo).then(() => {
+          showProfileToast(`✓ Copied ${regNo} to clipboard!`);
+        }).catch(() => {
+          showProfileToast(`Registration: ${regNo}`);
+        });
+      });
+    }
+  });
+
+  // Interactive Profile Tabs Switcher
+  const profileTabButtons = document.querySelectorAll('.profile-tab-btn');
+  const profileTabPanes = document.querySelectorAll('.profile-tab-pane');
+
+  profileTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTabId = btn.getAttribute('data-tab');
+      if (!targetTabId) return;
+
+      // Update button active state
+      profileTabButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Update pane active state
+      profileTabPanes.forEach(pane => {
+        pane.classList.remove('active');
+      });
+      const targetPane = document.getElementById(targetTabId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
+  // Print Profile Button Handler
+  const printProfileBtn = document.getElementById('printProfileBtn');
+  if (printProfileBtn) {
+    printProfileBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
 });
 
 // Global smart back navigation function for lecture pages
