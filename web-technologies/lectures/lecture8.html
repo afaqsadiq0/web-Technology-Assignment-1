@@ -117,7 +117,8 @@
         <!-- Fast Jump CTA to Practice Questions Lab -->
         <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a href="#practice-questions" class="hero-btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.4rem; font-size: 0.88rem; text-decoration: none;">
-            <span>🎯 Jump to Practice Questions Lab (Q1–Q15 with Live Code &amp; Output SS) &darr;</span>
+            <span>🧭 Jump to Flexbox (Q1–Q10) &darr;</span></a>
+          <a href="#grid-questions-start" class="hero-btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.4rem; font-size: 0.88rem; text-decoration: none; background: #10b981; border-color: #10b981;"><span>⚡ Jump Directly to CSS Grid Questions (Q11–Q15) &darr;</span>
           </a>
         </div>
       </section>
@@ -433,18 +434,24 @@
               <span class="practice-stat-num">15</span>
               <span>Total Questions Solved</span>
             </div>
-            <div class="practice-stat-badge">
-              <span class="practice-stat-num">10</span>
-              <span>Flexbox Mastery (Q01–Q10)</span>
+            <div class="practice-stat-badge" style="border-left: 3px solid #2563eb;">
+              <span class="practice-stat-num" style="background: #2563eb;">10</span>
+              <span>Flexbox (Q01–Q10)</span>
             </div>
-            <div class="practice-stat-badge">
-              <span class="practice-stat-num">04</span>
-              <span>CSS Grid Architecture (Q11–Q14)</span>
+            <div class="practice-stat-badge" style="border-left: 3px solid #10b981;">
+              <span class="practice-stat-num" style="background: #10b981;">05</span>
+              <span>CSS Grid &amp; Hybrid (Q11–Q15)</span>
             </div>
-            <div class="practice-stat-badge">
-              <span class="practice-stat-num">01</span>
-              <span>Flexbox vs. Grid Synthesis (Q15)</span>
-            </div>
+          </div>
+
+          <!-- Direct Part Jump Buttons -->
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="#pq1" class="hero-btn-primary" style="padding: 0.55rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+              <span>🧭 Flexbox Questions (Q01–Q10)</span>
+            </a>
+            <a href="#grid-questions-start" class="hero-btn-primary" style="background: #10b981; border-color: #10b981; padding: 0.55rem 1.2rem; font-size: 0.85rem; text-decoration: none;">
+              <span>⚡ Jump Directly to CSS Grid Questions (Q11–Q15) &darr;</span>
+            </a>
           </div>
         </div>
 
@@ -470,25 +477,35 @@
         <!-- Fast Jump Pills Bar -->
         <div class="practice-pills-bar">
           <div class="practice-pills-label">
-            <span>⚡ Jump to Specific Question (Click to Scroll):</span>
-            <span style="font-weight: 500; text-transform: none; color: var(--text-muted); font-size: 0.75rem;">15 Tasks &bull; Click to Inspect</span>
+            <span>⚡ Quick Jump Pills Bar:</span>
+            <span style="font-weight: 500; text-transform: none; color: var(--text-muted); font-size: 0.75rem;">Click any question pill to scroll instantly</span>
           </div>
-          <div class="practice-pills-row">
-            <a href="#pq1" class="practice-pill-link" title="Q1: Flex Container Navbar">Q01</a>
-            <a href="#pq2" class="practice-pill-link" title="Q2: Flex Items Cards">Q02</a>
-            <a href="#pq3" class="practice-pill-link" title="Q3: Main vs Cross Axis">Q03</a>
-            <a href="#pq4" class="practice-pill-link" title="Q4: Flex Direction Dashboard">Q04</a>
-            <a href="#pq5" class="practice-pill-link" title="Q5: Justify Content">Q05</a>
-            <a href="#pq6" class="practice-pill-link" title="Q6: Align Items Unequal Heights">Q06</a>
-            <a href="#pq7" class="practice-pill-link" title="Q7: Flex Wrap Gallery">Q07</a>
-            <a href="#pq8" class="practice-pill-link" title="Q8: Flex Grow Math">Q08</a>
-            <a href="#pq9" class="practice-pill-link" title="Q9: Flex Shrink Deficit Math">Q09</a>
-            <a href="#pq10" class="practice-pill-link" title="Q10: Flex Basis Initial Sizing">Q10</a>
-            <a href="#pq11" class="practice-pill-link" title="Q11: Grid Template Areas">Q11</a>
-            <a href="#pq12" class="practice-pill-link" title="Q12: Grid Rows & Columns">Q12</a>
-            <a href="#pq13" class="practice-pill-link" title="Q13: Fractional Units fr Math">Q13</a>
-            <a href="#pq14" class="practice-pill-link" title="Q14: Grid Line Placement Spanning">Q14</a>
-            <a href="#pq15" class="practice-pill-link" title="Q15: Flexbox vs Grid Justification">Q15</a>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span style="font-size: 0.78rem; font-weight: 700; color: #2563eb; min-width: 130px;">🧭 Flexbox (Q1–Q10):</span>
+              <div class="practice-pills-row" style="flex: 1;">
+                <a href="#pq1" class="practice-pill-link" title="Q1: Flex Container Navbar">Q01</a>
+                <a href="#pq2" class="practice-pill-link" title="Q2: Flex Items Cards">Q02</a>
+                <a href="#pq3" class="practice-pill-link" title="Q3: Main vs Cross Axis">Q03</a>
+                <a href="#pq4" class="practice-pill-link" title="Q4: Flex Direction Dashboard">Q04</a>
+                <a href="#pq5" class="practice-pill-link" title="Q5: Justify Content">Q05</a>
+                <a href="#pq6" class="practice-pill-link" title="Q6: Align Items Unequal Heights">Q06</a>
+                <a href="#pq7" class="practice-pill-link" title="Q7: Flex Wrap Gallery">Q07</a>
+                <a href="#pq8" class="practice-pill-link" title="Q8: Flex Grow Math">Q08</a>
+                <a href="#pq9" class="practice-pill-link" title="Q9: Flex Shrink Deficit Math">Q09</a>
+                <a href="#pq10" class="practice-pill-link" title="Q10: Flex Basis Initial Sizing">Q10</a>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding-top: 0.45rem; border-top: 1px dashed var(--border-light);">
+              <span style="font-size: 0.78rem; font-weight: 700; color: #059669; min-width: 130px;">⚡ CSS Grid (Q11–Q15):</span>
+              <div class="practice-pills-row" style="flex: 1;">
+                <a href="#pq11" class="practice-pill-link" title="Q11: Grid Template Areas" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.35); font-weight: 800;">Q11</a>
+                <a href="#pq12" class="practice-pill-link" title="Q12: Grid Rows & Columns" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.35); font-weight: 800;">Q12</a>
+                <a href="#pq13" class="practice-pill-link" title="Q13: Fractional Units fr Math" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.35); font-weight: 800;">Q13</a>
+                <a href="#pq14" class="practice-pill-link" title="Q14: Grid Line Placement Spanning" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.35); font-weight: 800;">Q14</a>
+                <a href="#pq15" class="practice-pill-link" title="Q15: Flexbox vs Grid Justification" style="background: rgba(16, 185, 129, 0.15); color: #059669; border-color: rgba(16, 185, 129, 0.35); font-weight: 800;">Q15</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1250,7 +1267,7 @@
         <!-- ===================================================================
              QUESTION 08: FLEX GROW (1 : 2 : 1 SPACE MATH)
              =================================================================== -->
-        <article class="practice-card" id="pq8" data-category="math">
+        <article class="practice-card" id="pq8" data-category="flexbox math">
           <header class="practice-card-header">
             <div class="practice-header-left">
               <span class="practice-qnum-badge">Q08</span>
@@ -1279,20 +1296,20 @@
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">3</span>
-              <div><strong>Sum of Grow Factors:</strong> $sum 	ext{Grow} = 1 + 2 + 1 = mathbf{4	ext{ parts (shares)}}$.</div>
+              <div><strong>Sum of Grow Factors:</strong> Total Grow Sum: <code>1 + 2 + 1 = 4 parts (shares)</code></div>
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">4</span>
-              <div><strong>Value of 1 Share:</strong> $	ext{Value per share} = rac{300	ext{px}}{4} = mathbf{75	ext{px}}$.</div>
+              <div><strong>Value of 1 Share:</strong> <code>300px &divide; 4 = 75px per share</code></div>
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">5</span>
               <div>
                 <strong>Final Allocated Widths:</strong><br>
-                &bull; <strong>Item 1 (grow: 1):</strong> $100	ext{px} + (1 	imes 75	ext{px}) = mathbf{175	ext{px}}$<br>
-                &bull; <strong>Item 2 (grow: 2):</strong> $100	ext{px} + (2 	imes 75	ext{px}) = mathbf{250	ext{px}}$ (Receives double the expansion!)<br>
-                &bull; <strong>Item 3 (grow: 1):</strong> $100	ext{px} + (1 	imes 75	ext{px}) = mathbf{175	ext{px}}$<br>
-                &bull; <strong>Verification:</strong> $175	ext{px} + 250	ext{px} + 175	ext{px} = mathbf{600	ext{px}}$ (100% of container is precisely consumed).
+                &bull; <strong>Item 1 (grow: 1):</strong> <code>100px + (1 &times; 75px) = 175px</code><br>
+                &bull; <strong>Item 2 (grow: 2):</strong> <code>100px + (2 &times; 75px) = 250px</code> (Receives double expansion!)<br>
+                &bull; <strong>Item 3 (grow: 1):</strong> <code>100px + (1 &times; 75px) = 175px</code><br>
+                &bull; <strong>Verification:</strong> <code>175px + 250px + 175px = 600px &check;</code> (100% space utilized)
               </div>
             </div>
           </div>
@@ -1360,7 +1377,7 @@
         <!-- ===================================================================
              QUESTION 09: FLEX SHRINK (NEGATIVE SPACE DEFICIT MATH)
              =================================================================== -->
-        <article class="practice-card" id="pq9" data-category="math">
+        <article class="practice-card" id="pq9" data-category="flexbox math">
           <header class="practice-card-header">
             <div class="practice-header-left">
               <span class="practice-qnum-badge">Q09</span>
@@ -1401,10 +1418,10 @@
               <span class="practice-step-num">5</span>
               <div>
                 <strong>Final Dimensions After Shrinking:</strong><br>
-                &bull; <strong>Item 1:</strong> Shrinks by $300	ext{px} 	imes rac{300}{900} = mathbf{100	ext{px}} implies 	ext{Final} = 300	ext{px} - 100	ext{px} = mathbf{200	ext{px}}$<br>
-                &bull; <strong>Item 2:</strong> Shrinks by $300	ext{px} 	imes rac{600}{900} = mathbf{200	ext{px}} implies 	ext{Final} = 300	ext{px} - 200	ext{px} = mathbf{100	ext{px}}$<br>
-                &bull; <strong>Item 3:</strong> Shrinks by $0	ext{px} implies 	ext{Final} = mathbf{300	ext{px}}$ (Completely protected by shrink: 0)<br>
-                &bull; <strong>Verification:</strong> $200	ext{px} + 100	ext{px} + 300	ext{px} = mathbf{600	ext{px}}$ (Fits perfectly without overflow!).
+                &bull; <strong>Item 1 (shrink: 1):</strong> Shrinks by <code>300px &times; (300 &divide; 900) = 100px</code> &rarr; <strong>Final: 300px - 100px = 200px</strong><br>
+                &bull; <strong>Item 2 (shrink: 2):</strong> Shrinks by <code>300px &times; (600 &divide; 900) = 200px</code> &rarr; <strong>Final: 300px - 200px = 100px</strong><br>
+                &bull; <strong>Item 3 (shrink: 0):</strong> Immune to shrinking &rarr; <strong>Final: 300px</strong><br>
+                &bull; <strong>Verification:</strong> <code>200px + 100px + 300px = 600px &check;</code> (Fits container perfectly without overflow)
               </div>
             </div>
           </div>
@@ -1473,7 +1490,7 @@
         <!-- ===================================================================
              QUESTION 10: FLEX BASIS (INITIAL SIZES: 150px, 250px, 350px)
              =================================================================== -->
-        <article class="practice-card" id="pq10" data-category="math">
+        <article class="practice-card" id="pq10" data-category="flexbox math">
           <header class="practice-card-header">
             <div class="practice-header-left">
               <span class="practice-qnum-badge">Q10</span>
@@ -1571,6 +1588,25 @@
             </div>
           </div>
         </article>
+
+        <!-- ===================================================================
+             PART II: CSS GRID PRACTICE QUESTIONS (Q11 TO Q15)
+             =================================================================== -->
+        <div class="grid-section-divider-banner" id="grid-questions-start">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2rem; background: rgba(16, 185, 129, 0.2); width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">⚡</div>
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 700; color: #059669; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem;">Part II &bull; 2-Dimensional Layout Engineering</div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin: 0 0 0.25rem 0;">CSS Grid Practice Questions (Q11 to Q15)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                Two-dimensional track matrix engineering, template areas, fractional unit calculations (fr), line placement spanning, and Flexbox vs Grid comparison.
+              </p>
+            </div>
+          </div>
+          <div style="background: #10b981; color: white; padding: 0.5rem 1.15rem; border-radius: 9999px; font-weight: 800; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); white-space: nowrap;">
+            Questions 11 – 15
+          </div>
+        </div>
 
         <!-- ===================================================================
              QUESTION 11: GRID CONTAINER (GRID TEMPLATE AREAS)
@@ -1793,7 +1829,7 @@
         <!-- ===================================================================
              QUESTION 13: FRACTIONAL UNITS (1fr VS 3fr IN 800px)
              =================================================================== -->
-        <article class="practice-card" id="pq13" data-category="math">
+        <article class="practice-card" id="pq13" data-category="grid math">
           <header class="practice-card-header">
             <div class="practice-header-left">
               <span class="practice-qnum-badge">Q13</span>
@@ -1818,25 +1854,25 @@
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">2</span>
-              <div><strong>Sum of Fractional Units:</strong> $	ext{Total Fractions} = 1	ext{fr} + 3	ext{fr} = mathbf{4	ext{fr}}$.</div>
+              <div><strong>Sum of Fractional Units:</strong> <code>Total Fractions = 1fr + 3fr = 4fr</code></div>
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">3</span>
               <div><strong>Compute the Pixel Value of 1fr:</strong>
-                <br>$$	ext{Value of } 1	ext{fr} = rac{	ext{Available Width}}{	ext{Total Fractions}} = rac{800	ext{px}}{4} = mathbf{200	ext{px}}$$
+                <br><code>Value of 1fr = 800px &divide; 4 = 200px</code>
               </div>
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">4</span>
               <div><strong>Calculate Individual Column Widths:</strong>
-                <br>&bull; <strong>Sidebar Column ($1	ext{fr}$):</strong> $1 	imes 200	ext{px} = mathbf{200	ext{px}}$ (which represents $rac{1}{4} = 25%$ of total grid width)
-                <br>&bull; <strong>Main Content Column ($3	ext{fr}$):</strong> $3 	imes 200	ext{px} = mathbf{600	ext{px}}$ (which represents $rac{3}{4} = 75%$ of total grid width)
+                <br>&bull; <strong>Sidebar Column (1fr):</strong> <code>1 &times; 200px = 200px</code> (25% of available width)
+                <br>&bull; <strong>Main Content Column (3fr):</strong> <code>3 &times; 200px = 600px</code> (75% of available width &bull; 3&times; wider than sidebar!)
               </div>
             </div>
             <div class="practice-math-step">
               <span class="practice-step-num">5</span>
               <div><strong>Mathematical Verification:</strong>
-                <br>$$	ext{Sidebar Width} + 	ext{Main Width} = 200	ext{px} + 600	ext{px} = mathbf{800	ext{px}} quad checkmark$$
+                <br><code>Sidebar (200px) + Main Content (600px) = 800px &check; (100% Fit)</code></div>
               </div>
             </div>
           </div>
@@ -2009,7 +2045,7 @@
         <!-- ===================================================================
              QUESTION 15: FLEXBOX VS GRID (HYBRID ARCHITECTURAL SYNTHESIS)
              =================================================================== -->
-        <article class="practice-card" id="pq15" data-category="hybrid">
+        <article class="practice-card" id="pq15" data-category="grid hybrid flexbox">
           <header class="practice-card-header">
             <div class="practice-header-left">
               <span class="practice-qnum-badge">Q15</span>

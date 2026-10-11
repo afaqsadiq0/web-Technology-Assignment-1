@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   const filterButtons = document.querySelectorAll('.practice-filter-btn');
   const practiceCards = document.querySelectorAll('.practice-card');
+  const gridSectionDivider = document.getElementById('grid-questions-start');
 
   if (filterButtons.length > 0 && practiceCards.length > 0) {
     filterButtons.forEach(btn => {
@@ -22,15 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
         filterButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Filter cards visibility
+        // Filter cards visibility (supports multiple space-separated categories)
         practiceCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          if (targetCategory === 'all' || cardCategory === targetCategory) {
+          const cardCategories = (card.getAttribute('data-category') || '').split(' ');
+          if (targetCategory === 'all' || cardCategories.includes(targetCategory)) {
             card.style.display = 'block';
           } else {
             card.style.display = 'none';
           }
         });
+
+        // Toggle Grid section divider visibility
+        if (gridSectionDivider) {
+          if (targetCategory === 'flexbox') {
+            gridSectionDivider.style.display = 'none';
+          } else {
+            gridSectionDivider.style.display = 'flex';
+          }
+        }
+
+        // Auto-scroll to relevant section if Grid is selected
+        if (targetCategory === 'grid' && gridSectionDivider) {
+          gridSectionDivider.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (targetCategory === 'flexbox') {
+          const firstFlexCard = document.getElementById('pq1');
+          if (firstFlexCard) firstFlexCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
   }
