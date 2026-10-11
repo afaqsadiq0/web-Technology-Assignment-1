@@ -108,7 +108,18 @@
             <span class="objective-icon">✓</span>
             <span>Compare when to utilize Flexbox versus CSS Grid in real production.</span>
           </li>
+          <li class="objective-item">
+            <span class="objective-icon">✓</span>
+            <span>Solve all 15 academic practice problems (Flexbox, Grid &amp; Hybrid architectures).</span>
+          </li>
         </ul>
+
+        <!-- Fast Jump CTA to Practice Questions Lab -->
+        <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#practice-questions" class="hero-btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.4rem; font-size: 0.88rem; text-decoration: none;">
+            <span>🎯 Jump to Practice Questions Lab (Q1–Q15 with Live Code &amp; Output SS) &darr;</span>
+          </a>
+        </div>
       </section>
     </div>
   </header>
@@ -399,7 +410,1758 @@
         </div>
       </section>
 
+      
       <!-- =======================================================================
+           6. COMPREHENSIVE PRACTICE QUESTIONS LAB (Q1 TO Q15)
+           ======================================================================= -->
+      <section class="practice-lab-section" id="practice-questions" aria-labelledby="practiceLabHeading">
+        <!-- Section Hero Banner -->
+        <div class="practice-lab-hero">
+          <div class="practice-eyebrow">
+            <span>🎯</span>
+            <span>Laboratory &amp; Viva Assessment</span>
+          </div>
+          <h2 class="practice-hero-title" id="practiceLabHeading">
+            Comprehensive Flexbox &amp; CSS Grid Practice Questions (Q1 to Q15)
+          </h2>
+          <p class="practice-hero-desc">
+            Complete academic and practical solutions for all 15 curriculum practice problems. Covering 1-dimensional Flexbox flow, dynamic axis inversion, precision sizing mathematics (grow, shrink, basis formulas), 2-dimensional CSS Grid track architectures, fractional unit computations, grid line spanning, and hybrid production system comparisons. Each problem features verified HTML5/CSS3 source code, detailed theoretical rationale, step-by-step calculations, and live interactive rendered output screens.
+          </p>
+
+          <div class="practice-stats-grid">
+            <div class="practice-stat-badge">
+              <span class="practice-stat-num">15</span>
+              <span>Total Questions Solved</span>
+            </div>
+            <div class="practice-stat-badge">
+              <span class="practice-stat-num">10</span>
+              <span>Flexbox Mastery (Q01–Q10)</span>
+            </div>
+            <div class="practice-stat-badge">
+              <span class="practice-stat-num">04</span>
+              <span>CSS Grid Architecture (Q11–Q14)</span>
+            </div>
+            <div class="practice-stat-badge">
+              <span class="practice-stat-num">01</span>
+              <span>Flexbox vs. Grid Synthesis (Q15)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="practice-filter-nav" aria-label="Filter Questions by Topic">
+          <button type="button" class="practice-filter-btn active" data-filter="all">
+            <span>📋</span> All 15 Questions
+          </button>
+          <button type="button" class="practice-filter-btn" data-filter="flexbox">
+            <span>🧭</span> Flexbox Basics (Q1–Q7)
+          </button>
+          <button type="button" class="practice-filter-btn" data-filter="math">
+            <span>📐</span> Flex Sizing &amp; Math (Q8–Q10)
+          </button>
+          <button type="button" class="practice-filter-btn" data-filter="grid">
+            <span>⚡</span> CSS Grid Systems (Q11–Q14)
+          </button>
+          <button type="button" class="practice-filter-btn" data-filter="hybrid">
+            <span>⚖️</span> Flexbox vs Grid (Q15)
+          </button>
+        </div>
+
+        <!-- Fast Jump Pills Bar -->
+        <div class="practice-pills-bar">
+          <div class="practice-pills-label">
+            <span>⚡ Jump to Specific Question (Click to Scroll):</span>
+            <span style="font-weight: 500; text-transform: none; color: var(--text-muted); font-size: 0.75rem;">15 Tasks &bull; Click to Inspect</span>
+          </div>
+          <div class="practice-pills-row">
+            <a href="#pq1" class="practice-pill-link" title="Q1: Flex Container Navbar">Q01</a>
+            <a href="#pq2" class="practice-pill-link" title="Q2: Flex Items Cards">Q02</a>
+            <a href="#pq3" class="practice-pill-link" title="Q3: Main vs Cross Axis">Q03</a>
+            <a href="#pq4" class="practice-pill-link" title="Q4: Flex Direction Dashboard">Q04</a>
+            <a href="#pq5" class="practice-pill-link" title="Q5: Justify Content">Q05</a>
+            <a href="#pq6" class="practice-pill-link" title="Q6: Align Items Unequal Heights">Q06</a>
+            <a href="#pq7" class="practice-pill-link" title="Q7: Flex Wrap Gallery">Q07</a>
+            <a href="#pq8" class="practice-pill-link" title="Q8: Flex Grow Math">Q08</a>
+            <a href="#pq9" class="practice-pill-link" title="Q9: Flex Shrink Deficit Math">Q09</a>
+            <a href="#pq10" class="practice-pill-link" title="Q10: Flex Basis Initial Sizing">Q10</a>
+            <a href="#pq11" class="practice-pill-link" title="Q11: Grid Template Areas">Q11</a>
+            <a href="#pq12" class="practice-pill-link" title="Q12: Grid Rows & Columns">Q12</a>
+            <a href="#pq13" class="practice-pill-link" title="Q13: Fractional Units fr Math">Q13</a>
+            <a href="#pq14" class="practice-pill-link" title="Q14: Grid Line Placement Spanning">Q14</a>
+            <a href="#pq15" class="practice-pill-link" title="Q15: Flexbox vs Grid Justification">Q15</a>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             QUESTION 01: FLEX CONTAINER (ONE-ROW NAVBAR)
+             =================================================================== -->
+        <article class="practice-card" id="pq1" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q01</span>
+              <h3 class="practice-card-title">Flex Container: 1-Row Responsive Navigation Bar</h3>
+            </div>
+            <span class="practice-cat-pill">Flexbox Container</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create a navigation bar containing a website logo, four navigation links, and a login button. Use Flexbox to arrange all items in one row.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Technical Rationale &amp; Flexbox Mechanics:</div>
+            <div class="practice-exp-content">
+              <p>
+                To establish a flexible formatting context, we declare <code>display: flex</code> on the navigation parent container. In Flexbox, the default flow orientation is <code>flex-direction: row</code>, placing all direct child elements along the horizontal <strong>Main Axis</strong> in a single unbroken row.
+              </p>
+              <ul>
+                <li><strong>Main Axis Distribution:</strong> <code>justify-content: space-between</code> distributes surplus space between the logo (at the start), navigation links (in the center), and the login button (at the far end).</li>
+                <li><strong>Cross Axis Alignment:</strong> <code>align-items: center</code> aligns elements along the perpendicular vertical cross axis, ensuring the logo, links, and button share an optical vertical midpoint without manual margins.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">HTML &amp; CSS Solution — Question 01</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-comment">&lt;!-- HTML Structure --&gt;</span>
+<span class="token-tag">&lt;header</span> <span class="token-attr">class=</span><span class="token-val">"demo-navbar-q1"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class=</span><span class="token-val">"demo-logo-q1"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;span</span> <span class="token-attr">class=</span><span class="token-val">"demo-logo-icon-q1"</span><span class="token-tag">&gt;</span>&lt;/&gt;<span class="token-tag">&lt;/span&gt;</span>
+    <span class="token-tag">&lt;span&gt;</span>DevTech UI<span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;ul</span> <span class="token-attr">class=</span><span class="token-val">"demo-links-q1"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;li&gt;&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"#"</span> <span class="token-attr">class=</span><span class="token-val">"demo-link-item-q1"</span><span class="token-tag">&gt;</span>Home<span class="token-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"#"</span> <span class="token-attr">class=</span><span class="token-val">"demo-link-item-q1"</span><span class="token-tag">&gt;</span>Courses<span class="token-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"#"</span> <span class="token-attr">class=</span><span class="token-val">"demo-link-item-q1"</span><span class="token-tag">&gt;</span>Tutorials<span class="token-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"#"</span> <span class="token-attr">class=</span><span class="token-val">"demo-link-item-q1"</span><span class="token-tag">&gt;</span>Docs<span class="token-tag">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="token-tag">&lt;/ul&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class=</span><span class="token-val">"demo-login-btn-q1"</span><span class="token-tag">&gt;</span>Sign In &amp;rarr;<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/header&gt;</span>
+
+<span class="token-comment">/* CSS Styling */</span>
+<span class="token-selector">.demo-navbar-q1</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-direction</span>: <span class="token-val">row</span>;             <span class="token-comment">/* Arranges all items in one horizontal row */</span>
+  <span class="token-property">justify-content</span>: <span class="token-val">space-between</span>;   <span class="token-comment">/* Pushes logo, nav links, and button apart */</span>
+  <span class="token-property">align-items</span>: <span class="token-val">center</span>;             <span class="token-comment">/* Vertical centering along cross axis */</span>
+  <span class="token-property">background</span>: <span class="token-val">#0f172a</span>;
+  <span class="token-property">padding</span>: <span class="token-val">0.9rem 1.4rem</span>;
+  <span class="token-property">border-radius</span>: <span class="token-val">10px</span>;
+}
+<span class="token-selector">.demo-links-q1</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;                    <span class="token-comment">/* Nested flex container for the links list */</span>
+  <span class="token-property">gap</span>: <span class="token-val">1.25rem</span>;
+  <span class="token-property">list-style</span>: <span class="token-val">none</span>;
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview & Screenshot View -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered Output &amp; Visual Demonstration (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live DOM Render</span>
+            </div>
+            <div class="practice-output-body">
+              <nav class="demo-navbar-q1" aria-label="Question 1 Navbar Demonstration">
+                <div class="demo-logo-q1">
+                  <span class="demo-logo-icon-q1">&lt;/&gt;</span>
+                  <span>DevTech UI</span>
+                </div>
+                <ul class="demo-links-q1">
+                  <li><a href="javascript:void(0)" class="demo-link-item-q1">Home</a></li>
+                  <li><a href="javascript:void(0)" class="demo-link-item-q1">Courses</a></li>
+                  <li><a href="javascript:void(0)" class="demo-link-item-q1">Tutorials</a></li>
+                  <li><a href="javascript:void(0)" class="demo-link-item-q1">Docs</a></li>
+                </ul>
+                <button type="button" class="demo-login-btn-q1">Sign In &rarr;</button>
+              </nav>
+            </div>
+            <div class="practice-output-footer">
+              <span>↔️</span>
+              <span><strong>Visual Proof:</strong> Logo, links, and login button sit in an unbroken horizontal line with equal spacing and perfect vertical centering.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 02: FLEX ITEMS (4 CARDS & IDENTIFICATION)
+             =================================================================== -->
+        <article class="practice-card" id="pq2" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q02</span>
+              <h3 class="practice-card-title">Flex Items: 4 Distinct Color Cards &amp; DOM Hierarchy</h3>
+            </div>
+            <span class="practice-cat-pill">Flex Items</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Write HTML and CSS to display four cards inside a Flexbox container. Apply a different background color to each card and explain which elements are the flex items.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Identification of Flex Items:</div>
+            <div class="practice-exp-content">
+              <p>
+                <strong>Which elements are the flex items?</strong> In CSS Flexbox, only the <strong>immediate, direct children</strong> of a container declaring <code>display: flex</code> are recognized as <strong>Flex Items</strong>.
+              </p>
+              <ul>
+                <li>The 4 direct child cards (<code>.demo-card-q2-blue</code>, <code>.demo-card-q2-green</code>, <code>.demo-card-q2-amber</code>, <code>.demo-card-q2-purple</code>) are the <strong>Flex Items</strong>.</li>
+                <li>Any internal elements nested <em>inside</em> those cards (such as headings, spans, paragraphs, or badges) are <strong>ordinary DOM descendants</strong>. They follow normal document flow unless their parent card itself is explicitly assigned <code>display: flex</code>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">HTML &amp; CSS Solution — Question 02</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-comment">&lt;!-- HTML Markup --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class=</span><span class="token-val">"demo-cards-q2"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class=</span><span class="token-val">"demo-card-q2 demo-card-q2-blue"</span><span class="token-tag">&gt;</span>Card 1 (Blue)<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class=</span><span class="token-val">"demo-card-q2 demo-card-q2-green"</span><span class="token-tag">&gt;</span>Card 2 (Green)<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class=</span><span class="token-val">"demo-card-q2 demo-card-q2-amber"</span><span class="token-tag">&gt;</span>Card 3 (Amber)<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class=</span><span class="token-val">"demo-card-q2 demo-card-q2-purple"</span><span class="token-tag">&gt;</span>Card 4 (Purple)<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-comment">/* CSS Rules */</span>
+<span class="token-selector">.demo-cards-q2</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">gap</span>: <span class="token-val">1rem</span>;
+  <span class="token-property">flex-wrap</span>: <span class="token-val">wrap</span>;
+}
+<span class="token-selector">.demo-card-q2</span> {
+  <span class="token-property">flex</span>: <span class="token-val">1 1 200px</span>;                  <span class="token-comment">/* Each card is a flex item */</span>
+  <span class="token-property">padding</span>: <span class="token-val">1.25rem</span>;
+  <span class="token-property">border-radius</span>: <span class="token-val">10px</span>;
+  <span class="token-property">color</span>: <span class="token-val">#ffffff</span>;
+}
+<span class="token-selector">.demo-card-q2-blue</span>   { <span class="token-property">background</span>: <span class="token-val">linear-gradient(135deg, #1e40af, #3b82f6)</span>; }
+<span class="token-selector">.demo-card-q2-green</span>  { <span class="token-property">background</span>: <span class="token-val">linear-gradient(135deg, #065f46, #10b981)</span>; }
+<span class="token-selector">.demo-card-q2-amber</span>  { <span class="token-property">background</span>: <span class="token-val">linear-gradient(135deg, #92400e, #f59e0b)</span>; }
+<span class="token-selector">.demo-card-q2-purple</span> { <span class="token-property">background</span>: <span class="token-val">linear-gradient(135deg, #5b21b6, #8b5cf6)</span>; }</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered Output &amp; Visual Demonstration (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live DOM Render</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-cards-q2">
+                <div class="demo-card-q2 demo-card-q2-blue">
+                  <div class="demo-card-q2-header">
+                    <span>Card A &bull; Sapphire</span>
+                    <span class="demo-card-q2-pill">Flex Item 1</span>
+                  </div>
+                  <p style="margin: 0.5rem 0 0; font-size: 0.82rem; opacity: 0.9;">Direct child of .demo-cards-q2</p>
+                </div>
+
+                <div class="demo-card-q2 demo-card-q2-green">
+                  <div class="demo-card-q2-header">
+                    <span>Card B &bull; Emerald</span>
+                    <span class="demo-card-q2-pill">Flex Item 2</span>
+                  </div>
+                  <p style="margin: 0.5rem 0 0; font-size: 0.82rem; opacity: 0.9;">Direct child of .demo-cards-q2</p>
+                </div>
+
+                <div class="demo-card-q2 demo-card-q2-amber">
+                  <div class="demo-card-q2-header">
+                    <span>Card C &bull; Amber</span>
+                    <span class="demo-card-q2-pill">Flex Item 3</span>
+                  </div>
+                  <p style="margin: 0.5rem 0 0; font-size: 0.82rem; opacity: 0.9;">Direct child of .demo-cards-q2</p>
+                </div>
+
+                <div class="demo-card-q2 demo-card-q2-purple">
+                  <div class="demo-card-q2-header">
+                    <span>Card D &bull; Amethyst</span>
+                    <span class="demo-card-q2-pill">Flex Item 4</span>
+                  </div>
+                  <p style="margin: 0.5rem 0 0; font-size: 0.82rem; opacity: 0.9;">Direct child of .demo-cards-q2</p>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>🎨</span>
+              <span><strong>Hierarchical Rule:</strong> Only the 4 colored cards are flex items. The text strings inside them are descendants.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 03: MAIN AXIS VS CROSS AXIS (DYNAMIC TOGGLE)
+             =================================================================== -->
+        <article class="practice-card" id="pq3" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q03</span>
+              <h3 class="practice-card-title">Main Axis vs. Cross Axis: Dynamic Orientation Switch</h3>
+            </div>
+            <span class="practice-cat-pill">Axes Alignment</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create a Flexbox container with three boxes. Change flex-direction from row to column and explain how the main axis and cross axis change.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Axis Transformation Explained:</div>
+            <div class="practice-exp-content">
+              <p>
+                Flexbox layout alignment is completely relative to two perpendicular axes that dynamically shift depending on the <code>flex-direction</code> value:
+              </p>
+              <ul>
+                <li><strong>When <code>flex-direction: row</code> (Default):</strong>
+                  <ul>
+                    <li><strong>Main Axis:</strong> Runs <strong>Horizontally</strong> (left-to-right in LTR). <code>justify-content</code> controls horizontal item spacing.</li>
+                    <li><strong>Cross Axis:</strong> Runs <strong>Vertically</strong> (top-to-bottom). <code>align-items</code> controls vertical item centering and stretching.</li>
+                  </ul>
+                </li>
+                <li><strong>When <code>flex-direction: column</code>:</strong>
+                  <ul>
+                    <li><strong>Main Axis:</strong> Rotates 90 degrees to run <strong>Vertically</strong> (top-to-bottom). <code>justify-content</code> now governs vertical height distribution!</li>
+                    <li><strong>Cross Axis:</strong> Rotates to run <strong>Horizontally</strong> (left-to-right). <code>align-items</code> now governs horizontal centering or stretching!</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS Comparison — Row vs. Column Axis Shift</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-comment">/* 1. Horizontal Mode */</span>
+<span class="token-selector">.container-row</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-direction</span>: <span class="token-val">row</span>;     <span class="token-comment">/* Main Axis = Horizontal ↔ | Cross Axis = Vertical ↕ */</span>
+  <span class="token-property">justify-content</span>: <span class="token-val">center</span>; <span class="token-comment">/* Centers horizontally */</span>
+  <span class="token-property">align-items</span>: <span class="token-val">center</span>;     <span class="token-comment">/* Centers vertically */</span>
+}
+
+<span class="token-comment">/* 2. Vertical Mode */</span>
+<span class="token-selector">.container-column</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-direction</span>: <span class="token-val">column</span>;  <span class="token-comment">/* Main Axis = Vertical ↕ | Cross Axis = Horizontal ↔ */</span>
+  <span class="token-property">justify-content</span>: <span class="token-val">center</span>; <span class="token-comment">/* Centers vertically! */</span>
+  <span class="token-property">align-items</span>: <span class="token-val">center</span>;     <span class="token-comment">/* Centers horizontally! */</span>
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview with Interactive Controls -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Interactive Live Axis Simulator (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live Interactive DOM</span>
+            </div>
+
+            <!-- Interactive Controller Bar -->
+            <div class="practice-ctrl-bar">
+              <span class="practice-ctrl-label">Switch Direction:</span>
+              <button type="button" class="practice-ctrl-btn active" id="q3BtnRow">
+                <span>↔️ Row Mode (flex-direction: row)</span>
+              </button>
+              <button type="button" class="practice-ctrl-btn" id="q3BtnCol">
+                <span>↕️ Column Mode (flex-direction: column)</span>
+              </button>
+            </div>
+
+            <div class="practice-output-body">
+              <!-- Live HUD -->
+              <div class="demo-axis-hud">
+                <div class="demo-axis-tag demo-axis-tag-main">
+                  <span>Main Axis:</span>
+                  <strong id="q3MainLabel">↔️ Horizontal (Left &rarr; Right)</strong>
+                </div>
+                <div class="demo-axis-tag demo-axis-tag-cross">
+                  <span>Cross Axis:</span>
+                  <strong id="q3CrossLabel">↕️ Vertical (Top &rarr; Bottom)</strong>
+                </div>
+              </div>
+
+              <!-- Live Container -->
+              <div class="demo-container-q3 is-row" id="demoContainerQ3">
+                <div class="demo-box-q3">Box A &bull; Alpha</div>
+                <div class="demo-box-q3">Box B &bull; Beta</div>
+                <div class="demo-box-q3">Box C &bull; Gamma</div>
+              </div>
+            </div>
+
+            <div class="practice-output-footer">
+              <span>🧭</span>
+              <span id="q3FooterNote"><strong>Row Mode:</strong> Main axis is horizontal (justify-content spaces left-to-right). Cross axis is vertical (align-items centers top-to-bottom).</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 04: FLEX DIRECTION (STUDENT DASHBOARD)
+             =================================================================== -->
+        <article class="practice-card" id="pq4" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q04</span>
+              <h3 class="practice-card-title">Flex Direction: Student Dashboard Responsive Navigation</h3>
+            </div>
+            <span class="practice-cat-pill">Flex Direction</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Design a student dashboard with three navigation items. Use flex-direction: column to display the items vertically, then modify it to display them horizontally.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Practical Architectural Context:</div>
+            <div class="practice-exp-content">
+              <p>
+                This pattern models standard <strong>Mobile-First Responsive Engineering</strong>:
+              </p>
+              <ul>
+                <li>On mobile smart screens (&lt; 768px), navigation items stack in a vertical column (<code>flex-direction: column</code>) to fit constrained narrow touch screens.</li>
+                <li>On tablet and desktop displays, a media query changes the container to <code>flex-direction: row</code>, placing the 3 dashboard modules side-by-side in a horizontal toolbar.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS Responsive Media Query — Question 04</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-comment">/* Mobile Default: Stacked Vertically */</span>
+<span class="token-selector">.student-dashboard-nav</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-direction</span>: <span class="token-val">column</span>;          <span class="token-comment">/* Vertical stack on smartphones */</span>
+  <span class="token-property">gap</span>: <span class="token-val">0.75rem</span>;
+}
+
+<span class="token-comment">/* Desktop Breakpoint: Arranged Horizontally */</span>
+<span class="token-selector">@media screen and (min-width: 768px)</span> {
+  <span class="token-selector">.student-dashboard-nav</span> {
+    <span class="token-property">flex-direction</span>: <span class="token-val">row</span>;             <span class="token-comment">/* Switches to horizontal bar */</span>
+  }
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered Dashboard Navigation (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live Interactive DOM</span>
+            </div>
+
+            <!-- Controller Bar -->
+            <div class="practice-ctrl-bar">
+              <span class="practice-ctrl-label">Dashboard Viewport:</span>
+              <button type="button" class="practice-ctrl-btn active" id="q4BtnCol">
+                <span>📱 Column View (Vertical Stack)</span>
+              </button>
+              <button type="button" class="practice-ctrl-btn" id="q4BtnRow">
+                <span>💻 Row View (Horizontal Bar)</span>
+              </button>
+            </div>
+
+            <div class="practice-output-body">
+              <div class="demo-dash-q4 is-column" id="demoDashQ4">
+                <div class="demo-dash-item-q4">
+                  <span style="font-size: 1.25rem;">📊</span>
+                  <div>
+                    <div style="font-weight: 700;">Grades &amp; CGPA Portal</div>
+                    <div style="font-size: 0.76rem; color: #94a3b8;">Cumulative GPA: 3.82 / 4.00</div>
+                  </div>
+                </div>
+
+                <div class="demo-dash-item-q4">
+                  <span style="font-size: 1.25rem;">📅</span>
+                  <div>
+                    <div style="font-weight: 700;">Lecture Timetable &amp; Attendance</div>
+                    <div style="font-size: 0.76rem; color: #94a3b8;">Attendance Record: 96.4% Verified</div>
+                  </div>
+                </div>
+
+                <div class="demo-dash-item-q4">
+                  <span style="font-size: 1.25rem;">📚</span>
+                  <div>
+                    <div style="font-weight: 700;">Course Materials &amp; Assignments</div>
+                    <div style="font-size: 0.76rem; color: #94a3b8;">8 / 8 Modules Fully Completed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="practice-output-footer">
+              <span>📱</span>
+              <span id="q4FooterNote"><strong>Vertical Stack:</strong> flex-direction: column arranges student menu cards top-to-bottom (ideal for mobile viewports).</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 05: JUSTIFY CONTENT (5 BUTTONS)
+             =================================================================== -->
+        <article class="practice-card" id="pq5" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q05</span>
+              <h3 class="practice-card-title">Justify Content: 5-Button Spacing Demonstration</h3>
+            </div>
+            <span class="practice-cat-pill">Main Axis Spacing</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create five buttons inside a Flexbox container. Use justify-content to demonstrate flex-start, center, space-between, and space-around.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Free Space Distribution Rules:</div>
+            <div class="practice-exp-content">
+              <ul>
+                <li><strong><code>flex-start</code>:</strong> Buttons pack flush to the start edge of the main axis (left in LTR). Excess free space collects at the end.</li>
+                <li><strong><code>center</code>:</strong> Buttons group tightly at the horizontal center with equal unused space flanking both outer ends.</li>
+                <li><strong><code>space-between</code>:</strong> The first button locks against the left boundary, the last button against the right boundary, and free space is partitioned equally between interior buttons.</li>
+                <li><strong><code>space-around</code>:</strong> Space is apportioned equally on both sides of every button. Consequently, inner gaps are twice as wide as outer edge gaps.</li>
+                <li><strong><code>space-evenly</code>:</strong> Every space between any two buttons and between the buttons and container edges is strictly identical.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS justify-content Declarations</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.button-container</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-comment">/* Choose one alignment rule below: */</span>
+  <span class="token-property">justify-content</span>: <span class="token-val">flex-start</span>;    <span class="token-comment">/* Left-aligned */</span>
+  <span class="token-comment">/* justify-content: center; */</span>          <span class="token-comment">/* Centered */</span>
+  <span class="token-comment">/* justify-content: space-between; */</span>   <span class="token-comment">/* Extreme boundaries */</span>
+  <span class="token-comment">/* justify-content: space-around; */</span>    <span class="token-comment">/* Equal surrounding padding */</span>
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Interactive justify-content Demonstrator (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live Interactive DOM</span>
+            </div>
+
+            <!-- Controller Buttons -->
+            <div class="practice-ctrl-bar">
+              <span class="practice-ctrl-label">Select Alignment:</span>
+              <button type="button" class="practice-ctrl-btn active" data-q5-justify="flex-start">flex-start</button>
+              <button type="button" class="practice-ctrl-btn" data-q5-justify="center">center</button>
+              <button type="button" class="practice-ctrl-btn" data-q5-justify="space-between">space-between</button>
+              <button type="button" class="practice-ctrl-btn" data-q5-justify="space-around">space-around</button>
+              <button type="button" class="practice-ctrl-btn" data-q5-justify="space-evenly">space-evenly</button>
+            </div>
+
+            <div class="practice-output-body">
+              <div class="demo-container-q5" id="demoContainerQ5" style="justify-content: flex-start;">
+                <button type="button" class="demo-btn-q5">Btn 1</button>
+                <button type="button" class="demo-btn-q5">Btn 2</button>
+                <button type="button" class="demo-btn-q5">Btn 3</button>
+                <button type="button" class="demo-btn-q5">Btn 4</button>
+                <button type="button" class="demo-btn-q5">Btn 5</button>
+              </div>
+            </div>
+
+            <div class="practice-output-footer">
+              <span>↔️</span>
+              <span id="q5FooterNote"><strong>flex-start:</strong> Items are packed tightly to the start of the Main Axis (left edge). Leftover free space is at the far right.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 06: ALIGN ITEMS (UNEQUAL HEIGHTS)
+             =================================================================== -->
+        <article class="practice-card" id="pq6" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q06</span>
+              <h3 class="practice-card-title">Align Items: Cross Axis Alignment with Unequal Heights</h3>
+            </div>
+            <span class="practice-cat-pill">Cross Axis Alignment</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create a container with three boxes of different heights. Use align-items to align them at the start, center, and end of the cross axis.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Cross Axis Geometric Mechanics:</div>
+            <div class="practice-exp-content">
+              <p>
+                When a container has a fixed height (e.g., 200px) and child elements have differing heights (60px, 140px, 95px), <code>align-items</code> governs vertical alignment along the <strong>Cross Axis</strong>:
+              </p>
+              <ul>
+                <li><strong><code>flex-start</code>:</strong> All boxes snap flush against the container's top boundary line. Bottoms hang unevenly.</li>
+                <li><strong><code>center</code>:</strong> Boxes align along their vertical midpoints, distributing top and bottom offsets equally.</li>
+                <li><strong><code>flex-end</code>:</strong> All boxes rest flush on the bottom boundary of the container.</li>
+                <li><strong><code>stretch</code>:</strong> Default behavior if no explicit heights are set; boxes expand to fill the full 200px container height.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS align-items Rules</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.cross-axis-container</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">height</span>: <span class="token-val">200px</span>;                   <span class="token-comment">/* Fixed cross-axis boundary */</span>
+  <span class="token-property">align-items</span>: <span class="token-val">flex-start</span>;        <span class="token-comment">/* Top edge alignment */</span>
+  <span class="token-comment">/* align-items: center; */</span>             <span class="token-comment">/* Vertical center alignment */</span>
+  <span class="token-comment">/* align-items: flex-end; */</span>           <span class="token-comment">/* Bottom edge alignment */</span>
+  <span class="token-comment">/* align-items: stretch; */</span>            <span class="token-comment">/* Expands to fill full container height */</span>
+}
+<span class="token-selector">.box-1</span> { <span class="token-property">height</span>: <span class="token-val">60px</span>; }
+<span class="token-selector">.box-2</span> { <span class="token-property">height</span>: <span class="token-val">140px</span>; }
+<span class="token-selector">.box-3</span> { <span class="token-property">height</span>: <span class="token-val">95px</span>; }</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Interactive Cross-Axis Alignment Demonstrator (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live Interactive DOM</span>
+            </div>
+
+            <!-- Controller Bar -->
+            <div class="practice-ctrl-bar">
+              <span class="practice-ctrl-label">align-items:</span>
+              <button type="button" class="practice-ctrl-btn active" data-q6-align="flex-start">flex-start</button>
+              <button type="button" class="practice-ctrl-btn" data-q6-align="center">center</button>
+              <button type="button" class="practice-ctrl-btn" data-q6-align="flex-end">flex-end</button>
+              <button type="button" class="practice-ctrl-btn" data-q6-align="stretch">stretch</button>
+            </div>
+
+            <div class="practice-output-body">
+              <div class="demo-container-q6" id="demoContainerQ6" style="align-items: flex-start;">
+                <div class="demo-box-q6" id="q6Box1" style="height: 60px;">Box 1 (60px)</div>
+                <div class="demo-box-q6" id="q6Box2" style="height: 140px;">Box 2 (140px)</div>
+                <div class="demo-box-q6" id="q6Box3" style="height: 95px;">Box 3 (95px)</div>
+              </div>
+            </div>
+
+            <div class="practice-output-footer">
+              <span>↕️</span>
+              <span id="q6FooterNote"><strong>align-items: flex-start:</strong> All boxes align flush against the top edge of the Cross Axis.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 07: FLEX WRAP (8-CARD PRODUCT GALLERY)
+             =================================================================== -->
+        <article class="practice-card" id="pq7" data-category="flexbox">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q07</span>
+              <h3 class="practice-card-title">Flex Wrap: 8-Card Responsive Product Gallery</h3>
+            </div>
+            <span class="practice-cat-pill">Multi-Line Flex Flow</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Design a product gallery containing eight cards. Use flex-wrap so the cards move onto additional rows when the screen becomes narrower.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Multi-Line Wrapping Mechanism:</div>
+            <div class="practice-exp-content">
+              <p>
+                By default, Flexbox operates in <strong>single-line mode</strong> (<code>flex-wrap: nowrap</code>). In this mode, items shrink until their minimum content width is reached, eventually spilling out horizontally and producing undesirable horizontal scrollbars.
+              </p>
+              <p>
+                Applying <strong><code>flex-wrap: wrap</code></strong> instructs the browser to evaluate the cumulative width of flex items along the main axis. The moment adding another card would overflow the container's width, the browser starts a new flex line beneath the preceding line, producing an automatic, fluid grid.
+              </p>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS flex-wrap Gallery Rule</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.product-gallery</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-wrap</span>: <span class="token-val">wrap</span>;                  <span class="token-comment">/* Breaks items into additional rows */</span>
+  <span class="token-property">gap</span>: <span class="token-val">1rem</span>;
+}
+<span class="token-selector">.product-card</span> {
+  <span class="token-property">flex</span>: <span class="token-val">1 1 200px</span>;                  <span class="token-comment">/* Base 200px width; grows to consume remaining line space */</span>
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered 8-Card Product Gallery (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Live Interactive DOM</span>
+            </div>
+
+            <!-- Controller Bar -->
+            <div class="practice-ctrl-bar">
+              <span class="practice-ctrl-label">Wrapping Behavior:</span>
+              <button type="button" class="practice-ctrl-btn active" id="q7BtnWrap">flex-wrap: wrap (Fluid Multi-Row)</button>
+              <button type="button" class="practice-ctrl-btn" id="q7BtnNoWrap">flex-wrap: nowrap (Forced Single Row)</button>
+            </div>
+
+            <div class="practice-output-body">
+              <div class="demo-gallery-q7 is-wrap" id="demoGalleryQ7">
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">🎧</div>
+                  <div class="demo-pcard-title">Wireless ANC Headphones</div>
+                  <div class="demo-pcard-price">$129.99</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">⌨️</div>
+                  <div class="demo-pcard-title">Mechanical Keyboard</div>
+                  <div class="demo-pcard-price">$89.50</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">📷</div>
+                  <div class="demo-pcard-title">Ultra HD 4K Webcam</div>
+                  <div class="demo-pcard-price">$65.00</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">🔌</div>
+                  <div class="demo-pcard-title">10-in-1 USB-C Hub Dock</div>
+                  <div class="demo-pcard-price">$45.00</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">⌚</div>
+                  <div class="demo-pcard-title">Smart Fitness Tracker</div>
+                  <div class="demo-pcard-price">$179.00</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">🖱️</div>
+                  <div class="demo-pcard-title">Precision Gaming Mouse</div>
+                  <div class="demo-pcard-price">$54.99</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">🎙️</div>
+                  <div class="demo-pcard-title">Studio Condenser Mic</div>
+                  <div class="demo-pcard-price">$110.00</div>
+                </div>
+                <div class="demo-pcard-q7">
+                  <div class="demo-pcard-icon">🖥️</div>
+                  <div class="demo-pcard-title">Extended Felt Desk Mat</div>
+                  <div class="demo-pcard-price">$28.00</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="practice-output-footer">
+              <span>🛒</span>
+              <span id="q7FooterNote"><strong>flex-wrap: wrap:</strong> As screen width shrinks, cards gracefully break onto additional rows without horizontal overflow!</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 08: FLEX GROW (1 : 2 : 1 SPACE MATH)
+             =================================================================== -->
+        <article class="practice-card" id="pq8" data-category="math">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q08</span>
+              <h3 class="practice-card-title">Flex Grow: Positive Free Space Distribution Math (1 : 2 : 1)</h3>
+            </div>
+            <span class="practice-cat-pill">Sizing Calculations</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create three flex items with flex-grow values of 1, 2, and 1. Explain how the available positive free space is distributed among them.
+            </p>
+          </div>
+
+          <!-- Mathematical Calculation Box -->
+          <div class="practice-math-box">
+            <div class="practice-math-title"><span>📐</span> Step-by-Step Mathematical Calculation &amp; Formula:</div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">1</span>
+              <div><strong>Define Given Parameters:</strong> Container Width = <strong>600px</strong>. Assume each item has an initial base width (<code>flex-basis</code>) of <strong>100px</strong>. Total base size = $100	ext{px} 	imes 3 = mathbf{300	ext{px}}$.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">2</span>
+              <div><strong>Compute Positive Free Space:</strong> $	ext{Available Space} = 600	ext{px} - 300	ext{px} = mathbf{300	ext{px}}$.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">3</span>
+              <div><strong>Sum of Grow Factors:</strong> $sum 	ext{Grow} = 1 + 2 + 1 = mathbf{4	ext{ parts (shares)}}$.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">4</span>
+              <div><strong>Value of 1 Share:</strong> $	ext{Value per share} = rac{300	ext{px}}{4} = mathbf{75	ext{px}}$.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">5</span>
+              <div>
+                <strong>Final Allocated Widths:</strong><br>
+                &bull; <strong>Item 1 (grow: 1):</strong> $100	ext{px} + (1 	imes 75	ext{px}) = mathbf{175	ext{px}}$<br>
+                &bull; <strong>Item 2 (grow: 2):</strong> $100	ext{px} + (2 	imes 75	ext{px}) = mathbf{250	ext{px}}$ (Receives double the expansion!)<br>
+                &bull; <strong>Item 3 (grow: 1):</strong> $100	ext{px} + (1 	imes 75	ext{px}) = mathbf{175	ext{px}}$<br>
+                &bull; <strong>Verification:</strong> $175	ext{px} + 250	ext{px} + 175	ext{px} = mathbf{600	ext{px}}$ (100% of container is precisely consumed).
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS flex-grow Implementation</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.grow-container</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">width</span>: <span class="token-val">600px</span>;
+}
+<span class="token-selector">.item-1</span> {
+  <span class="token-property">flex-basis</span>: <span class="token-val">100px</span>;
+  <span class="token-property">flex-grow</span>: <span class="token-val">1</span>;                     <span class="token-comment">/* Expands by 1 share (+75px) = 175px */</span>
+}
+<span class="token-selector">.item-2</span> {
+  <span class="token-property">flex-basis</span>: <span class="token-val">100px</span>;
+  <span class="token-property">flex-grow</span>: <span class="token-val">2</span>;                     <span class="token-comment">/* Expands by 2 shares (+150px) = 250px */</span>
+}
+<span class="token-selector">.item-3</span> {
+  <span class="token-property">flex-basis</span>: <span class="token-val">100px</span>;
+  <span class="token-property">flex-grow</span>: <span class="token-val">1</span>;                     <span class="token-comment">/* Expands by 1 share (+75px) = 175px */</span>
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered flex-grow Output (600px Container)</span>
+              </div>
+              <span class="practice-ss-badge">Mathematically Verified</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-container-q8">
+                <div class="demo-item-q8 demo-item-q8-1">
+                  <div>Item 1 (grow: 1)</div>
+                  <span style="font-size: 0.75rem; background: rgba(0,0,0,0.25); padding: 0.15rem 0.5rem; border-radius: 4px;">175px (+75px)</span>
+                </div>
+                <div class="demo-item-q8 demo-item-q8-2">
+                  <div>Item 2 (grow: 2)</div>
+                  <span style="font-size: 0.75rem; background: rgba(0,0,0,0.25); padding: 0.15rem 0.5rem; border-radius: 4px;">250px (+150px)</span>
+                </div>
+                <div class="demo-item-q8 demo-item-q8-3">
+                  <div>Item 3 (grow: 1)</div>
+                  <span style="font-size: 0.75rem; background: rgba(0,0,0,0.25); padding: 0.15rem 0.5rem; border-radius: 4px;">175px (+75px)</span>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>📊</span>
+              <span><strong>Calculated Result:</strong> Item 2 consumes 2 parts of leftover space, growing to 250px, while Items 1 &amp; 3 grow to 175px each.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 09: FLEX SHRINK (NEGATIVE SPACE DEFICIT MATH)
+             =================================================================== -->
+        <article class="practice-card" id="pq9" data-category="math">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q09</span>
+              <h3 class="practice-card-title">Flex Shrink: Negative Space Deficit Handling &amp; Reduction Math</h3>
+            </div>
+            <span class="practice-cat-pill">Sizing Calculations</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create three flex items with widths of 300px each inside a 600px-wide container. Apply different flex-shrink values and explain how the browser handles insufficient space.
+            </p>
+          </div>
+
+          <!-- Mathematical Calculation Box -->
+          <div class="practice-math-box">
+            <div class="practice-math-title"><span>📐</span> Negative Space Deficit Formula &amp; Reduction Math:</div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">1</span>
+              <div><strong>Determine Requested Width:</strong> 3 items $	imes$ 300px = <strong>900px</strong> requested width.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">2</span>
+              <div><strong>Compute Negative Free Space (Deficit):</strong> Container is 600px wide. $	ext{Deficit} = 900	ext{px} - 600	ext{px} = mathbf{300	ext{px shortage}}$ that must be removed.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">3</span>
+              <div><strong>Assigned Shrink Factors:</strong> Item 1 (<code>shrink: 1</code>), Item 2 (<code>shrink: 2</code>), Item 3 (<code>shrink: 0</code>).</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">4</span>
+              <div><strong>Weighted Shrink Product Calculation:</strong> Item 3 has <code>shrink: 0</code>, so it refuses to shrink and absorbs <strong>0px</strong>. The remaining 300px deficit is shared by Items 1 and 2:
+                <br>$	ext{Weighted Sum} = (1 	imes 300) + (2 	imes 300) = 300 + 600 = mathbf{900}$.
+              </div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">5</span>
+              <div>
+                <strong>Final Dimensions After Shrinking:</strong><br>
+                &bull; <strong>Item 1:</strong> Shrinks by $300	ext{px} 	imes rac{300}{900} = mathbf{100	ext{px}} implies 	ext{Final} = 300	ext{px} - 100	ext{px} = mathbf{200	ext{px}}$<br>
+                &bull; <strong>Item 2:</strong> Shrinks by $300	ext{px} 	imes rac{600}{900} = mathbf{200	ext{px}} implies 	ext{Final} = 300	ext{px} - 200	ext{px} = mathbf{100	ext{px}}$<br>
+                &bull; <strong>Item 3:</strong> Shrinks by $0	ext{px} implies 	ext{Final} = mathbf{300	ext{px}}$ (Completely protected by shrink: 0)<br>
+                &bull; <strong>Verification:</strong> $200	ext{px} + 100	ext{px} + 300	ext{px} = mathbf{600	ext{px}}$ (Fits perfectly without overflow!).
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS flex-shrink Implementation</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.shrink-container</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">width</span>: <span class="token-val">600px</span>;                    <span class="token-comment">/* Total available width */</span>
+  <span class="token-property">overflow</span>: <span class="token-val">hidden</span>;
+}
+<span class="token-selector">.shrink-item-1</span> {
+  <span class="token-property">width</span>: <span class="token-val">300px</span>;
+  <span class="token-property">flex-shrink</span>: <span class="token-val">1</span>;                  <span class="token-comment">/* Absorbs 100px deficit -> Final: 200px */</span>
+}
+<span class="token-selector">.shrink-item-2</span> {
+  <span class="token-property">width</span>: <span class="token-val">300px</span>;
+  <span class="token-property">flex-shrink</span>: <span class="token-val">2</span>;                  <span class="token-comment">/* Absorbs 200px deficit -> Final: 100px */</span>
+}
+<span class="token-selector">.shrink-item-3</span> {
+  <span class="token-property">width</span>: <span class="token-val">300px</span>;
+  <span class="token-property">flex-shrink</span>: <span class="token-val">0</span>;                  <span class="token-comment">/* Immune to shrinking -> Final: 300px */</span>
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered flex-shrink Output (600px Container)</span>
+              </div>
+              <span class="practice-ss-badge">Deficit Math Verified</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-container-q9">
+                <div class="demo-item-q9 demo-item-q9-1" style="width: 200px;">
+                  <div>Item 1 (shrink: 1)</div>
+                  <span style="font-size: 0.75rem; background: rgba(0,0,0,0.3); padding: 0.15rem 0.4rem; border-radius: 4px; margin-top: 0.25rem;">200px (-100px)</span>
+                </div>
+                <div class="demo-item-q9 demo-item-q9-2" style="width: 100px;">
+                  <div>Item 2 (shrink: 2)</div>
+                  <span style="font-size: 0.75rem; background: rgba(0,0,0,0.3); padding: 0.15rem 0.4rem; border-radius: 4px; margin-top: 0.25rem;">100px (-200px)</span>
+                </div>
+                <div class="demo-item-q9 demo-item-q9-3" style="width: 300px;">
+                  <div>Item 3 (shrink: 0)</div>
+                  <span style="font-size: 0.75rem; background: rgba(0,0,0,0.3); padding: 0.15rem 0.4rem; border-radius: 4px; margin-top: 0.25rem;">300px (No Shrink)</span>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>📉</span>
+              <span><strong>Handling Insufficient Space:</strong> Items shrink according to their weighted shrink ratios, while items with shrink: 0 never compress.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 10: FLEX BASIS (INITIAL SIZES: 150px, 250px, 350px)
+             =================================================================== -->
+        <article class="practice-card" id="pq10" data-category="math">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q10</span>
+              <h3 class="practice-card-title">Flex Basis: Initial Main Track Sizing (150px, 250px, 350px)</h3>
+            </div>
+            <span class="practice-cat-pill">Sizing Foundations</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create three flex items using flex-basis: 150px, 250px, and 350px. Explain how these initial main sizes affect the layout before growing or shrinking.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> The Role of flex-basis in Layout Calculation:</div>
+            <div class="practice-exp-content">
+              <p>
+                <strong><code>flex-basis</code></strong> defines the <em>hypothetical starting size</em> of a flex item along the main axis before any flex factor (<code>flex-grow</code> or <code>flex-shrink</code>) is calculated:
+              </p>
+              <ul>
+                <li><strong>Baseline Consumption:</strong> The items consume an initial cumulative width of $150	ext{px} + 250	ext{px} + 350	ext{px} = mathbf{750	ext{px}}$.</li>
+                <li><strong>Precedence over width:</strong> When both <code>flex-basis</code> and <code>width</code> are declared, <code>flex-basis</code> takes precedence along the main axis.</li>
+                <li><strong>Determining Space Allocation:</strong>
+                  <ul>
+                    <li>If container width &gt; 750px: The remaining positive free space is distributed ONLY if <code>flex-grow &gt; 0</code>.</li>
+                    <li>If container width &lt; 750px: The negative space deficit forces items to shrink according to <code>flex-shrink</code>.</li>
+                    <li>If container width = 750px: Each item renders precisely at its declared basis without any distortion.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS flex-basis Declarations</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.basis-container</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">gap</span>: <span class="token-val">0.75rem</span>;
+}
+<span class="token-selector">.basis-item-1</span> {
+  <span class="token-property">flex-basis</span>: <span class="token-val">150px</span>;                <span class="token-comment">/* Initial starting width: 150px */</span>
+  <span class="token-property">flex-grow</span>: <span class="token-val">0</span>;
+  <span class="token-property">flex-shrink</span>: <span class="token-val">0</span>;
+}
+<span class="token-selector">.basis-item-2</span> {
+  <span class="token-property">flex-basis</span>: <span class="token-val">250px</span>;                <span class="token-comment">/* Initial starting width: 250px */</span>
+  <span class="token-property">flex-grow</span>: <span class="token-val">0</span>;
+  <span class="token-property">flex-shrink</span>: <span class="token-val">0</span>;
+}
+<span class="token-selector">.basis-item-3</span> {
+  <span class="token-property">flex-basis</span>: <span class="token-val">350px</span>;                <span class="token-comment">/* Initial starting width: 350px */</span>
+  <span class="token-property">flex-grow</span>: <span class="token-val">0</span>;
+  <span class="token-property">flex-shrink</span>: <span class="token-val">0</span>;
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered flex-basis Baseline Output</span>
+              </div>
+              <span class="practice-ss-badge">Baseline Dimensions</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-container-q10">
+                <div class="demo-item-q10 demo-item-q10-1">
+                  <div>Basis: 150px</div>
+                  <span style="font-size: 0.72rem; opacity: 0.85; margin-top: 0.2rem;">Initial Width</span>
+                </div>
+                <div class="demo-item-q10 demo-item-q10-2">
+                  <div>Basis: 250px</div>
+                  <span style="font-size: 0.72rem; opacity: 0.85; margin-top: 0.2rem;">Initial Width</span>
+                </div>
+                <div class="demo-item-q10 demo-item-q10-3">
+                  <div>Basis: 350px</div>
+                  <span style="font-size: 0.72rem; opacity: 0.85; margin-top: 0.2rem;">Initial Width</span>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>📏</span>
+              <span><strong>Pre-Flex State:</strong> flex-basis dictates the raw starting boundaries before positive free space (grow) or negative deficit (shrink) is factored.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 11: GRID CONTAINER (GRID TEMPLATE AREAS)
+             =================================================================== -->
+        <article class="practice-card" id="pq11" data-category="grid">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q11</span>
+              <h3 class="practice-card-title">Grid Container: Semantic Webpage Layout via grid-template-areas</h3>
+            </div>
+            <span class="practice-cat-pill">CSS Grid Architecture</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create a webpage with a header, sidebar, main content area, and footer using CSS Grid. Use grid-template-areas to define the layout.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Named Grid Areas Architecture:</div>
+            <div class="practice-exp-content">
+              <p>
+                <strong><code>grid-template-areas</code></strong> allows developers to declare a visual, ASCII-art-like map of named rectangular layout slots:
+              </p>
+              <ul>
+                <li>The desktop layout maps to a 2-column by 3-row grid:
+                  <br><code>"header header"</code> (Header spans both columns across row 1)
+                  <br><code>"sidebar main"</code> (Sidebar takes col 1, Main content takes col 2 in row 2)
+                  <br><code>"footer footer"</code> (Footer spans both columns across row 3)
+                </li>
+                <li>Child elements simply bind to their respective zone using <code>grid-area: header;</code>, <code>grid-area: sidebar;</code>, <code>grid-area: main;</code>, and <code>grid-area: footer;</code>.</li>
+                <li>On mobile viewports, responsive media queries redefine the map into a single vertical column: <code>"header" "main" "sidebar" "footer"</code> without altering a single line of HTML!</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS grid-template-areas Implementation</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.page-layout</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">220px 1fr</span>;
+  <span class="token-property">grid-template-rows</span>: <span class="token-val">60px 1fr 50px</span>;
+  <span class="token-property">grid-template-areas</span>:
+    <span class="token-val">"header  header"</span>
+    <span class="token-val">"sidebar main"</span>
+    <span class="token-val">"footer  footer"</span>;
+  <span class="token-property">gap</span>: <span class="token-val">0.75rem</span>;
+}
+<span class="token-selector">.header-area</span>  { <span class="token-property">grid-area</span>: <span class="token-val">header</span>; }
+<span class="token-selector">.sidebar-area</span> { <span class="token-property">grid-area</span>: <span class="token-val">sidebar</span>; }
+<span class="token-selector">.main-area</span>    { <span class="token-property">grid-area</span>: <span class="token-val">main</span>; }
+<span class="token-selector">.footer-area</span>  { <span class="token-property">grid-area</span>: <span class="token-val">footer</span>; }</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered Grid Areas Layout (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">2D Grid Layout</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-grid-q11">
+                <header class="demo-grid-q11-header">
+                  <span>🚀 Header Region &bull; [grid-area: header] (Spans 2 Columns)</span>
+                </header>
+                <aside class="demo-grid-q11-sidebar">
+                  <div style="font-weight: 700; margin-bottom: 0.5rem; color: #ffffff;">Sidebar Navigation</div>
+                  <div style="font-size: 0.78rem; opacity: 0.8;">[grid-area: sidebar]</div>
+                  <div style="font-size: 0.78rem; opacity: 0.8; margin-top: 0.5rem;">Fixed Track: 220px</div>
+                </aside>
+                <main class="demo-grid-q11-main">
+                  <div style="font-weight: 800; font-size: 1rem; margin-bottom: 0.35rem; color: var(--primary-600);">Main Content Area [grid-area: main]</div>
+                  <p style="margin: 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-secondary);">
+                    CSS Grid assigns this central workspace dynamically into the remaining fractional track (1fr) between the sidebar and container bounds.
+                  </p>
+                </main>
+                <footer class="demo-grid-q11-footer">
+                  <span>Footer Region &bull; [grid-area: footer] (Spans 2 Columns)</span>
+                </footer>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>📐</span>
+              <span><strong>Grid Areas Verified:</strong> Header and footer span both tracks, while sidebar and main share the middle row track.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 12: GRID ROWS & COLUMNS (3x2 DASHBOARD)
+             =================================================================== -->
+        <article class="practice-card" id="pq12" data-category="grid">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q12</span>
+              <h3 class="practice-card-title">Grid Rows and Columns: 3-Column &times; 2-Row Analytical Dashboard</h3>
+            </div>
+            <span class="practice-cat-pill">Grid Tracks</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Design a dashboard with three columns and two rows. Use grid-template-columns and grid-template-rows to define their sizes.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Two-Dimensional Track Sizing:</div>
+            <div class="practice-exp-content">
+              <p>
+                CSS Grid allows explicit coordinate matrix generation via track templates:
+              </p>
+              <ul>
+                <li><strong><code>grid-template-columns: repeat(3, 1fr)</code>:</strong> Creates 3 equally proportioned column tracks, each consuming exactly one-third ($rac{1}{3}$) of available container width.</li>
+                <li><strong><code>grid-template-rows: 110px 150px</code>:</strong> Explicitly sizes row track 1 to a height of 110px (ideal for KPI metric summary cards) and row track 2 to 150px (for analytical charts and action panels).</li>
+                <li><strong><code>gap: 1rem</code>:</strong> Standardizes internal gutter separation between all 6 coordinate cells simultaneously.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS Grid Tracks Implementation</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.dashboard-grid</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">repeat(3, 1fr)</span>;     <span class="token-comment">/* 3 Equal Columns */</span>
+  <span class="token-property">grid-template-rows</span>: <span class="token-val">110px 150px</span>;           <span class="token-comment">/* 2 Defined Rows (Row 1: 110px, Row 2: 150px) */</span>
+  <span class="token-property">gap</span>: <span class="token-val">1rem</span>;
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered 3&times;2 Grid Dashboard (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">3 Cols &times; 2 Rows</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-grid-q12">
+                <!-- Row 1: KPI Widgets (110px height) -->
+                <div class="demo-widget-q12">
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Total Revenue (R1, C1)</span>
+                  <div class="demo-widget-num-q12">$48,250</div>
+                  <span style="font-size: 0.75rem; color: #10b981; font-weight: 600;">&uarr; +14.2% this term</span>
+                </div>
+
+                <div class="demo-widget-q12">
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Active Students (R1, C2)</span>
+                  <div class="demo-widget-num-q12">1,420</div>
+                  <span style="font-size: 0.75rem; color: #3b82f6; font-weight: 600;">Enrolled BS &amp; MS</span>
+                </div>
+
+                <div class="demo-widget-q12">
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Server Uptime (R1, C3)</span>
+                  <div class="demo-widget-num-q12">99.98%</div>
+                  <span style="font-size: 0.75rem; color: #10b981; font-weight: 600;">COMSATS Cloud Host</span>
+                </div>
+
+                <!-- Row 2: Deep Detail Widgets (150px height) -->
+                <div class="demo-widget-q12">
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Enrollment Trend (R2, C1)</span>
+                  <div style="height: 60px; display: flex; align-items: flex-end; gap: 0.35rem; padding-top: 0.5rem;">
+                    <div style="flex: 1; height: 40%; background: #93c5fd; border-radius: 3px;"></div>
+                    <div style="flex: 1; height: 65%; background: #60a5fa; border-radius: 3px;"></div>
+                    <div style="flex: 1; height: 85%; background: #3b82f6; border-radius: 3px;"></div>
+                    <div style="flex: 1; height: 100%; background: #1d4ed8; border-radius: 3px;"></div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">Spring 2026 Cohort</span>
+                </div>
+
+                <div class="demo-widget-q12">
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Recent Submissions (R2, C2)</span>
+                  <div style="font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); margin-top: 0.35rem;">
+                    &bull; Lab 04 Table Forms (Graded)<br>
+                    &bull; CSS Grid Garden (100% Solved)<br>
+                    &bull; Flexbox Assignment 1 (Submitted)
+                  </div>
+                </div>
+
+                <div class="demo-widget-q12">
+                  <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Quick Operations (R2, C3)</span>
+                  <div style="display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.35rem;">
+                    <button style="padding: 0.35rem; background: var(--bg-muted); border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.76rem; font-weight: 600; cursor: pointer;">Export Attendance PDF</button>
+                    <button style="padding: 0.35rem; background: var(--bg-muted); border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.76rem; font-weight: 600; cursor: pointer;">Sync Portal Database</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>📊</span>
+              <span><strong>Track Consistency:</strong> All 6 widgets rigidly respect the 3-column &times; 2-row geometric matrix.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 13: FRACTIONAL UNITS (1fr VS 3fr IN 800px)
+             =================================================================== -->
+        <article class="practice-card" id="pq13" data-category="math">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q13</span>
+              <h3 class="practice-card-title">Fractional Units (fr): 1fr vs. 3fr Mathematical Calculation</h3>
+            </div>
+            <span class="practice-cat-pill">Grid Math</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create a two-column layout where the sidebar occupies 1fr and the main content occupies 3fr. If the available grid width is 800px after accounting for gaps, calculate the width of each column.
+            </p>
+          </div>
+
+          <!-- Mathematical Calculation Box -->
+          <div class="practice-math-box">
+            <div class="practice-math-title"><span>📐</span> Step-by-Step Fractional Unit Mathematical Calculation:</div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">1</span>
+              <div><strong>Given Scenario Parameters:</strong> Total available container width after gap subtraction = <strong>800px</strong>. Grid declaration = <code>grid-template-columns: 1fr 3fr;</code>.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">2</span>
+              <div><strong>Sum of Fractional Units:</strong> $	ext{Total Fractions} = 1	ext{fr} + 3	ext{fr} = mathbf{4	ext{fr}}$.</div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">3</span>
+              <div><strong>Compute the Pixel Value of 1fr:</strong>
+                <br>$$	ext{Value of } 1	ext{fr} = rac{	ext{Available Width}}{	ext{Total Fractions}} = rac{800	ext{px}}{4} = mathbf{200	ext{px}}$$
+              </div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">4</span>
+              <div><strong>Calculate Individual Column Widths:</strong>
+                <br>&bull; <strong>Sidebar Column ($1	ext{fr}$):</strong> $1 	imes 200	ext{px} = mathbf{200	ext{px}}$ (which represents $rac{1}{4} = 25%$ of total grid width)
+                <br>&bull; <strong>Main Content Column ($3	ext{fr}$):</strong> $3 	imes 200	ext{px} = mathbf{600	ext{px}}$ (which represents $rac{3}{4} = 75%$ of total grid width)
+              </div>
+            </div>
+            <div class="practice-math-step">
+              <span class="practice-step-num">5</span>
+              <div><strong>Mathematical Verification:</strong>
+                <br>$$	ext{Sidebar Width} + 	ext{Main Width} = 200	ext{px} + 600	ext{px} = mathbf{800	ext{px}} quad checkmark$$
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS Fractional Units Implementation</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.two-column-layout</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-property">max-width</span>: <span class="token-val">800px</span>;                 <span class="token-comment">/* Total available width */</span>
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">1fr 3fr</span>;   <span class="token-comment">/* 1fr = 200px (25%), 3fr = 600px (75%) */</span>
+  <span class="token-property">gap</span>: <span class="token-val">1rem</span>;
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered 800px Fractional Grid Output</span>
+              </div>
+              <span class="practice-ss-badge">1fr (200px) : 3fr (600px)</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-grid-q13">
+                <div class="demo-col-q13-sidebar">
+                  <div style="font-weight: 800; font-size: 1.1rem;">Sidebar (1fr)</div>
+                  <div style="font-size: 0.85rem; background: rgba(0,0,0,0.25); padding: 0.2rem 0.65rem; border-radius: 4px;">Exact Width: 200px</div>
+                  <div style="font-size: 0.75rem; opacity: 0.85;">25% of Grid Space</div>
+                </div>
+
+                <div class="demo-col-q13-main">
+                  <div style="font-weight: 800; font-size: 1.1rem;">Main Content Area (3fr)</div>
+                  <div style="font-size: 0.85rem; background: rgba(0,0,0,0.25); padding: 0.2rem 0.65rem; border-radius: 4px;">Exact Width: 600px</div>
+                  <div style="font-size: 0.75rem; opacity: 0.85;">75% of Grid Space (Triple the sidebar size!)</div>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>📏</span>
+              <span><strong>Calculated Dimension Proof:</strong> 1fr translates directly to 200px and 3fr translates to 600px, fulfilling the 800px constraint.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 14: GRID LINE PLACEMENT & SPANNING
+             =================================================================== -->
+        <article class="practice-card" id="pq14" data-category="grid">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q14</span>
+              <h3 class="practice-card-title">Grid Line Placement: 4-Column Track &amp; Multi-Row Spanning</h3>
+            </div>
+            <span class="practice-cat-pill">Grid Lines &amp; Spans</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              Create a grid with four columns. Place a heading across the first three columns and make a feature card span two rows using grid line placement.
+            </p>
+          </div>
+
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>💡</span> Grid Line Indexing Architecture:</div>
+            <div class="practice-exp-content">
+              <p>
+                In CSS Grid, items snap to <strong>numbered boundary lines</strong> rather than columns themselves. A 4-column grid has <strong>5 vertical lines</strong> (1 to 5), and a 2-row grid has <strong>3 horizontal lines</strong> (1 to 3):
+              </p>
+              <ul>
+                <li><strong>Heading spanning first three columns:</strong> <code>grid-column: 1 / 4;</code> (Starts at grid line 1, stretches across columns 1, 2, and 3, and terminates at line 4). Alternatively written as <code>grid-column: 1 / span 3;</code>.</li>
+                <li><strong>Feature card spanning two rows:</strong> Located in column 4, spanning rows 1 and 2: <code>grid-column: 4; grid-row: 1 / 3;</code> (Starts at row line 1, spans downward through rows 1 and 2, terminating at line 3). Alternatively written as <code>grid-row: 1 / span 2;</code>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS Grid Line Placement Rules</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-selector">.spanning-grid</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">repeat(4, 1fr)</span>;  <span class="token-comment">/* Lines: 1 | 2 | 3 | 4 | 5 */</span>
+  <span class="token-property">grid-template-rows</span>: <span class="token-val">90px 90px</span>;          <span class="token-comment">/* Rows: 1 | 2 | 3 */</span>
+  <span class="token-property">gap</span>: <span class="token-val">0.85rem</span>;
+}
+
+<span class="token-comment">/* Heading spans across columns 1, 2, and 3 */</span>
+<span class="token-selector">.grid-heading</span> {
+  <span class="token-property">grid-column</span>: <span class="token-val">1 / 4</span>;                      <span class="token-comment">/* Starts at Line 1, ends at Line 4 */</span>
+}
+
+<span class="token-comment">/* Feature card occupies column 4 and spans rows 1 and 2 */</span>
+<span class="token-selector">.feature-card</span> {
+  <span class="token-property">grid-column</span>: <span class="token-val">4</span>;
+  <span class="token-property">grid-row</span>: <span class="token-val">1 / 3</span>;                         <span class="token-comment">/* Starts at Row Line 1, ends at Line 3 */</span>
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Live Rendered Grid Line Spanning Output (Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Line Indices Verified</span>
+            </div>
+
+            <!-- Controller Bar -->
+            <div class="practice-ctrl-bar">
+              <span class="practice-ctrl-label">Visual Line Helper:</span>
+              <button type="button" class="practice-ctrl-btn" id="q14ToggleLinesBtn">
+                <span>📐 Show Grid Line Indices (1 to 5)</span>
+              </button>
+            </div>
+
+            <div class="practice-output-body">
+              <div class="demo-grid-q14">
+                <!-- Heading (Span 3 Cols) -->
+                <div class="demo-item-q14-heading">
+                  <div>
+                    <span>📌 Primary Heading Banner</span>
+                    <span style="display: block; font-size: 0.75rem; font-weight: 500; opacity: 0.85; margin-top: 0.2rem;">
+                      [grid-column: 1 / 4] &bull; Spanning Columns 1, 2, and 3
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Feature Card (Span 2 Rows) -->
+                <div class="demo-item-q14-feature">
+                  <div style="font-size: 1.1rem; font-weight: 800;">⭐ Feature Card</div>
+                  <div style="font-size: 0.8rem; line-height: 1.4;">
+                    [grid-column: 4]<br>
+                    [grid-row: 1 / 3]<br>
+                    Spanning 2 vertical rows!
+                  </div>
+                  <div style="font-size: 0.72rem; background: rgba(0,0,0,0.25); padding: 0.2rem 0.5rem; border-radius: 4px; text-align: center;">Col 4 Full Height</div>
+                </div>
+
+                <!-- Row 2 standard cells filling columns 1, 2, 3 -->
+                <div class="demo-item-q14-cell">Cell (R2, Col 1)</div>
+                <div class="demo-item-q14-cell">Cell (R2, Col 2)</div>
+                <div class="demo-item-q14-cell">Cell (R2, Col 3)</div>
+              </div>
+            </div>
+
+            <div class="practice-output-footer">
+              <span>📐</span>
+              <span><strong>Grid Lines Proof:</strong> Heading starts at line 1 and terminates before line 4, while feature card spans seamlessly across row line 1 to row line 3.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             QUESTION 15: FLEXBOX VS GRID (HYBRID ARCHITECTURAL SYNTHESIS)
+             =================================================================== -->
+        <article class="practice-card" id="pq15" data-category="hybrid">
+          <header class="practice-card-header">
+            <div class="practice-header-left">
+              <span class="practice-qnum-badge">Q15</span>
+              <h3 class="practice-card-title">Flexbox vs. Grid: Architectural Synthesis &amp; Integrated Prototype</h3>
+            </div>
+            <span class="practice-cat-pill">Architectural Synthesis</span>
+          </header>
+
+          <div class="practice-prompt-box">
+            <div class="practice-prompt-label">📋 Question Prompt:</div>
+            <p class="practice-prompt-text">
+              A website requires a horizontal navigation bar and a dashboard with rows and columns. Implement both layouts using appropriate CSS techniques and justify why you selected Flexbox or Grid for each.
+            </p>
+          </div>
+
+          <!-- Architectural Decision Matrix -->
+          <div class="practice-explanation-box">
+            <div class="practice-exp-title"><span>⚖️</span> Architectural Selection Justification:</div>
+            <div class="practice-exp-content">
+              <div class="table-responsive" style="margin-top: 0.5rem;">
+                <table class="data-table" aria-label="Justification Table">
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Selected Model</th>
+                      <th>Core Architectural Justification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Horizontal Navigation Bar</strong></td>
+                      <td><strong style="color: #2563eb;">CSS Flexbox</strong></td>
+                      <td>
+                        <strong>1-Dimensional Flow &amp; Content-First Sizing:</strong> Navigation bars flow strictly along a single horizontal row. Elements (logo, links, profile) have varying text lengths and should size themselves dynamically based on their content. <code>justify-content: space-between</code> effortlessly separates ends, while <code>align-items: center</code> aligns buttons vertically without brittle coordinate grids.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Analytics Dashboard</strong></td>
+                      <td><strong style="color: #10b981;">CSS Grid</strong></td>
+                      <td>
+                        <strong>2-Dimensional Coordination &amp; Layout-First Matrix:</strong> Dashboards require simultaneous alignment across columns AND rows. Cards must strictly conform to rigid tracks regardless of internal text length. Grid easily coordinates complex cell spanning (e.g., charts spanning 2 columns) without distorting adjacent widgets.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="code-wrapper">
+            <div class="code-header">
+              <span class="code-title">CSS Unified Solution — Flexbox Nav + Grid Dashboard</span>
+              <button type="button" class="code-copy-btn" aria-label="Copy code">Copy Code</button>
+            </div>
+            <pre class="code-pre"><code><span class="token-comment">/* 1. Flexbox Selected for Horizontal 1D Navigation */</span>
+<span class="token-selector">.site-navbar</span> {
+  <span class="token-property">display</span>: <span class="token-val">flex</span>;
+  <span class="token-property">flex-direction</span>: <span class="token-val">row</span>;
+  <span class="token-property">justify-content</span>: <span class="token-val">space-between</span>;
+  <span class="token-property">align-items</span>: <span class="token-val">center</span>;
+  <span class="token-property">padding</span>: <span class="token-val">0.75rem 1.25rem</span>;
+}
+
+<span class="token-comment">/* 2. CSS Grid Selected for 2D Multi-Track Dashboard */</span>
+<span class="token-selector">.dashboard-matrix</span> {
+  <span class="token-property">display</span>: <span class="token-val">grid</span>;
+  <span class="token-property">grid-template-columns</span>: <span class="token-val">200px 1fr 1fr</span>;
+  <span class="token-property">grid-template-rows</span>: <span class="token-val">auto auto</span>;
+  <span class="token-property">gap</span>: <span class="token-val">1rem</span>;
+}</code></pre>
+          </div>
+
+          <!-- Live Output Preview -->
+          <div class="practice-output-frame">
+            <div class="practice-output-header">
+              <div class="output-card-title-group">
+                <div class="practice-mac-dots">
+                  <span class="practice-mac-dot dot-red"></span>
+                  <span class="practice-mac-dot dot-yellow"></span>
+                  <span class="practice-mac-dot dot-green"></span>
+                </div>
+                <span>🖥️ Integrated Live System (Flexbox Navbar + Grid Dashboard Output SS)</span>
+              </div>
+              <span class="practice-ss-badge">Hybrid Production System</span>
+            </div>
+            <div class="practice-output-body">
+              <div class="demo-q15-layout">
+                <!-- Part 1: Flexbox Navigation Bar -->
+                <div class="demo-q15-navbar">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800;">
+                    <span style="background: #3b82f6; padding: 0.2rem 0.5rem; border-radius: 4px;">⚡</span>
+                    <span>FlexNav 1D</span>
+                  </div>
+                  <div style="display: flex; gap: 1rem; font-size: 0.85rem; font-weight: 600;">
+                    <span style="color: #93c5fd;">Overview</span>
+                    <span style="color: #cbd5e1;">Analytics</span>
+                    <span style="color: #cbd5e1;">Settings</span>
+                  </div>
+                  <button style="background: #10b981; color: white; border: none; padding: 0.35rem 0.85rem; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer;">
+                    Active Student
+                  </button>
+                </div>
+
+                <!-- Part 2: CSS Grid 2D Dashboard -->
+                <div class="demo-q15-grid">
+                  <!-- Sidebar Widget in Col 1 -->
+                  <div style="background: #1e293b; color: white; padding: 1rem; border-radius: 8px; grid-row: 1 / 3;">
+                    <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: #60a5fa;">Grid Sidebar Track</div>
+                    <div style="font-size: 0.78rem; color: #94a3b8; line-height: 1.5;">
+                      Fixed 200px column spanning both dashboard rows simultaneously using CSS Grid!
+                    </div>
+                  </div>
+
+                  <!-- Widget 2 in Col 2, Row 1 -->
+                  <div style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 1rem; border-radius: 8px;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Weekly Study Hours</span>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary-600); margin: 0.25rem 0;">34.5 hrs</div>
+                    <span style="font-size: 0.75rem; color: #10b981; font-weight: 600;">&uarr; Top 5% in class</span>
+                  </div>
+
+                  <!-- Widget 3 in Col 3, Row 1 -->
+                  <div style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 1rem; border-radius: 8px;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">GPA Benchmark</span>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary-600); margin: 0.25rem 0;">3.82 / 4.0</div>
+                    <span style="font-size: 0.75rem; color: #3b82f6; font-weight: 600;">COMSATS Honors Roll</span>
+                  </div>
+
+                  <!-- Widget 4 in Col 2 & 3, Row 2 (Spanning 2 columns) -->
+                  <div style="background: var(--bg-surface); border: 1px solid var(--border-light); padding: 1rem; border-radius: 8px; grid-column: 2 / 4;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                      <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Curriculum Progress Matrix (Cols 2–3 Spanned)</span>
+                      <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.15); color: #059669; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 700;">All 8 Lectures Verified</span>
+                    </div>
+                    <div style="background: var(--bg-muted); height: 10px; border-radius: 5px; overflow: hidden;">
+                      <div style="width: 100%; height: 100%; background: linear-gradient(90deg, #3b82f6, #10b981);"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="practice-output-footer">
+              <span>🌟</span>
+              <span><strong>Architectural Cohesion:</strong> Flexbox powers the linear fluid navbar, while CSS Grid manages the multi-track dashboard widgets and spanning elements.</span>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+
+<!-- =======================================================================
            INTERACTIVE LECTURE QUERY & DOUBT STATION (SELECTABLE OPTIONS)
            ======================================================================= -->
       <section class="lecture-query-section" id="lectureQuerySection" aria-labelledby="queryHeadingL8">
@@ -699,5 +2461,6 @@
   </footer>
 
   <script src="../js/script.js"></script>
+  <script src="../js/practice-lab.js"></script>
 </body>
 </html>
