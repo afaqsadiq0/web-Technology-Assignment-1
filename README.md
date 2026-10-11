@@ -15,7 +15,7 @@
 | **Registration No** | **FA23-BSE-012** |
 | **Academic Program** | BS Software Engineering (BS-SE) |
 | **Course Code & Title**| CSC336 Web Technologies |
-| **Semester** | Fall 2026 |
+| **Semester** | 7th Semester (Fall 2026) |
 | **Campus** | COMSATS University Islamabad, Vehari Campus |
 | **GitHub Repository** | **[https://github.com/afaqsadiq0/web-Technology-Assignment-1](https://github.com/afaqsadiq0/web-Technology-Assignment-1)** |
 | **Live Vercel URL** | **[https://web-technologies-csc336.vercel.app](https://web-technologies-csc336.vercel.app)** |
