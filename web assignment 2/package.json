@@ -1,0 +1,21 @@
+{
+  "name": "quizmaster-pro",
+  "version": "1.0.0",
+  "description": "Premium Interactive Web Technologies Quiz Platform for University Web Technologies Assignment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/validate.js && node tests/simulation.js && node tests/test_pdf.js"
+  },
+  "keywords": [
+    "quiz",
+    "web-technologies",
+    "html5",
+    "css3",
+    "javascript",
+    "bootstrap5",
+    "jspdf"
+  ],
+  "author": "QuizMaster Pro Development Team",
+  "license": "MIT"
+}

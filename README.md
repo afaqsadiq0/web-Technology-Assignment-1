@@ -29,6 +29,15 @@
 
 ---
 
+## 📚 Repository Assignments Directory
+
+| Assignment | Project Name | Description | Folder Link |
+| :--- | :--- | :--- | :--- |
+| **Assignment 1** | **Web Technologies Portal** | Comprehensive educational web portal | [View Assignment 1](./) |
+| **Assignment 2** | **QuizMaster Pro** | Premium interactive educational quiz platform | [View Assignment 2](./web%20assignment%202/) |
+
+---
+
 ## 📌 Project Overview
 
 This repository contains a high-quality, responsive educational web portal developed for the **CSC336 Web Technologies** course. The project is built entirely using semantic **HTML5**, modern **CSS3** (utilizing custom properties, Flexbox, and CSS Grid), and lightweight **Vanilla JavaScript** without reliance on external CSS frameworks like Bootstrap or Tailwind.

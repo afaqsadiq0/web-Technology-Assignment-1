@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuizMaster Pro - Premium interactive educational quiz platform for testing modern web technologies: HTML5, CSS3, JavaScript ES6+, and Bootstrap 5.">
+  <meta name="keywords" content="Quiz, Web Technologies, HTML5, CSS3, JavaScript, Bootstrap 5, QuizMaster Pro, University Assignment">
+  <meta name="author" content="QuizMaster Pro Team">
+  <meta name="theme-color" content="#6366F1">
+
+  <title>QuizMaster Pro — Interactive Web Technologies Quiz Platform</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Bootstrap 5.3.3 CSS (Local with CDN fallback) -->
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons 1.11.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Ambient Background Mesh Gradients -->
+  <div class="app-backdrop" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- ========================================================================
+       PREMIUM NAVIGATION HEADER
+       ======================================================================== -->
+  <header class="qm-header" role="banner">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <!-- Brand Logo & Name -->
+      <a href="#" class="brand-wrapper" id="brand-home-link" aria-label="QuizMaster Pro Home">
+        <img src="assets/logo.svg" alt="QuizMaster Pro Logo" class="brand-logo-img">
+        <span class="brand-text">
+          QuizMaster <span class="brand-badge">PRO</span>
+        </span>
+      </a>
+
+      <!-- Header Right Utilities -->
+      <div class="d-flex align-items-center gap-2">
+        <span class="course-tag d-none d-md-inline-flex" title="CSC336 Web Technologies">
+          <i class="bi bi-mortarboard-fill text-primary" aria-hidden="true"></i> CSC336 Web Technologies
+        </span>
+
+        <!-- Sound Toggle -->
+        <button type="button" class="header-btn" id="sound-toggle-btn" aria-label="Enable sound effects" title="Enable sound effects">
+          <i class="bi bi-volume-mute-fill" id="sound-icon" aria-hidden="true"></i>
+        </button>
+
+        <!-- Theme Switcher (Dark / Light) -->
+        <button type="button" class="header-btn" id="theme-toggle-btn" aria-label="Switch theme mode" title="Switch theme mode">
+          <i class="bi bi-moon-stars-fill" id="theme-icon" aria-hidden="true"></i>
+        </button>
+
+        <!-- Instructions / Help Modal Trigger -->
+        <button type="button" class="header-btn" id="help-btn" aria-label="Help & Information" title="Help & Information">
+          <i class="bi bi-question-circle" aria-hidden="true"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN APPLICATION WORKSPACE (SINGLE PAGE ARCHITECTURE)
+       ======================================================================== -->
+  <main id="app-main" class="flex-grow-1" role="main">
+
+    <!-- ----------------------------------------------------------------------
+         STATE 1: WELCOME & HERO EXPERIENCE
+         ---------------------------------------------------------------------- -->
+    <section id="view-welcome" class="app-view active" aria-label="Welcome Screen">
+      
+      <!-- 1. Hero Section -->
+      <div class="hero-section">
+        <div class="container">
+          <div class="row align-items-center g-4 g-lg-5 mb-4">
+            
+            <!-- Left Hero Column -->
+            <div class="col-lg-7">
+              <div class="eyebrow-pill">
+                <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                <span>Your Knowledge. Your Next Level.</span>
+              </div>
+
+              <h1 class="hero-title">
+                Challenge Your Mind.<br>
+                <span class="text-gradient">Master </span><span class="text-gradient typewriter-text" id="typewriter-text">Web Technologies.</span><span class="typewriter-cursor" aria-hidden="true">|</span>
+              </h1>
+
+              <p class="hero-lead">
+                Test your knowledge of modern web technologies through interactive questions, real-time feedback, and a beautifully designed learning experience.
+              </p>
+
+              <!-- Tech Badges -->
+              <div class="tech-badges-list" aria-label="Topics covered">
+                <span class="tech-badge-item"><i class="bi bi-filetype-html text-danger"></i> HTML5 Semantics</span>
+                <span class="tech-badge-item"><i class="bi bi-filetype-css text-primary"></i> CSS3 &amp; Flex/Grid</span>
+                <span class="tech-badge-item"><i class="bi bi-filetype-js text-warning"></i> JavaScript ES6+</span>
+                <span class="tech-badge-item"><i class="bi bi-bootstrap-fill text-purple" style="color: #8B5CF6;"></i> Bootstrap 5</span>
+              </div>
+
+              <!-- Primary Actions -->
+              <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+                <button type="button" class="btn-qm-primary" id="btn-start-challenge">
+                  <span>Start Your Challenge</span>
+                  <i class="bi bi-arrow-right-short fs-5" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn-qm-secondary" id="btn-how-it-works">
+                  <i class="bi bi-compass" aria-hidden="true"></i>
+                  <span>How It Works</span>
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center gap-2 text-muted small">
+                <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
+                <span>Quick to start. Easy to understand. Designed for learning.</span>
+              </div>
+            </div>
+
+            <!-- Right Hero Column (Interactive Illustrative Preview Card) -->
+            <div class="col-lg-5">
+              <div class="preview-card" aria-hidden="true">
+                <div class="preview-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="preview-chip">JavaScript ES6+</span>
+                    <span class="text-muted small">Q 03 / 10</span>
+                  </div>
+                  <div class="preview-timer">
+                    <i class="bi bi-clock-history text-primary"></i> 04:32
+                  </div>
+                </div>
+
+                <!-- Mini Segmented Bar Illustration -->
+                <div class="d-flex gap-1 mb-3">
+                  <div style="flex:1; height:6px; background:#10B981; border-radius:3px;"></div>
+                  <div style="flex:1; height:6px; background:#10B981; border-radius:3px;"></div>
+                  <div style="flex:1; height:6px; background:#6366F1; border-radius:3px;"></div>
+                  <div style="flex:1; height:6px; background:var(--qm-surface-tertiary); border-radius:3px;"></div>
+                  <div style="flex:1; height:6px; background:var(--qm-surface-tertiary); border-radius:3px;"></div>
+                </div>
+
+                <div class="preview-question">
+                  Which method selects an element using its unique CSS ID selector?
+                </div>
+
+                <div class="preview-options">
+                  <div class="preview-opt">
+                    <span class="preview-opt-circle">A</span>
+                    <span>document.getElementsByClassName()</span>
+                  </div>
+                  <div class="preview-opt correct-mock">
+                    <span class="preview-opt-circle"><i class="bi bi-check text-white"></i></span>
+                    <span>document.getElementById()</span>
+                  </div>
+                  <div class="preview-opt">
+                    <span class="preview-opt-circle">C</span>
+                    <span>document.findElementById()</span>
+                  </div>
+                  <div class="preview-opt">
+                    <span class="preview-opt-circle">D</span>
+                    <span>document.queryAll()</span>
+                  </div>
+                </div>
+
+                <!-- Mock feedback -->
+                <div class="p-2 px-3 rounded-3 small d-flex align-items-center gap-2" style="background:var(--qm-emerald-soft); color:var(--qm-emerald-success);">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span class="fw-semibold">Correct! Instant feedback explains why.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Features Section (Independent Container) -->
+      <div class="features-section">
+        <div class="container">
+          <div class="row g-4">
+            
+            <div class="col-sm-6 col-lg-3">
+              <div class="feature-box">
+                <div class="feature-icon-wrapper icon-bg-indigo">
+                  <i class="bi bi-shuffle" aria-hidden="true"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Smart Questions</h5>
+                <p class="text-secondary small mb-0">Randomized questions on every attempt from an authoritative question bank.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="feature-box">
+                <div class="feature-icon-wrapper icon-bg-violet">
+                  <i class="bi bi-bar-chart-steps" aria-hidden="true"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Live Progress</h5>
+                <p class="text-secondary small mb-0">Multi-colored segmented indicator tracks correct, incorrect, and current status in real time.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="feature-box">
+                <div class="feature-icon-wrapper icon-bg-cyan">
+                  <i class="bi bi-lightbulb-fill" aria-hidden="true"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Instant Feedback</h5>
+                <p class="text-secondary small mb-0">Understand concepts as you go with immediate evaluations and detailed educational explanations.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="feature-box">
+                <div class="feature-icon-wrapper icon-bg-emerald">
+                  <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Downloadable Results</h5>
+                <p class="text-secondary small mb-0">Generate and export an official, multi-page vector PDF report of your performance.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. How It Works Section (Independent Container) -->
+      <div class="workflow-section" id="section-how-it-works">
+        <div class="container">
+          <div class="text-center max-w-600 mx-auto mb-4">
+            <span class="text-primary fw-bold text-uppercase small letter-spacing-1">Simple &bull; Engaging &bull; Rewarding</span>
+            <h2 class="fw-bold mt-1">How QuizMaster Pro Works</h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="step-card">
+                <div class="step-num">01</div>
+                <h5 class="fw-bold mb-2">Start Challenge</h5>
+                <p class="text-secondary small mb-0">Select your preferred question count and begin a clean, randomized session.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step-card">
+                <div class="step-num">02</div>
+                <h5 class="fw-bold mb-2">Answer &amp; Learn</h5>
+                <p class="text-secondary small mb-0">Answer MCQs before the countdown expires while monitoring real-time segmented progress.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step-card">
+                <div class="step-num">03</div>
+                <h5 class="fw-bold mb-2">Review &amp; Export</h5>
+                <p class="text-secondary small mb-0">Inspect category analytics, review detailed answers, and download your formal PDF report.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4 pt-2">
+            <button type="button" class="btn-qm-primary" id="btn-hero-start-modal">
+              <i class="bi bi-play-circle-fill" aria-hidden="true"></i>
+              <span>Start Your Challenge Now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         STATE 2: ACTIVE QUIZ EXPERIENCE
+         ---------------------------------------------------------------------- -->
+    <section id="view-quiz" class="app-view" aria-label="Active Quiz">
+      <div class="container quiz-active-wrapper">
+
+        <!-- Top Information & Status Row -->
+        <div class="quiz-status-header">
+          <div class="d-flex align-items-center gap-2">
+            <span class="quiz-badge-live">
+              <span class="pulse-dot"></span>
+              Quiz in Progress
+            </span>
+            <span class="quiz-category-pill" id="quiz-category-pill">JavaScript</span>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <span class="fw-bold tabular-nums text-secondary small" id="quiz-question-counter">01 / 10</span>
+            
+            <!-- Resilient Countdown Timer Card -->
+            <div class="timer-container" id="timer-wrapper" role="timer" aria-live="off">
+              <i class="bi bi-stopwatch timer-icon" aria-hidden="true"></i>
+              <span id="timer-display" class="tabular-nums">05:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-Colored Segmented Progress System (Mandatory) -->
+        <div class="segmented-progress-wrap" aria-label="Quiz Progress Segments">
+          <div class="segmented-progress-meta">
+            <span class="fw-bold text-secondary small" id="progress-answered-label">0 of 10 Answered</span>
+            <span class="text-muted small">Click any segment to jump</span>
+          </div>
+
+          <!-- Segments Grid -->
+          <div class="segments-track" id="segments-track" role="toolbar" aria-label="Question Segments Navigation">
+            <!-- Dynamically injected segments -->
+          </div>
+
+          <!-- Color Legend -->
+          <div class="segments-legend" aria-hidden="true">
+            <div class="legend-item">
+              <span class="legend-dot leg-unanswered"></span>
+              <span>Unanswered</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot leg-current"></span>
+              <span>Current</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot leg-correct"></span>
+              <span>Correct</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot leg-incorrect"></span>
+              <span>Incorrect</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Display Panel -->
+        <article class="question-panel" aria-live="polite">
+          
+          <div class="question-meta-row">
+            <span class="question-num-tag" id="question-num-tag">QUESTION 01</span>
+            <span class="difficulty-pill diff-easy" id="question-diff-tag">Easy</span>
+          </div>
+
+          <h2 class="question-text" id="question-title-text">
+            Loading question...
+          </h2>
+
+          <!-- 4 Answer Option Cards -->
+          <div class="options-grid" id="options-container" role="radiogroup" aria-label="Answer Options">
+            <!-- Dynamically injected option cards -->
+          </div>
+
+          <!-- Feedback & Explanation Box -->
+          <div class="feedback-box" id="feedback-box" aria-live="polite">
+            <div class="feedback-title-row">
+              <i class="bi bi-check-circle-fill text-success" id="feedback-icon" aria-hidden="true"></i>
+              <span id="feedback-title">Correct! Great job.</span>
+            </div>
+            <p class="feedback-explanation" id="feedback-explanation">
+              Explanation will be displayed here.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- Quiz Footer Navigation -->
+        <div class="quiz-nav-footer">
+          <button type="button" class="btn-qm-secondary" id="btn-prev-question" disabled>
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            <span>Previous</span>
+          </button>
+
+          <span class="answered-count-text" id="answered-summary-text">0 of 10 Answered</span>
+
+          <div class="d-flex gap-2">
+            <button type="button" class="btn-qm-outline text-danger border-danger-subtle d-none d-sm-inline-flex" id="btn-submit-quiz">
+              <i class="bi bi-check2-circle" aria-hidden="true"></i>
+              <span>Submit Early</span>
+            </button>
+            <button type="button" class="btn-qm-secondary" id="btn-next-question">
+              <span>Next</span>
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         STATE 3: RESULTS DASHBOARD
+         ---------------------------------------------------------------------- -->
+    <section id="view-results" class="app-view" aria-label="Quiz Results Dashboard">
+      <div class="container results-wrapper">
+
+        <!-- Results Header -->
+        <div class="results-hero-header">
+          <div class="results-badge-wrap">
+            <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+            <span>Quiz Completed</span>
+          </div>
+          <h1 class="fw-bold mb-2">Your Results Are In!</h1>
+          <p class="text-secondary">Every attempt is an opportunity to learn something new and sharpen your technical mastery.</p>
+        </div>
+
+        <!-- Hero Score Banner Card with Animated SVG Donut -->
+        <div class="score-banner-card">
+          <!-- Donut Chart -->
+          <div class="donut-chart-container" aria-hidden="true">
+            <svg class="donut-svg" viewBox="0 0 160 160">
+              <circle class="donut-track" cx="80" cy="80" r="70"></circle>
+              <circle class="donut-fill" id="result-donut-fill" cx="80" cy="80" r="70"></circle>
+            </svg>
+            <div class="donut-center-label">
+              <div class="donut-percent-num tabular-nums" id="result-accuracy-pct">0%</div>
+              <div class="donut-percent-text">Accuracy</div>
+            </div>
+          </div>
+
+          <!-- Score Details -->
+          <div class="score-details-block">
+            <div class="text-secondary small fw-bold text-uppercase letter-spacing-1 mb-1">Final Score</div>
+            <div class="score-fraction-heading tabular-nums" id="result-fraction-score">0 / 10</div>
+            <div class="performance-msg-box" id="result-performance-msg">
+              Calculating performance assessment...
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Responsive Metric Cards -->
+        <div class="metrics-row">
+          
+          <div class="metric-item-card">
+            <div class="metric-icon-box icon-bg-emerald">
+              <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="metric-lbl">Correct Answers</div>
+              <div class="metric-val tabular-nums text-success" id="metric-correct">0</div>
+            </div>
+          </div>
+
+          <div class="metric-item-card">
+            <div class="metric-icon-box icon-bg-rose" style="background:var(--qm-rose-soft); color:var(--qm-rose-error);">
+              <i class="bi bi-x-circle-fill text-danger" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="metric-lbl">Incorrect Answers</div>
+              <div class="metric-val tabular-nums text-danger" id="metric-incorrect">0</div>
+            </div>
+          </div>
+
+          <div class="metric-item-card">
+            <div class="metric-icon-box" style="background:var(--qm-surface-secondary); color:var(--qm-text-secondary);">
+              <i class="bi bi-dash-circle-fill" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="metric-lbl">Unanswered</div>
+              <div class="metric-val tabular-nums" id="metric-unanswered">0</div>
+            </div>
+          </div>
+
+          <div class="metric-item-card">
+            <div class="metric-icon-box icon-bg-indigo">
+              <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="metric-lbl">Time Taken</div>
+              <div class="metric-val tabular-nums" id="metric-time-taken">00:00</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Category Performance Breakdown -->
+        <div class="category-breakdown-panel">
+          <h4 class="fw-bold mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-pie-chart-fill text-primary" aria-hidden="true"></i>
+            <span>Topic Performance Breakdown</span>
+          </h4>
+          <div id="category-bars-container">
+            <!-- Dynamically injected category progress rows -->
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="results-actions-bar">
+          <button type="button" class="btn-qm-primary" id="btn-download-pdf">
+            <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i>
+            <span>Download PDF Report</span>
+          </button>
+          <button type="button" class="btn-qm-secondary" id="btn-review-answers">
+            <i class="bi bi-card-checklist" aria-hidden="true"></i>
+            <span>Review Answers</span>
+          </button>
+          <button type="button" class="btn-qm-secondary" id="btn-retake-quiz">
+            <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            <span>Try Again</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         STATE 4: DETAILED ANSWER REVIEW SCREEN
+         ---------------------------------------------------------------------- -->
+    <section id="view-review" class="app-view" aria-label="Answer Review Screen">
+      <div class="container review-wrapper">
+
+        <!-- Top Header & Back Action -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">Comprehensive Answer Review</h2>
+            <p class="text-secondary small mb-0">Inspect each question, evaluate your choices against the correct answers, and read detailed technical explanations.</p>
+          </div>
+          <button type="button" class="btn-qm-secondary" id="btn-back-to-results">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+            <span>Back to Dashboard</span>
+          </button>
+        </div>
+
+        <!-- Filter Pills Nav -->
+        <div class="review-filter-nav" role="tablist" aria-label="Filter Review Questions">
+          <button type="button" class="filter-pill-btn active" data-filter="all">All Questions</button>
+          <button type="button" class="filter-pill-btn" data-filter="correct">Correct Only</button>
+          <button type="button" class="filter-pill-btn" data-filter="incorrect">Incorrect Only</button>
+          <button type="button" class="filter-pill-btn" data-filter="unanswered">Unanswered</button>
+        </div>
+
+        <!-- Review Cards Container -->
+        <div id="review-cards-container">
+          <!-- Dynamically populated review cards -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODAL 1: QUIZ CONFIGURATION & INSTRUCTIONS MODAL
+       ======================================================================== -->
+  <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <div class="d-flex align-items-center gap-2">
+            <div class="feature-icon-wrapper icon-bg-indigo mb-0" style="width:36px; height:36px; font-size:1.1rem;">
+              <i class="bi bi-sliders2-vertical"></i>
+            </div>
+            <div>
+              <h5 class="modal-title fw-bold" id="configModalLabel">Quiz Setup &amp; Rules</h5>
+              <span class="text-secondary small">Web Technologies Knowledge Challenge</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="config-form" onsubmit="return false;">
+            
+            <div class="row g-3 mb-4">
+              <!-- Question Count Selection (5, 10, 15) -->
+              <div class="col-sm-6">
+                <label for="config-question-count" class="form-label fw-bold small text-uppercase">Number of Questions</label>
+                <select class="form-select" id="config-question-count">
+                  <option value="5">5 Questions (Quick Sprint)</option>
+                  <option value="10" selected>10 Questions (Standard Challenge)</option>
+                  <option value="15">15 Questions (Deep Evaluation)</option>
+                  <option value="20">20 Questions (Comprehensive Master)</option>
+                </select>
+                <div class="form-text">Questions are randomly chosen from our 40-question curated bank.</div>
+              </div>
+
+              <!-- Time Limit Selection -->
+              <div class="col-sm-6">
+                <label for="config-time-limit" class="form-label fw-bold small text-uppercase">Time Limit</label>
+                <select class="form-select" id="config-time-limit">
+                  <option value="3">3 Minutes (Fast Pace)</option>
+                  <option value="5" selected>5 Minutes (Standard &bull; Recommended)</option>
+                  <option value="10">10 Minutes (Relaxed Pace)</option>
+                </select>
+                <div class="form-text">Timer runs continuously and auto-submits when expired.</div>
+              </div>
+            </div>
+
+            <!-- Optional Student Profile for PDF Report -->
+            <div class="p-3 rounded-3 mb-4" style="background:var(--qm-surface-secondary); border:1px solid var(--qm-border-subtle);">
+              <label class="fw-bold small text-uppercase mb-2 d-flex align-items-center gap-2">
+                <i class="bi bi-person-badge text-primary"></i>
+                <span>Candidate Information for PDF Report (Optional)</span>
+              </label>
+              <div class="row g-2">
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="config-candidate-name" placeholder="Student Name (e.g. Alex Johnson)">
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="config-candidate-reg" placeholder="Registration No. (e.g. FA23-BSE-001)">
+                </div>
+              </div>
+              <div class="form-text small text-muted mt-1">If left blank, report will simply designate candidate as Anonymous Learner.</div>
+            </div>
+
+            <!-- Sound Effects Toggle (Default OFF as per spec) -->
+            <div class="form-check form-switch mb-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="config-sound-toggle">
+              <label class="form-check-label fw-semibold" for="config-sound-toggle">
+                Enable synthesized sound effects (synthesized audio chimes &amp; countdown warnings)
+              </label>
+              <div class="form-text">Disabled by default per specification. No external files needed.</div>
+            </div>
+
+            <!-- Instructions Summary -->
+            <div class="p-3 rounded-3" style="background:var(--qm-surface-secondary);">
+              <h6 class="fw-bold mb-2 small text-uppercase text-secondary">Quiz Instructions &amp; Rules:</h6>
+              <ul class="small text-secondary mb-0 ps-3">
+                <li class="mb-1">Each question has four multiple-choice options with exactly one correct answer.</li>
+                <li class="mb-1">The timer begins immediately once you click <strong>Start Quiz Now</strong>.</li>
+                <li class="mb-1">Instant feedback and explanations are displayed upon selecting any answer.</li>
+                <li class="mb-1">Your selected answers remain securely preserved when navigating between questions.</li>
+                <li class="mb-1">You may jump directly to any question by clicking its segment on the progress bar.</li>
+                <li>When time expires, the quiz automatically submits and displays your official results.</li>
+              </ul>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-between">
+          <button type="button" class="btn-qm-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn-qm-primary" id="btn-confirm-start-quiz">
+            <i class="bi bi-play-fill fs-5" aria-hidden="true"></i>
+            <span>Start Quiz Now</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: SUBMISSION CONFIRMATION (UNANSWERED DETECTOR)
+       ======================================================================== -->
+  <div class="modal fade" id="confirmSubmitModal" tabindex="-1" aria-labelledby="confirmSubmitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold d-flex align-items-center gap-2" id="confirmSubmitModalLabel">
+            <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+            <span>Submit Quiz Confirmation</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <p id="unanswered-warning-text" class="mb-3">
+            You still have unanswered questions. Would you like to review them or submit your quiz now?
+          </p>
+          <div class="alert alert-warning small mb-0 d-flex align-items-center gap-2">
+            <i class="bi bi-info-circle-fill"></i>
+            <span>Once submitted, answers cannot be edited.</span>
+          </div>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-between">
+          <button type="button" class="btn-qm-secondary" id="btn-review-unanswered">
+            <i class="bi bi-search"></i>
+            <span>Review Unanswered</span>
+          </button>
+          <button type="button" class="btn-qm-primary" id="btn-confirm-submit-final">
+            <i class="bi bi-check2-all"></i>
+            <span>Submit Anyway</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: HELP & UNIVERSITY ASSIGNMENT DETAILS
+       ======================================================================== -->
+  <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="helpModalLabel">
+            <i class="bi bi-info-circle-fill text-primary me-2"></i>
+            About QuizMaster Pro
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="p-3 rounded-3 mb-3" style="background:var(--qm-surface-secondary);">
+            <h6 class="fw-bold mb-1">Academic Context:</h6>
+            <p class="small text-secondary mb-1"><strong>Course:</strong> CSC336 Web Technologies &bull; Assignment 2</p>
+            <p class="small text-secondary mb-1"><strong>Department:</strong> Department of Computer Science &bull; COMSATS University Islamabad</p>
+            <p class="small text-secondary mb-0"><strong>CLO 2:</strong> Demonstrate the capabilities for developing professional front-end using client-side technologies.</p>
+          </div>
+
+          <h6 class="fw-bold">Implemented Features Checklist:</h6>
+          <div class="row g-2 small text-secondary mb-3">
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> HTML5, CSS3, JavaScript ES6+, Bootstrap 5</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Multi-colored segmented progress system</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> High-precision countdown timer</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Dynamic correct &amp; incorrect feedback</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Dark &amp; Light theme toggle with persistence</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Real multi-page PDF generation via jsPDF</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> 40-question randomized question bank</div>
+            <div class="col-sm-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Keyboard accessibility &amp; WCAG contrast</div>
+          </div>
+
+          <h6 class="fw-bold">Keyboard Shortcuts:</h6>
+          <p class="small text-secondary mb-0">
+            Use <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> or <kbd>A</kbd>, <kbd>B</kbd>, <kbd>C</kbd>, <kbd>D</kbd> to select answer options during a quiz. Use <kbd>&larr;</kbd> and <kbd>&rarr;</kbd> arrow keys to navigate between questions.
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-qm-primary" data-bs-dismiss="modal">Got It</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION COMPONENT
+       ======================================================================== -->
+  <div class="qm-toast" id="qm-toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <i class="bi bi-info-circle-fill text-primary" aria-hidden="true"></i>
+    <span id="toast-message">Notification message</span>
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT LIBRARIES & MODULES
+       ======================================================================== -->
+  <!-- Bootstrap 5.3.3 Bundle (with Popper) -->
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <script>
+    if (typeof bootstrap === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- jsPDF for Vector PDF Report Generation -->
+  <script src="js/vendor/jspdf.umd.min.js"></script>
+  <script src="js/vendor/jspdf.plugin.autotable.min.js"></script>
+  <script>
+    if (typeof window.jspdf === 'undefined' && typeof window.jsPDF === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"><\/script>');
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- QuizMaster Pro Modules -->
+  <script src="js/questions.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
