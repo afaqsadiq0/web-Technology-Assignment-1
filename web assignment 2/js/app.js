@@ -13,8 +13,8 @@
     // Configuration
     questionCount: 10,
     timeLimitSeconds: 300, // 5 minutes default
-    studentName: "",
-    studentRegNo: "",
+    studentName: "Muhammad Afaq",
+    studentRegNo: "FA23-BSE-012",
     soundEnabled: false,
     theme: "light",
 
@@ -68,6 +68,7 @@
     btnConfirmStartQuiz: document.getElementById("btn-confirm-start-quiz"),
 
     // Active Quiz Elements
+    btnQuizBack: document.getElementById("btn-quiz-back"),
     quizCategoryPill: document.getElementById("quiz-category-pill"),
     quizQuestionCounter: document.getElementById("quiz-question-counter"),
     timerDisplay: document.getElementById("timer-display"),
@@ -99,6 +100,12 @@
     btnReviewUnanswered: document.getElementById("btn-review-unanswered"),
     btnConfirmSubmitFinal: document.getElementById("btn-confirm-submit-final"),
 
+    // Exit Quiz Early Modal
+    exitQuizModalEl: document.getElementById("exitQuizModal"),
+    exitModalAnsweredCount: document.getElementById("exit-modal-answered-count"),
+    btnExitDiscardHome: document.getElementById("btn-exit-discard-home"),
+    btnExitSaveResults: document.getElementById("btn-exit-save-results"),
+
     // Results Dashboard Elements
     resultDonutFill: document.getElementById("result-donut-fill"),
     resultAccuracyPct: document.getElementById("result-accuracy-pct"),
@@ -117,6 +124,7 @@
     reviewCardsContainer: document.getElementById("review-cards-container"),
     reviewFilterBtns: document.querySelectorAll(".filter-pill-btn"),
     btnBackToResults: document.getElementById("btn-back-to-results"),
+    btnReviewDownloadPdf: document.getElementById("btn-review-download-pdf"),
 
     // Toast
     toastEl: document.getElementById("qm-toast"),
@@ -142,6 +150,7 @@
     if (typeof bootstrap !== "undefined" && bootstrap.Modal) {
       if (DOM.configModalEl) bootstrapModals.config = new bootstrap.Modal(DOM.configModalEl);
       if (DOM.confirmSubmitModalEl) bootstrapModals.confirm = new bootstrap.Modal(DOM.confirmSubmitModalEl);
+      if (DOM.exitQuizModalEl) bootstrapModals.exit = new bootstrap.Modal(DOM.exitQuizModalEl);
       const helpModalEl = document.getElementById("helpModal");
       if (helpModalEl) bootstrapModals.help = new bootstrap.Modal(helpModalEl);
     }
@@ -195,6 +204,10 @@
       } else {
         charIndex++;
         textEl.textContent = currentPhrase.substring(0, charIndex);
+        // Play subtle mechanical typewriter click when typing
+        if (typeof soundManager !== "undefined") {
+          soundManager.playTypewriterKey();
+        }
       }
 
       let speed = isDeleting ? 45 : 85;
@@ -212,6 +225,18 @@
 
       setTimeout(tick, speed);
     }
+
+    // Auto-resume AudioContext on first user interaction so typewriter sound plays
+    const enableAudioContext = () => {
+      if (typeof soundManager !== "undefined" && soundManager.audioCtx) {
+        if (soundManager.audioCtx.state === "suspended") {
+          soundManager.audioCtx.resume();
+        }
+      }
+    };
+    ["click", "touchstart", "keydown", "scroll"].forEach(ev => {
+      window.addEventListener(ev, enableAudioContext, { once: true, passive: true });
+    });
 
     // Begin cycling after initial pause
     setTimeout(tick, 2000);
@@ -368,8 +393,8 @@
     
     state.questionCount = Math.min(qCount, state.allQuestions.length);
     state.timeLimitSeconds = timeLimitMins * 60;
-    state.studentName = DOM.inputCandidateName ? DOM.inputCandidateName.value.trim() : "";
-    state.studentRegNo = DOM.inputCandidateReg ? DOM.inputCandidateReg.value.trim() : "";
+    state.studentName = (DOM.inputCandidateName && DOM.inputCandidateName.value.trim()) || "Muhammad Afaq";
+    state.studentRegNo = (DOM.inputCandidateReg && DOM.inputCandidateReg.value.trim()) || "FA23-BSE-012";
 
     if (DOM.checkSoundEffect) {
       state.soundEnabled = DOM.checkSoundEffect.checked;
@@ -793,6 +818,43 @@
   }
 
   // ==========================================================================
+  // 9b. EXIT QUIZ EARLY & PARTIAL REPORT HANDLERS
+  // ==========================================================================
+  function openExitQuizModal() {
+    if (!state.isQuizActive || state.isSubmitted) return;
+
+    const totalQ = state.activeQuestions.length;
+    const answeredCount = Object.keys(state.userAnswers).length;
+
+    if (DOM.exitModalAnsweredCount) {
+      DOM.exitModalAnsweredCount.textContent = `${answeredCount} of ${totalQ} Answered`;
+    }
+
+    if (bootstrapModals.exit) {
+      bootstrapModals.exit.show();
+    } else {
+      if (confirm(`You have answered ${answeredCount} of ${totalQ} questions. Would you like to end the quiz and view your results and download PDF?`)) {
+        finalizeQuizSubmission();
+      }
+    }
+  }
+
+  function handleExitSaveAndResults() {
+    if (bootstrapModals.exit) bootstrapModals.exit.hide();
+    finalizeQuizSubmission();
+    showToast("Quiz progress saved! You can now review answers or download your PDF report.", "info");
+  }
+
+  function handleExitDiscardHome() {
+    if (bootstrapModals.exit) bootstrapModals.exit.hide();
+    stopTimer();
+    state.isQuizActive = false;
+    state.isSubmitted = false;
+    switchView("welcome");
+    showToast("Quiz session ended. Returned to home screen.", "secondary");
+  }
+
+  // ==========================================================================
   // 10. RESULTS CALCULATION & DASHBOARD RENDERING
   // ==========================================================================
   function calculateResults() {
@@ -1111,11 +1173,7 @@
       brandHomeLink.addEventListener("click", (e) => {
         e.preventDefault();
         if (state.isQuizActive && !state.isSubmitted) {
-          if (confirm("A quiz is currently in progress. Do you wish to leave and discard this attempt?")) {
-            stopTimer();
-            state.isQuizActive = false;
-            switchView("welcome");
-          }
+          openExitQuizModal();
         } else {
           switchView("welcome");
         }
@@ -1192,6 +1250,17 @@
       });
     }
 
+    // Exit Quiz / Back button during quiz
+    if (DOM.btnQuizBack) {
+      DOM.btnQuizBack.addEventListener("click", openExitQuizModal);
+    }
+    if (DOM.btnExitSaveResults) {
+      DOM.btnExitSaveResults.addEventListener("click", handleExitSaveAndResults);
+    }
+    if (DOM.btnExitDiscardHome) {
+      DOM.btnExitDiscardHome.addEventListener("click", handleExitDiscardHome);
+    }
+
     // Results Dashboard Buttons
     if (DOM.btnDownloadPdf) {
       DOM.btnDownloadPdf.addEventListener("click", downloadReportPDF);
@@ -1210,6 +1279,9 @@
       DOM.btnBackToResults.addEventListener("click", () => {
         switchView("results");
       });
+    }
+    if (DOM.btnReviewDownloadPdf) {
+      DOM.btnReviewDownloadPdf.addEventListener("click", downloadReportPDF);
     }
 
     // Review Filters

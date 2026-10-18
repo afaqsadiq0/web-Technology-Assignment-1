@@ -133,6 +133,36 @@ class SoundController {
     osc.stop(now + 0.045);
   }
 
+  // Realistic mechanical typewriter keystroke click
+  playTypewriterKey() {
+    this.init();
+    this.resume();
+    if (!this.audioCtx || this.audioCtx.state === 'suspended') return;
+
+    try {
+      const now = this.audioCtx.currentTime;
+      const osc = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+
+      // Subtle pitch variation for realistic tactile typewriter effect
+      const freq = 1050 + (Math.random() * 260 - 130);
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, now);
+      osc.frequency.exponentialRampToValueAtTime(280, now + 0.022);
+
+      gain.gain.setValueAtTime(0.035, now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.028);
+
+      osc.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.032);
+    } catch (e) {
+      // Audio playback fails silently if not permitted
+    }
+  }
+
   // Subtle urgency blip for countdown warning in last 10 seconds
   playWarningTick() {
     if (!this.enabled) return;
